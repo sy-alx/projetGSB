@@ -1,0 +1,21 @@
+CRITICAL - 2021-11-25 03:39:25 --> Argument 1 passed to view() must be of the type string, array given, called in /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/app/Controllers/LoginController.php on line 14
+#0 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/app/Controllers/LoginController.php(14): view(Array)
+#1 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(824): App\Controllers\LoginController->index()
+#2 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#3 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-25 03:39:27 --> Argument 1 passed to view() must be of the type string, array given, called in /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/app/Controllers/LoginController.php on line 14
+#0 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/app/Controllers/LoginController.php(14): view(Array)
+#1 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(824): App\Controllers\LoginController->index()
+#2 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#3 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-25 03:40:54 --> Argument 1 passed to view() must be of the type string, array given, called in /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/app/Controllers/LoginController.php on line 14
+#0 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/app/Controllers/LoginController.php(14): view(Array)
+#1 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(824): App\Controllers\LoginController->index()
+#2 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#3 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/talitouboul/Sites/localhost/Projet_GSB/projet-gsb/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

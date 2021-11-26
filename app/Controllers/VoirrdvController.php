@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-class Page1Controller extends BaseController
+class VoirrdvController extends BaseController
 {
     public function index()
     {
         $data = array(
-            "TITRE_PAGE" => "Connectez-vous",
-            "CONTENT_PAGE" =>  "page1",
+            "TITRE_PAGE" => "Voir mes rdv",
+            "CONTENT_PAGE" =>  "voirrdv",
         );
 
         echo view('dashboard', $data);

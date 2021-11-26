@@ -36,7 +36,7 @@
                 <a class="nav-link" href="/LoginController">LOGIN <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Page1Controller">Page principale</a>
+                <a class="nav-link" href="/ProfilController">Page principale</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>

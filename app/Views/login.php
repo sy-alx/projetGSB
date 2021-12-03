@@ -38,13 +38,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/ProfilController">Page principale</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <a class="nav-link disabled" href="/Login">Disabled</a>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/Login">Login</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/LoginController">Login</button>
         </form>
     </div>
 </nav>

@@ -15,7 +15,7 @@
     <meta name="description" content="Yorks - Responsive Multi-Purpose Template">
     <link href="/assets/images/favicon/favicon.png" rel="icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title><?= $TITRE_PAGE; ?></title>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700%7cSource+Sans+Pro:300,300i,400,400i,600,600i,700">

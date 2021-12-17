@@ -16,6 +16,9 @@ class SignupController extends Controller
     public function store()
     {
         helper(['form']);
+
+        if ($this->request->getMethod()=='post'){
+
         $rules = [
             'name'          => 'required|min_length[2]|max_length[50]',
             'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email]',
@@ -34,10 +37,11 @@ class SignupController extends Controller
 
             $userModel->save($data);
 
-            return redirect()->to('/signin');
+            return redirect()->to('/ProfilController');
         }else{
             $data['validation'] = $this->validator;
             echo view('signup', $data);
+        }
         }
 
     }

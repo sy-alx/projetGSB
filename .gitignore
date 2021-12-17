@@ -5,7 +5,8 @@
 !*/cache/index.html
 !*/cache/.htaccess
 .DS_STORE
-*/writable/*
+writable/*
+.env
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*

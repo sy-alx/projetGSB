@@ -6,6 +6,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('accueil');
+        //return view('accueil');
+        return redirect()->to('/AccueilController');
     }
 }

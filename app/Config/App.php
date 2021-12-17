@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://projet-gsb.local';
+    public $baseURL = 'http://projetgsbgit/';
 
     /**
      * --------------------------------------------------------------------------

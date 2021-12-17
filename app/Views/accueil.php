@@ -39,10 +39,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="/ProfilController">Page principale</a>
             </li>
+
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/LoginController">Login</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SigninController">Login</a>
+
+            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a>
         </form>
     </div>
 </nav>
@@ -50,7 +54,7 @@
 
 <section>
     <h1 class="text-center">Bienvenue</h1>
-    <img class="rounded mx-auto d-block" src="/assets/image/gsb.jpg" alt="logo-gsb">
+    <img class="rounded mx-auto d-block" src="/assets/img/logogsb.jpg" alt="logo-gsb">
 </section>
 
 

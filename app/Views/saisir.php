@@ -19,9 +19,7 @@
                             <label for="start">Date de contre rendu:</label>
                             <input type="date" id="DateCR" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
                         </div>
-
-
-
+                        
                         <!--    <fieldset class="form-group">
                                 <div class="row">
                                     <legend class="col-form-label col-sm-2 pt-0">Radios</legend>

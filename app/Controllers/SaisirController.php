@@ -14,4 +14,10 @@ class SaisirController extends BaseController
         echo view('dashboard', $data);
     }
 
+    public function saisir()
+    {
+
+
+
+    }
 }

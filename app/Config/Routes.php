@@ -37,6 +37,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('/Consultation', 'ConsultationController::index');
+
+$routes->get('/CompteRendu', 'SaisirController::index');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

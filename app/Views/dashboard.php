@@ -69,7 +69,7 @@
 
 
         <li class="nav-item active">
-            <a class="nav-link" href="/SaisirController">
+            <a class="nav-link" href="/CompteRendu">
                 <i class="fas fa-pen"></i>
                 <span>Saisir/ Nouveau</span>
             </a>
@@ -77,7 +77,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item active">
-            <a class="nav-link" href="/ConsultationController">
+            <a class="nav-link" href="/Consultation">
                 <i class="fas fa-eye"></i>
                 <span>Consultation</span>
             </a>

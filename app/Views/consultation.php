@@ -13,22 +13,33 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Praticien</th>
                             <th>Date de visite</th>
                             <th>Cp</th>
                             <th>Date compte rendu</th>
                             <th>Ouvrir</th>
                             <th>Modifier</th>
-                         </tr>
+                        </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                             <th><button><i class="fas fa-book-open"></i></button></th>
-                             <th><button><i class="fas fa-user-edit"></i></button></th>
+
+                        <?php foreach ($nouveau as $row) { ?>
+                            <tr>
+                                <td><?= $row['id'] ?></td>
+                                <td><?= $row['Praticien'] ?></td>
+                                <td><?= $row['Datevisite'] ?></td>
+                                <td><?= $row['texte'] ?></td>
+                                <td><?= $row['Datevisite'] ?></td>
+                                <td><?= $row['DateCR'] ?></td>
+                                <td>
+                                     <button><i class="fas fa-user-edit"></i></button></td>
+                            </tr>
+                        <?php } ?>
+
+
+
+
                         </tr>
 
                         </tbody>

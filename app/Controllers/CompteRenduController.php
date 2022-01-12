@@ -47,11 +47,6 @@ class CompteRenduController extends BaseController
     }*/
 
 
-
-
-
-
-
     // Fonction pour envoyer des emails si validation ok
     public function formulairecontact()
     {

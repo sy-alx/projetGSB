@@ -2,7 +2,6 @@
 <section>
     <h1>Consultation</h1>
 
-
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="card shadow mb-4">
             <div class="card-header py-3">

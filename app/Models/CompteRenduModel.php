@@ -44,9 +44,27 @@ class CompteRenduModel extends Model
         return $query->getResultArray();
     }
 
+    // recuperation en bdd la liste des praticien a mettre dans le select
+   public function insertPraticienSelect(){
+        $builder = $this->db->table('listePraticien');
+        $builder->select('*');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+
+
     // recuperation en bdd dans la view controller
-   public function getCompteRendu2(){
-        $builder = $this->db->table('liste_metiers');
+   public function insertRempacantSelect(){
+        $builder = $this->db->table('listeRemplacant');
+        $builder->select('*');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+
+
+    // recuperation en bdd dans la view controller
+   public function insertMotifVisiteSelect(){
+        $builder = $this->db->table('listeMotifVisite');
         $builder->select('*');
         $query=$builder->get();
         return $query->getResultArray();

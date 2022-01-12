@@ -21,7 +21,9 @@ class CompteRenduController extends BaseController
             "TITRE_PAGE" => "Saisir mes rendez-vous",
             "CONTENT_PAGE" =>  "compterendu",
         );
-        $data['liste_metiers'] = $this->nouveauModel->getCompteRendu2();
+        $data['listePraticien'] = $this->nouveauModel->insertPraticienSelect();
+        $data['listeRemplacant'] = $this->nouveauModel->insertRempacantSelect();
+        $data['listeMotifVisite'] = $this->nouveauModel->insertMotifVisiteSelect();
 
         echo view('dashboard', $data);
     }

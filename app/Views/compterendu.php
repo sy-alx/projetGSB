@@ -74,21 +74,25 @@
                                 <select class="form-control" id="Praticien" name="Praticien">
 
                                     <option value="">-- Sélection --</option>
-                                    <?php foreach ($liste_metiers as $row) { ?>
-                                        <option value="<?php echo $row['pk_liste_metiers']; ?>"> <?php echo $row['metiers']; ?></option>
+                                    <?php foreach ($listePraticien as $row) { ?>
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']; ?></option>
                                     <?php } ?>
                                 </select>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Remplacant</label>
-                                    <select class="form-control" id="Remplacant" name="Remplacant">
-                                        <option value="a">1</option>
-                                        <option value="B">2</option>
-                                        <option value="c">3</option>
-                                        <option value="D">4</option>
-                                        <option value="e">5</option>
-                                    </select>
-                                </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Remplacant</label>
+
+                                <select class="form-control" id="Remplacant" name="Remplacant">
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeRemplacant as $row) { ?>
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
 
 
 
@@ -131,17 +135,22 @@
 
 
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
-                                    <select class="form-control" id="exampleFormControlSelect1" name="MotifVisite">
-                                        <option value="a">Périodicité</option>
-                                        <option value="b">Nouveautés / Actualisation</option>
-                                        <option value="c">Demande venant du médecin</option>
-                                        <option value="d">Autres</option>
-                                    </select>
-                                </div>
 
-                                <div class="form-group">
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
+
+                                <select class="form-control" id="exampleFormControlSelect1" name="MotifVisite">
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeMotifVisite as $row) { ?>
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['motif']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
                                     <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texte"></textarea>
                                 </div>

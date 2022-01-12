@@ -25,9 +25,9 @@ class SaisirController extends BaseController
     }
 
         // Récuperer les données du formulaire saisir
-    public function store()
+   /* public function store()
     {
-         // $clients = new Contact_Model();
+        // $clients = new Contact_Model();
         $data = array(
             'Datevisite'=> $this->request->getPost('Datevisite'),
             'Praticien'=> $this->request->getPost('Praticien'),
@@ -40,5 +40,57 @@ class SaisirController extends BaseController
         );
         $this->nouveauModel->insertCompteRendu($data);
 
+    }*/
+
+
+
+
+
+
+
+    // Fonction pour envoyer des emails si validation ok
+    public function formulairecontact()
+    {
+        $validation =  \Config\Services::validation();
+        $validation->setRules([
+            'Datevisite' => 'required',
+            'Praticien' => 'required',
+            'Remplacant' => 'required',
+            'ImpacteVisite' => 'required',
+            'CoefConf' =>'required',
+            'MotifVisite' => 'required',
+            'texte' => 'required',
+
+        ]);
+
+        if($validation->withRequest($this->request)->run())
+        {
+
+            // BDD
+            $dataclients = [
+                'Datevisite' => $this->request->getPost('Datevisite'),
+                'Praticien' => $this->request->getPost('Praticien'),
+                'Remplacant'=> $this->request->getPost('Remplacant'),
+                'ImpacteVisite' => $this->request->getPost('ImpacteVisite'),
+                'CoefConf'=> $this->request->getPost('CoefConf'),
+                'MotifVisite'=> $this->request->getPost('MotifVisite'),
+                'texte'=> $this->request->getPost('texte'),
+
+            ];
+
+            $this->nouveauModel->insertCompteRendu($dataclients);
+
+
+
+
+
+
+
+            // redirect()->to('/Contact');
+            return redirect()->to(site_url("CompteRendu?is_valid=1"));
+        } else {
+
+            return redirect()->to(site_url("CompteRendu?is_valid=0"));
+        }
     }
 }

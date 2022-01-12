@@ -21,7 +21,7 @@ class ConsultationController extends BaseController
             "CONTENT_PAGE" =>  "consultation",
 
         );
-        $data['nouveau'] = $this->NouveauModel->getCompteRendu();
+        $data['compteRendu'] = $this->NouveauModel->getCompteRendu();
       //  echo '<pre>',print_r($data),'</pre>';
         echo view('dashboard', $data);
     }

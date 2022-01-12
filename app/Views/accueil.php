@@ -54,7 +54,7 @@
 
 <section>
     <h1 class="text-center">Bienvenue</h1>
-    <img class="rounded mx-auto d-block" src="/assets/img/logogsb1.jpg" alt="logo-gsb">
+    <img class="rounded mx-auto d-block" src="/assets/img/gsb.png" alt="logo-gsb">
 </section>
 
 

@@ -24,7 +24,7 @@
                         </thead>
                         <tbody>
 
-                        <?php foreach ($nouveau as $row) { ?>
+                        <?php foreach ($compteRendu as $row) { ?>
                             <tr>
                                 <td><?= $row['id'] ?></td>
                                 <td><?= $row['Praticien'] ?></td>

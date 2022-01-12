@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-use App\Models\NouveauModel;
+use App\Models\CompteRenduModel;
 
 class ConsultationController extends BaseController
 {
 
     public function __construct() {
-        $this->NouveauModel = new \App\Models\NouveauModel();
+        $this->NouveauModel = new \App\Models\CompteRenduModel();
         helper('securedata');
 
     }

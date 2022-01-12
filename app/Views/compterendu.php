@@ -1,5 +1,5 @@
 <section>
-    <form method="post" action="/SaisirController/formulairecontact" id="form_contact">
+    <form method="post" action="/CompteRenduController/formulairecontact" id="form_contact">
         <div id="content-wrapper" class="d-flex flex-column">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">

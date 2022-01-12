@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class NouveauModel extends Model
+class CompteRenduModel extends Model
 {
     protected $table = 'compteRendu';
     protected $primaryKey = 'id';

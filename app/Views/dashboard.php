@@ -71,7 +71,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="/CompteRendu">
                 <i class="fas fa-pen"></i>
-                <span>Saisir/ Nouveau</span>
+                <span>Compte-rendu</span>
             </a>
         </li>
 

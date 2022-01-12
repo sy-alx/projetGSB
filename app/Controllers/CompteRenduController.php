@@ -4,7 +4,7 @@ namespace App\Controllers;
 use CodeIgniter\Database;
 
 
-class SaisirController extends BaseController
+class CompteRenduController extends BaseController
 {
     protected $db;
     protected $nouveauModel;
@@ -13,18 +13,18 @@ class SaisirController extends BaseController
         helper(['form', 'url']);
         $this->db = \Config\Database::connect();
         // load model //
-        $this->nouveauModel = new \App\Models\NouveauModel();
+        $this->nouveauModel = new \App\Models\CompteRenduModel();
     }
     public function index()
     {
         $data = array(
             "TITRE_PAGE" => "Saisir mes rendez-vous",
-            "CONTENT_PAGE" =>  "saisir",
+            "CONTENT_PAGE" =>  "compterendu",
         );
         echo view('dashboard', $data);
     }
 
-        // Récuperer les données du formulaire saisir
+        // Récuperer les données du formulaire compte rendu
    /* public function store()
     {
         // $clients = new Contact_Model();

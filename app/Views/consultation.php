@@ -24,6 +24,7 @@
                         </thead>
                         <tbody>
 
+
                         <?php foreach ($compteRendu as $row) { ?>
                             <tr>
                                 <td><?= $row['id'] ?></td>
@@ -33,10 +34,9 @@
                                 <td><?= $row['Datevisite'] ?></td>
                                 <td><?= $row['DateCR'] ?></td>
                                 <td>
-                                     <button><i class="fas fa-user-edit"></i></button></td>
+                                    <button><i class="fas fa-user-edit"></i></button></td>
                             </tr>
                         <?php } ?>
-
 
 
 

@@ -66,113 +66,118 @@
                                      </div>
                                  </fieldset> -->
 
+
+
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Praticien</label>
+
                                 <select class="form-control" id="Praticien" name="Praticien">
-                                    <option value="a">1</option>
-                                    <option value="b">2</option>
-                                    <option value="c">3</option>
-                                    <option value="d">4</option>
-                                    <option value="e">5</option>
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($liste_metiers as $row) { ?>
+                                        <option value="<?php echo $row['pk_liste_metiers']; ?>"> <?php echo $row['metiers']; ?></option>
+                                    <?php } ?>
                                 </select>
-                            </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Remplacant</label>
+                                    <select class="form-control" id="Remplacant" name="Remplacant">
+                                        <option value="a">1</option>
+                                        <option value="B">2</option>
+                                        <option value="c">3</option>
+                                        <option value="D">4</option>
+                                        <option value="e">5</option>
+                                    </select>
+                                </div>
 
 
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Remplacant</label>
-                                <select class="form-control" id="Remplacant" name="Remplacant">
-                                    <option value="a">1</option>
-                                    <option value="B">2</option>
-                                    <option value="c">3</option>
-                                    <option value="D">4</option>
-                                    <option value="e">5</option>
-                                </select>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="start">Impacte de la visite :</label> <br>
+
+
+                                <div class="form-group">
+                                    <label for="start">Impacte de la visite :</label> <br>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio1" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio2" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio2" value="3">
+                                        <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="start">Coefficient de confiance :</label> <br>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio1" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio2" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio2" value="3">
+                                        <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="MotifVisite">
+                                        <option value="a">Périodicité</option>
+                                        <option value="b">Nouveautés / Actualisation</option>
+                                        <option value="c">Demande venant du médecin</option>
+                                        <option value="d">Autres</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texte"></textarea>
+                                </div>
+
+
+
+
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio1" value="1">
-                                    <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio2" value="2">
-                                    <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio2" value="3">
-                                    <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="start">Coefficient de confiance :</label> <br>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio1" value="1">
-                                    <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio2" value="2">
-                                    <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio2" value="3">
-                                    <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="MotifVisite">
-                                    <option value="a">Périodicité</option>
-                                    <option value="b">Nouveautés / Actualisation</option>
-                                    <option value="c">Demande venant du médecin</option>
-                                    <option value="d">Autres</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texte"></textarea>
-                            </div>
-
-
-
-
-
-                            <div class="form-check form-check-inline">
-
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="btn btn-danger btn-icon-split">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
-                                        <button class="btn btn__rounded btn__primary btn__hover3"  type="reset" >Rafraîchir</button>
-                                    </div
+                                            <button class="btn btn__rounded btn__primary btn__hover3"  type="reset" >Rafraîchir</button>
+                                        </div
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline">
 
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class="btn btn-success btn-icon-split">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
 <i class="fas fa-paper-plane"></i>
                                         </span>
-                                        <button   class="btn btn__rounded btn__primary btn__hover3" id="buttontest" onclick="$( '#form_contact' ).submit();">Envoyer</button>
+                                            <button   class="btn btn__rounded btn__primary btn__hover3" id="buttontest" onclick="$( '#form_contact' ).submit();">Envoyer</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         </div>
     </form>

@@ -44,6 +44,14 @@ class CompteRenduModel extends Model
         return $query->getResultArray();
     }
 
+    // recuperation en bdd dans la view controller
+   public function getCompteRendu2(){
+        $builder = $this->db->table('liste_metiers');
+        $builder->select('*');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+
 }
 
 

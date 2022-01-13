@@ -41,6 +41,8 @@ $routes->get('/Consultation', 'ConsultationController::index');
 
 $routes->get('/CompteRendu', 'CompteRenduController::index');
 
+$routes->get('/Medicament', 'MedicamentsController::index');
+
 
 /*
  * --------------------------------------------------------------------

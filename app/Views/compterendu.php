@@ -33,7 +33,7 @@
 
                             <div class="form-group">
                                 <label for="start">Date de visite:</label>
-                                <input type="date" id="DateVisite" name="Datevisite" value="<php echo date(); ?>" min="2018-01-01" max="2018-12-31">
+                                <input type="date" id="DateVisite" name="Datevisite" value="<php echo date(); ?>" min="2022-01-01" max="2025-12-31">
                             </div>
                             <div class="form-group">
                                 <label for="start">Date de compte rendu:</label>
@@ -75,7 +75,7 @@
 
                                     <option value="">-- Sélection --</option>
                                     <?php foreach ($listePraticien as $row) { ?>
-                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']; ?></option>
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']. " ".$row['prenom']; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

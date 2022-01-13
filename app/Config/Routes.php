@@ -25,7 +25,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -36,12 +36,17 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/', 'SignupController::index');
+$routes->get('/signup', 'SignupController::index');
+$routes->get('/signin', 'SigninController::index');
+$routes->post('signin/loginAuth', 'SigninController::loginAuth');
 
-$routes->get('/Consultation', 'ConsultationController::index');
-
-$routes->get('/CompteRendu', 'CompteRenduController::index');
-
-$routes->get('/Medicament', 'MedicamentsController::index');
+$routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
+$routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
+$routes->get('/Consultation', 'ConsultationController::index',['filter' => 'authGuard']);
+$routes->get('/CompteRendu', 'CompteRenduController::index',['filter' => 'authGuard']);
+$routes->get('/Medicament', 'MedicamentsController::index',['filter' => 'authGuard']);
+$routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
 
 
 /*

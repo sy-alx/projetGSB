@@ -33,6 +33,7 @@
                                 <td><?= $row['Datevisite'] ?></td>
                                 <td><?= $row['DateCR'] ?></td>
                                 <td>
+                                    <a href="<?= base_url('/EditController'.$row['id']) ?>" class="fas fa-user-edit"></a>
                                     <button><i class="fas fa-user-edit"></i></button></td>
                             </tr>
                         <?php } ?>

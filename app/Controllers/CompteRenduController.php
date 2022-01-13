@@ -92,4 +92,10 @@ class CompteRenduController extends BaseController
             return redirect()->to(site_url("CompteRendu?is_valid=0"));
         }
     }
+
+    public function edit($id){
+
+        echo view('edit');
+
+    }
 }

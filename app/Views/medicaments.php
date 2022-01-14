@@ -1,7 +1,7 @@
 <section>
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="card shadow mb-4">
-            <form method="post" action="/MedicamentsController/formulairecontact" id="form_contact">
+            <form method="post" action="/Medicament/formulairecontact" id="form_contact">
                 <div id="content-wrapper" class="d-flex flex-column">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">

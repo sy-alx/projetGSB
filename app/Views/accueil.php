@@ -37,14 +37,14 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="/ProfilController">Page principale</a>
+                <a class="nav-link" href="/profil">Page principale</a>
             </li>
 
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SigninController">Login</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/signin">Login</a>
 
             <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a>
         </form>

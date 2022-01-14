@@ -53,10 +53,10 @@ class MedicamentsController extends BaseController
             $this->medicamentModel->insertMedicamentProduits($dataclients);
 
             // redirect()->to('/Contact');
-            return redirect()->to(site_url("MedicamentsController?is_valid=1"));
+            return redirect()->to(site_url("Medicament?is_valid=1"));
         } else {
 
-            return redirect()->to(site_url("MedicamentsController?is_valid=0"));
+            return redirect()->to(site_url("Medicament?is_valid=0"));
         }
 
 

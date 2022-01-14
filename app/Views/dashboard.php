@@ -53,7 +53,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="/ProfilController">
+            <a class="nav-link" href="/profil">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Profil</span>
             </a>
@@ -94,7 +94,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item active">
-            <a class="nav-link" href="/VoirrdvController">
+            <a class="nav-link" href="/Voirrdv">
                 <i class="fas fa-clock"></i>
                 <span>Voir mes rendez-vous</span>
             </a>
@@ -110,7 +110,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item active">
-            <a class="nav-link" href="/MedicamentsController">
+            <a class="nav-link" href="/Medicament">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
 
                 <span>Information medicament</span>
@@ -119,7 +119,11 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
-
+        <li class="nav-item active">
+            <a class="nav-link" href="/logout">
+                <span>Logout</span>
+            </a>
+        </li>
     </ul>
     <!-- End of Sidebar -->
 

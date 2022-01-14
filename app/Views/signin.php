@@ -35,7 +35,7 @@
                 </div>
             <?php endif;?>
 
-            <form  class="user" action="<?php echo base_url(); ?>/SigninController/loginAuth" method="post">
+            <form  class="user" action="<?php echo base_url(); ?>/signin/loginAuth" method="post">
                 <div class="form-group mb-3">
                     <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control form-control-user" >
                 </div>

@@ -75,7 +75,9 @@
 
                                     <option value="">-- Sélection --</option>
                                     <?php foreach ($listePraticien as $row) { ?>
+
                                         <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']." ".$row['prenom']; ?></option>
+
                                     <?php } ?>
                                 </select>
                             </div>
@@ -89,7 +91,7 @@
 
                                     <option value="">-- Sélection --</option>
                                     <?php foreach ($listeRemplacant as $row) { ?>
-                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']; ?></option>
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nomRemplacant']. " ".$row['prenomRemplacant'] ; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

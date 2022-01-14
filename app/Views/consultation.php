@@ -12,13 +12,15 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Praticien</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
                             <th>Date de visite</th>
-                            <th>Cp</th>
-                            <th>Date compte rendu</th>
-                            <th>Ouvrir</th>
+                            <th>Date du compte-rendu</th>
+                            <th>Remplacant</th>
+                            <th>Motif</th>
                             <th>Modifier</th>
+                          
+
                         </tr>
                         </thead>
                         <tbody>
@@ -26,12 +28,13 @@
 
                         <?php foreach ($compteRendu as $row) { ?>
                             <tr>
-                                <td><?= $row['id'] ?></td>
-                                <td><?= $row['Praticien'] ?></td>
-                                <td><?= $row['Datevisite'] ?></td>
-                                <td><?= $row['texte'] ?></td>
-                                <td><?= $row['Datevisite'] ?></td>
+                                <td><?= $row['nom'] ?></td>
+                                <td><?= $row['prenom'] ?></td>
                                 <td><?= $row['DateCR'] ?></td>
+                                <td><?= $row['Datevisite'] ?></td>
+                                <td><?= $row['nomRemplacant'] ?></td>
+                                <td><?= $row['motif'] ?></td>
+
                                 <td>
                                     <a href="<?= base_url('/EditController'.$row['id']) ?>" class="fas fa-user-edit"></a>
                                     <button><i class="fas fa-user-edit"></i></button></td>

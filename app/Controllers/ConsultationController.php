@@ -26,6 +26,8 @@ class ConsultationController extends BaseController
         echo view('dashboard', $data);
     }
 
+    
+
 
 
 }

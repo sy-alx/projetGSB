@@ -39,7 +39,10 @@ class CompteRenduModel extends Model
     // recuperation en bdd dans la view controller
    public function getCompteRendu(){
         $builder = $this->db->table('compteRendu');
-        $builder->select('id , Praticien , Datevisite , texte , Datevisite , DateCR  ');
+        $builder->join('listePraticien', 'listePraticien.id = compteRendu.Praticien');
+        $builder->join('listeRemplacant', 'listeRemplacant.id = compteRendu.Remplacant');
+        $builder->join('listeMotifVisite', 'listeMotifVisite.id = compteRendu.MotifVisite');
+        $builder->select('*');
         $query=$builder->get();
         return $query->getResultArray();
     }

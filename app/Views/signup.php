@@ -11,7 +11,7 @@
 
 <body>
 <section class="bg-gradient-primary">
-    <a href="/AccueilController">Accueil</a>
+    <a href="/Accueil>Accueil</a>
 
     <div class="container">
 

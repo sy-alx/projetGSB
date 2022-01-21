@@ -73,6 +73,46 @@ class CompteRenduModel extends Model
         return $query->getResultArray();
     }
 
+
+
+
+
+
+
+    /* receive users */
+    public function getUsers($id = null){
+
+        /* return all users */
+        if($id) return $this->findAll();
+
+        /* return user by id */
+        return $this->find($id);
+
+    }
+
+
+
+    public function init_update($data = NULL) {
+
+        /* update a user by your id (primary key) */
+        $this->update($data["id"], $data);
+
+    }
+
+
+    public function init_delete($id){
+
+        /* delete a user by your id */
+        $this->delete($id);
+
+    }
+
+
+
+
+
+
+
 }
 
 

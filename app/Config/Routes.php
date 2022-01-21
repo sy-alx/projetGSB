@@ -37,10 +37,10 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('Accueil', 'AccueilController::index');
-$routes->get('/', 'SignupController::index');
-$routes->get('/signup', 'SignupController::index');
+$routes->get('/SignupController', 'SignupController::index');
 $routes->get('/signin', 'SigninController::index');
 $routes->post('signin/loginAuth', 'SigninController::loginAuth');
+$routes->post('/SignupController/store', 'SignupController::store');
 
 $routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
 $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controllers;
-use CodeIgniter\Database;
+
+use App\Models\CompteRenduModel;
 
 
 class CompteRenduController extends BaseController
@@ -14,7 +15,10 @@ class CompteRenduController extends BaseController
         $this->db = \Config\Database::connect();
         // load model //
         $this->nouveauModel = new \App\Models\CompteRenduModel();
+        $this->model = new CompteRenduModel();
+
     }
+
     public function index()
     {
         $data = array(
@@ -24,6 +28,7 @@ class CompteRenduController extends BaseController
         $data['listePraticien'] = $this->nouveauModel->insertPraticienSelect();
         $data['listeRemplacant'] = $this->nouveauModel->insertRempacantSelect();
         $data['listeMotifVisite'] = $this->nouveauModel->insertMotifVisiteSelect();
+        $data["compteRendu"] = $this->model->getUsers();
 
         echo view('dashboard', $data);
     }
@@ -98,4 +103,39 @@ class CompteRenduController extends BaseController
         echo view('edit');
 
     }
+
+
+
+    /* controller to update a user */
+    public function update(){
+
+        /* calling the update function on model sending the form */
+        $this->model->init_update($this->request->getVar());
+
+        /* add success message in flashdata */
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user edited!</b></div>");
+
+        /* return to default page */
+        return redirect("/");
+
+
+    }
+
+    /* controller to delete a user */
+    public function delete($id = NULL){
+
+        /* calling the delete function on model sending the url id */
+        $this->model->init_delete($id);
+
+        /* add success message in flashdata */
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user deleted!</b></div>");
+
+        /* return to default page */
+        return redirect("/");
+
+    }
+
+
 }
+
+

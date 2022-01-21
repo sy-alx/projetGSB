@@ -1,5 +1,5 @@
 <section>
-    <form method="post" action="/CompteRenduController/formulairecontact" id="form_contact">
+    <form method="post" action="/CompteRendu/formulairecontact" id="form_contact">
         <div id="content-wrapper" class="d-flex flex-column">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -33,38 +33,13 @@
 
                             <div class="form-group">
                                 <label for="start">Date de visite:</label>
-                                <input type="date" id="DateVisite" name="Datevisite" value="<php echo date(); ?>" min="2022-01-01" max="2025-12-31">
+                                <input type="date" id="DateVisite" name="Datevisite" value="<php echo date(); ?>" min="2022-01-01" max="2025-12-31" selected>
                             </div>
                             <div class="form-group">
                                 <label for="start">Date de compte rendu:</label>
                                 <input type="date" id="DateCR" name="DateCR" value="<php echo date(); ?>" min="2018-01-01" max="2018-12-31" disabled>
                             </div>
 
-                            <!--    <fieldset class="form-group">
-                                     <div class="row">
-                                         <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                                         <div class="col-sm-10">
-                                             <div class="form-check">
-                                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" checked>
-                                                 <label class="form-check-label" for="gridRadios1">
-                                                     First radio
-                                                 </label>
-                                             </div>
-                                             <div class="form-check">
-                                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2">
-                                                 <label class="form-check-label" for="gridRadios2">
-                                                     Second radio
-                                                 </label>
-                                             </div>
-                                             <div class="form-check disabled">
-                                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="3" disabled>
-                                                 <label class="form-check-label" for="gridRadios3">
-                                                     Third disabled radio
-                                                 </label>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </fieldset> -->
 
 
 
@@ -177,7 +152,7 @@
                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                         <div class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
-<i class="fas fa-paper-plane"></i>
+                                            <i class="fas fa-paper-plane"></i>
                                         </span>
                                             <button   class="btn btn__rounded btn__primary btn__hover3" id="buttontest" onclick="$( '#form_contact' ).submit();">Envoyer</button>
                                         </div>

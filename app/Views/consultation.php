@@ -36,7 +36,7 @@
                                 <td><?= $row['motif'] ?></td>
 
                                 <td>
-                                    <a href="<?= base_url('/EditController'.$row['id']) ?>" class="fas fa-user-edit"></a>
+                                    <!-- <a href="<?= base_url('/EditController'.$row['id']) ?>" class="fas fa-user-edit"></a> -->
                                     <button><i class="fas fa-user-edit"></i></button></td>
                             </tr>
                         <?php } ?>

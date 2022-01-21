@@ -46,8 +46,11 @@ $routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
 $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
 $routes->get('/Consultation', 'ConsultationController::index',['filter' => 'authGuard']);
 $routes->get('/CompteRendu', 'CompteRenduController::index',['filter' => 'authGuard']);
+$routes->post('/CompteRendu/formulairecontact', 'CompteRenduController::formulairecontact',['filter' => 'authGuard']);
 $routes->get('/Medicament', 'MedicamentsController::index',['filter' => 'authGuard']);
 $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
+
+
 
 
 /*

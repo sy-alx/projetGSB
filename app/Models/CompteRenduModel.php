@@ -42,7 +42,7 @@ class CompteRenduModel extends Model
         $builder->join('listePraticien', 'listePraticien.id = compteRendu.Praticien');
         $builder->join('listeRemplacant', 'listeRemplacant.id = compteRendu.Remplacant');
         $builder->join('listeMotifVisite', 'listeMotifVisite.id = compteRendu.MotifVisite');
-        $builder->select('*');
+        $builder->select('compteRendu.id as id,listePraticien.nom as nom, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite, listeRemplacant.nomRemplacant as nomRemplacant, listeMotifVisite.motif as motif');
         $query=$builder->get();
         return $query->getResultArray();
     }
@@ -97,7 +97,7 @@ class CompteRenduModel extends Model
     public function init_update($data = NULL) {
 
         /* update a user by your id (primary key) */
-        $this->update($data["id"], $data);
+        return $this->update($data["id"], $data);
 
     }
 

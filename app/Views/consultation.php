@@ -37,7 +37,7 @@
                                 <td><?= $row['motif'] ?></td>
 
                                 <td>
-                                    <button nom = "<?= $row['nom'] ?>" prenom = "<?= $row['prenom'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacant = "<?= $row['nomRemplacant'] ?>" motif = "<?= $row['motif'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                    <button id= "<?= $row['id'] ?>" nom = "<?= $row['nom'] ?>" prenom = "<?= $row['prenom'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacant = "<?= $row['nomRemplacant'] ?>" motif = "<?= $row['motif'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
                             </tr>
                         <?php } ?>
 
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <form method = "post" action = "/users/update">
+    <form method = "post" action = "/CompteRendu/update">
         <input type = "hidden" name = "id" id = "edit-id">
         <div class="modal" tabindex="-1" role="dialog" id = "edit-user">
             <div class="modal-dialog" role="document">
@@ -64,9 +64,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                             <label for="exampleFormControlSelect1">Praticien</label>
+
+
+
+
                         <div class = "form-group">
                             <label class = "light-dark">Nom</label>
-                            <input class = "form-control" name = "nom" required type="text" id = "edit-nom">
+                            <input class = "form-control" = "nom" required type="text" id = "edit-nom">
                         </div>
                         <div class = "form-group">
                             <label class = "light-dark">Prénom</label>
@@ -114,6 +119,7 @@
             $("#edit-Datevisite").val(($(user).attr("Datevisite")));
             $("#edit-nomRemplacant").val(($(user).attr("nomRemplacant")));
             $("#edit-MotifVisite").val(($(user).attr("edit-MotifVisite")));
+            $("#edit-id").val(($(user).attr("id")));
             $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
 
         }

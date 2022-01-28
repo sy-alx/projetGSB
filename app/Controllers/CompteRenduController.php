@@ -21,6 +21,8 @@ class CompteRenduController extends BaseController
 
     public function index()
     {
+        $data["compteRendu"] = $this->model->getUsers();
+
         $data = array(
             "TITRE_PAGE" => "Saisir mes rendez-vous",
             "CONTENT_PAGE" =>  "compterendu",
@@ -110,13 +112,15 @@ class CompteRenduController extends BaseController
     public function update(){
 
         /* calling the update function on model sending the form */
-        $this->model->init_update($this->request->getVar());
+        $result = $this->model->init_update($this->request->getVar());
+        $this->session->setFlashdata('inputData', $this->request->getVar());
+        $this->session->setFlashdata('result', $result);
 
         /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user edited!</b></div>");
 
         /* return to default page */
-        return redirect("/");
+        return redirect()->to(site_url("CompteRendu?is_valid=0"));
 
 
     }

@@ -42,6 +42,9 @@ $routes->get('/signin', 'SigninController::index');
 $routes->post('signin/loginAuth', 'SigninController::loginAuth');
 $routes->post('/SignupController/store', 'SignupController::store');
 
+$routes->post('/CompteRendu/update', 'CompteRenduController::update');
+
+
 $routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
 $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
 $routes->get('/Consultation', 'ConsultationController::index',['filter' => 'authGuard']);

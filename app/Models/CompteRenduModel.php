@@ -42,7 +42,7 @@ class CompteRenduModel extends Model
         $builder->join('listePraticien', 'listePraticien.id = compteRendu.Praticien');
         $builder->join('listeRemplacant', 'listeRemplacant.id = compteRendu.Remplacant');
         $builder->join('listeMotifVisite', 'listeMotifVisite.id = compteRendu.MotifVisite');
-        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.motif as motif');
+        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif,');
         $query=$builder->get();
         return $query->getResultArray();
     }
@@ -64,6 +64,13 @@ class CompteRenduModel extends Model
     // recuperation en bdd la liste des praticien a mettre dans le select
    public function insertRemplacantToConsultation(){
         $builder = $this->db->table('listeRemplacant');
+        $builder->select('*');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+    // recuperation en bdd la liste des praticien a mettre dans le select
+   public function insertMotifToConsultation(){
+        $builder = $this->db->table('listeMotifVisite');
         $builder->select('*');
         $query=$builder->get();
         return $query->getResultArray();

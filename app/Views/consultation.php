@@ -34,10 +34,10 @@
                                  <td><?= $row['DateCR'] ?></td>
                                 <td><?= $row['Datevisite'] ?></td>
                                 <td><?= $row['RemplacantNom'] ?></td>
-                                <td><?= $row['motif'] ?></td>
+                                <td><?= $row['Motif'] ?></td>
 
                                 <td>
-                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['motif'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
                             </tr>
                         <?php } ?>
 
@@ -93,6 +93,15 @@
                         </select>
 
 
+                        <select class="form-control" id="edit-MotifVisite" name="MotifVisite">
+
+                            <option value="">-- Sélection --</option>
+                            <?php foreach ($listeMotifVisite as $row) { ?>
+                                <option value="<?php echo $row['id']; ?>"> <?php echo $row['motif']; ?></option>
+                            <?php } ?>
+                        </select>
+
+
                        <!-- <div class = "form-group">
                             <label class = "light-dark">Motif</label>
                             <input class = "form-control" name = "MotifVisite" required type = "text" id = "edit-MotifVisite">
@@ -122,7 +131,7 @@
             $("#edit-DateCR").val(($(user).attr("DateCR")));
             $("#edit-Datevisite").val(($(user).attr("Datevisite")));
             $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
-            $("#edit-MotifVisite").val(($(user).attr("edit-MotifVisite")));
+            $("#edit-MotifVisite").val(($(user).attr("Motif")));
             $("#edit-id").val(($(user).attr("id")));
             $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
 

@@ -92,6 +92,8 @@ class CompteRenduModel extends Model
 
 
 
+
+
     public function init_update($data = NULL) {
 
         /* update a user by your id (primary key) */

@@ -1,5 +1,6 @@
-
 <section>
+<!--    --><?/*= $session->getFlashdata("message") */?>
+
     <h1>Consultation</h1>
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -36,7 +37,7 @@
                                 <td><?= $row['motif'] ?></td>
 
                                 <td>
-                                    <button nom = "<?= $row['nom'] ?>" useremail = "<?= $row['prenom'] ?>" username = "<?= $row['DateCR'] ?>" userid = "<?= $user->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                    <button nom = "<?= $row['nom'] ?>" prenom = "<?= $row['prenom'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacant = "<?= $row['nomRemplacant'] ?>" motif = "<?= $row['motif'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
                             </tr>
                         <?php } ?>
 
@@ -64,16 +65,28 @@
                     </div>
                     <div class="modal-body">
                         <div class = "form-group">
-                            <label class = "light-dark">Name</label>
-                            <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick" id = "edit-nom">
+                            <label class = "light-dark">Nom</label>
+                            <input class = "form-control" name = "nom" required type="text" id = "edit-nom">
                         </div>
                         <div class = "form-group">
-                            <label class = "light-dark">Age</label>
-                            <input class = "form-control" name = "age" required type = "number" id = "edit-age">
+                            <label class = "light-dark">Prénom</label>
+                            <input class = "form-control" name = "prenom" required type = "text" id = "edit-prenom">
                         </div>
                         <div class = "form-group">
-                            <label class = "light-dark">E-mail</label>
-                            <input class = "form-control" name = "email" required type = "email" placeholder = "Example: john@wick.com" id = "edit-email">
+                            <label class = "light-dark">Date de compte-rendu</label>
+                            <input class = "form-control" name = "DateCR" required type = "date" id = "edit-DateCR">
+                        </div>
+                        <div class = "form-group">
+                            <label class = "light-dark">Date de visite</label>
+                            <input class = "form-control" name = "Datevisite" required type = "date" id = "edit-Datevisite">
+                        </div>
+                        <div class = "form-group">
+                            <label class = "light-dark">Remplacant</label>
+                            <input class = "form-control" name = "nomRemplacant" required type = "text" id = "edit-nomRemplacant">
+                        </div>
+                        <div class = "form-group">
+                            <label class = "light-dark">Motif</label>
+                            <input class = "form-control" name = "MotifVisite" required type = "text" id = "edit-MotifVisite">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -96,9 +109,11 @@
         edit = (user) => {
             $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
             $("#edit-nom").val(($(user).attr("nom")));
-            $("#edit-age").val(($(user).attr("userage")));
-            $("#edit-email").val(($(user).attr("useremail")));
-            $("#edit-id").val(($(user).attr("userid")));
+            $("#edit-prenom").val(($(user).attr("prenom")));
+            $("#edit-DateCR").val(($(user).attr("DateCR")));
+            $("#edit-Datevisite").val(($(user).attr("Datevisite")));
+            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacant")));
+            $("#edit-MotifVisite").val(($(user).attr("edit-MotifVisite")));
             $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
 
         }

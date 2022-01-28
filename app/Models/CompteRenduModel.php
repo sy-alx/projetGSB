@@ -48,7 +48,14 @@ class CompteRenduModel extends Model
     }
 
     // recuperation en bdd la liste des praticien a mettre dans le select
-   public function insertPraticienSelect(){
+   public function insertPraticienToConsultation(){
+        $builder = $this->db->table('listePraticien');
+        $builder->select('*');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+    // recuperation en bdd la liste des praticien a mettre dans le select
+   public function insertPraticienSelect2(){
         $builder = $this->db->table('listePraticien');
         $builder->select('*');
         $query=$builder->get();

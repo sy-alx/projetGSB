@@ -64,11 +64,15 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                             <label for="exampleFormControlSelect1">Praticien</label>
+                        <select class="form-control" id="Praticien" name="Praticien">
 
+                            <option value="">-- Sélection --</option>
+                            <?php foreach ($listePraticien as $row) { ?>
 
+                                <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']." ".$row['prenom']; ?></option>
 
-
+                            <?php } ?>
+                        </select>
                         <div class = "form-group">
                             <label class = "light-dark">Nom</label>
                             <input class = "form-control" = "nom" required type="text" id = "edit-nom">

@@ -21,6 +21,8 @@ class ConsultationController extends BaseController
             "CONTENT_PAGE" =>  "consultation",
 
         );
+        $data['listePraticien'] = $this->NouveauModel->insertPraticienToConsultation();
+
         $data['compteRendu'] = $this->NouveauModel->getCompteRendu();
       //  echo '<pre>',print_r($data),'</pre>';
         echo view('dashboard', $data);

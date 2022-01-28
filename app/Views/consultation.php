@@ -13,7 +13,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Nom</th>
+                            <th>Praticien</th>
                             <th>Prenom</th>
                             <th>Date de visite</th>
                             <th>Date du compte-rendu</th>
@@ -31,13 +31,13 @@
                             <tr>
                                 <td><?= $row['nom'] ?></td>
                                 <td><?= $row['prenom'] ?></td>
-                                <td><?= $row['DateCR'] ?></td>
+                                 <td><?= $row['DateCR'] ?></td>
                                 <td><?= $row['Datevisite'] ?></td>
-                                <td><?= $row['nomRemplacant'] ?></td>
+                                <td><?= $row['RemplacantNom'] ?></td>
                                 <td><?= $row['motif'] ?></td>
 
                                 <td>
-                                    <button id= "<?= $row['id'] ?>" nom = "<?= $row['nom'] ?>" prenom = "<?= $row['prenom'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacant = "<?= $row['nomRemplacant'] ?>" motif = "<?= $row['motif'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['motif'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
                             </tr>
                         <?php } ?>
 
@@ -64,7 +64,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <select class="form-control" id="Praticien" name="Praticien">
+                        <select class="form-control" id="edit-nom" name="Praticien">
 
                             <option value="">-- Sélection --</option>
                             <?php foreach ($listePraticien as $row) { ?>
@@ -73,14 +73,7 @@
 
                             <?php } ?>
                         </select>
-                        <div class = "form-group">
-                            <label class = "light-dark">Nom</label>
-                            <input class = "form-control" = "nom" required type="text" id = "edit-nom">
-                        </div>
-                        <div class = "form-group">
-                            <label class = "light-dark">Prénom</label>
-                            <input class = "form-control" name = "prenom" required type = "text" id = "edit-prenom">
-                        </div>
+
                         <div class = "form-group">
                             <label class = "light-dark">Date de compte-rendu</label>
                             <input class = "form-control" name = "DateCR" required type = "date" id = "edit-DateCR">
@@ -89,14 +82,21 @@
                             <label class = "light-dark">Date de visite</label>
                             <input class = "form-control" name = "Datevisite" required type = "date" id = "edit-Datevisite">
                         </div>
-                        <div class = "form-group">
-                            <label class = "light-dark">Remplacant</label>
-                            <input class = "form-control" name = "nomRemplacant" required type = "text" id = "edit-nomRemplacant">
-                        </div>
-                        <div class = "form-group">
+
+
+                        <select class="form-control" id="edit-nomRemplacant" name="Remplacant">
+
+                            <option value="">-- Sélection --</option>
+                            <?php foreach ($listeRemplacant as $row) { ?>
+                                <option value="<?php echo $row['id']; ?>"> <?php echo $row['nomRemplacant']. " ".$row['prenomRemplacant'] ; ?></option>
+                            <?php } ?>
+                        </select>
+
+
+                       <!-- <div class = "form-group">
                             <label class = "light-dark">Motif</label>
                             <input class = "form-control" name = "MotifVisite" required type = "text" id = "edit-MotifVisite">
-                        </div>
+                        </div>-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
@@ -117,11 +117,11 @@
         /* config fields to update/delete a user */
         edit = (user) => {
             $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
-            $("#edit-nom").val(($(user).attr("nom")));
+            $("#edit-nom").val(($(user).attr("PraticienId")));
             $("#edit-prenom").val(($(user).attr("prenom")));
             $("#edit-DateCR").val(($(user).attr("DateCR")));
             $("#edit-Datevisite").val(($(user).attr("Datevisite")));
-            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacant")));
+            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
             $("#edit-MotifVisite").val(($(user).attr("edit-MotifVisite")));
             $("#edit-id").val(($(user).attr("id")));
             $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));

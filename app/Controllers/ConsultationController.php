@@ -22,6 +22,7 @@ class ConsultationController extends BaseController
 
         );
         $data['listePraticien'] = $this->NouveauModel->insertPraticienToConsultation();
+        $data['listeRemplacant'] = $this->NouveauModel->insertRemplacantToConsultation();
 
         $data['compteRendu'] = $this->NouveauModel->getCompteRendu();
       //  echo '<pre>',print_r($data),'</pre>';

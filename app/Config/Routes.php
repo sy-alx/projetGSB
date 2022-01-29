@@ -46,6 +46,14 @@ $routes->post('/CompteRendu/update', 'CompteRenduController::update');
 
 
 $routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
+
+
+$routes->get('/Addpraticien', 'addpraticienController::index',['filter' => 'authGuard']);
+$routes->post('/Addpraticien/Create', 'addpraticienController::create',['filter' => 'authGuard']);
+$routes->post('/Addpraticien/Update', 'addpraticienController::update',['filter' => 'authGuard']);
+
+
+
 $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
 $routes->get('/Consultation', 'ConsultationController::index',['filter' => 'authGuard']);
 $routes->get('/CompteRendu', 'CompteRenduController::index',['filter' => 'authGuard']);

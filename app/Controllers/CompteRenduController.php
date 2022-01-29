@@ -120,7 +120,7 @@ class CompteRenduController extends BaseController
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user edited!</b></div>");
 
         /* return to default page */
-        return redirect()->to(site_url("CompteRendu?is_valid=0"));
+        return redirect()->to(site_url("Consultation"));
 
 
     }

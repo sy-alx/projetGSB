@@ -101,6 +101,23 @@
         </li>
 
 
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Ajouter mes praticiens
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/Addpraticien">
+                <i class="fas fa-user-plus"></i>
+                <span>Ajouter mes praticiens</span>
+            </a>
+        </li>
+
+
         <hr class="sidebar-divider">
 
         <!-- Heading -->

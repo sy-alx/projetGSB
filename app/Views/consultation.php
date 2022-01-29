@@ -19,6 +19,9 @@
                             <th>Date du compte-rendu</th>
                             <th>Remplacant</th>
                             <th>Motif</th>
+                            <th>texte</th>
+                            <th>ImpacteVisite</th>
+                            <th>coefconf</th>
                             <th>Modifier</th>
                           
 
@@ -31,17 +34,19 @@
                             <tr>
                                 <td><?= $row['nom'] ?></td>
                                 <td><?= $row['prenom'] ?></td>
-                                 <td><?= $row['DateCR'] ?></td>
+                                <td><?= $row['DateCR'] ?></td>
                                 <td><?= $row['Datevisite'] ?></td>
                                 <td><?= $row['RemplacantNom'] ?></td>
                                 <td><?= $row['Motif'] ?></td>
+                                <td><?= $row['Texte'] ?></td>
+                                <td><?= $row['CoefConf'] ?></td>
+                                <td><?= $row['ImpacteVisite'] ?></td>
 
                                 <td>
-                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user2" class = "btn btn-sm btn-primary"><b><i class="fas fa-eye"></i></b></button>
                             </tr>
                         <?php } ?>
-
-
 
                         </tr>
 
@@ -83,7 +88,7 @@
                             <input class = "form-control" name = "Datevisite" required type = "date" id = "edit-Datevisite">
                         </div>
 
-
+                        <label class = "light-dark">Remplacent</label>
                         <select class="form-control" id="edit-nomRemplacant" name="Remplacant">
 
                             <option value="">-- Sélection --</option>
@@ -93,6 +98,7 @@
                         </select>
 
 
+                        <label class = "light-dark">Motif</label>
                         <select class="form-control" id="edit-MotifVisite" name="MotifVisite">
 
                             <option value="">-- Sélection --</option>
@@ -102,10 +108,99 @@
                         </select>
 
 
-                       <!-- <div class = "form-group">
-                            <label class = "light-dark">Motif</label>
-                            <input class = "form-control" name = "MotifVisite" required type = "text" id = "edit-MotifVisite">
-                        </div>-->
+                        <div class = "form-group">
+                             <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
+                                    <textarea class="form-control"  rows="3" name="texte" id="edit-Texte">
+
+                                    </textarea>
+                         </div>
+
+
+                        <div class="form-group">
+                            <label for="start">Impacte de la visite :</label> <br>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="3">
+                                <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="start">Coefficient de confiance :</label> <br>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="CoefConf" id="edit-CoefConf" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="CoefConf" id="edit-CoefConf" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="CoefConf" id="edit-CoefConf" value="3">
+                                <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
+                        <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
+                        <button type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form method = "post" action = "/CompteRendu/update">
+        <input type = "hidden" name = "id" id = "edit-id2">
+        <div class="modal" tabindex="-1" role="dialog" id = "edit-user2">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title light-dark" id = "text-edit-user2"><b></b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <?php foreach ($compteRendu as $row) { ?>
+                            <tr>
+                                <td><?= $row['id'] ?></td>
+                                <br>
+
+                                <td><?= $row['nom'] ?></td>                                <br>
+
+                                <td><?= $row['prenom'] ?></td>                                <br>
+
+                                <td><?= $row['DateCR'] ?></td>                                <br>
+
+                                <td><?= $row['Datevisite'] ?></td>                                <br>
+
+                                <td><?= $row['RemplacantNom'] ?></td>                                <br>
+
+                                <td><?= $row['Motif'] ?></td>                                <br>
+
+                                <td><?= $row['Texte'] ?></td>                                <br>
+
+                                <td><?= $row['CoefConf'] ?></td>                                <br>
+
+                                <td><?= $row['ImpacteVisite'] ?></td>                                <br>
+
+
+                                <td>
+                             </tr>
+                        <?php } ?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
@@ -122,7 +217,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script>
     $(document).ready(() => {
-
         /* config fields to update/delete a user */
         edit = (user) => {
             $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
@@ -132,10 +226,31 @@
             $("#edit-Datevisite").val(($(user).attr("Datevisite")));
             $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
             $("#edit-MotifVisite").val(($(user).attr("Motif")));
+            $("#edit-Texte").val(($(user).attr("Texte")));
+            $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
+            $("#edit-CoefConf").val(($(user).attr("CoefConf")));
             $("#edit-id").val(($(user).attr("id")));
             $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
-
         }
+    })
+</script>
 
+<script>
+    $(document).ready(() => {
+        /* config fields to update/delete a user */
+        edit = (user) => {
+            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+            $("#edit-nom").val(($(user).attr("PraticienId")));
+            $("#edit-prenom").val(($(user).attr("prenom")));
+            $("#edit-DateCR").val(($(user).attr("DateCR")));
+            $("#edit-Datevisite").val(($(user).attr("Datevisite")));
+            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
+            $("#edit-MotifVisite").val(($(user).attr("Motif")));
+            $("#edit-Texte").val(($(user).attr("Texte")));
+            $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
+            $("#edit-CoefConf").val(($(user).attr("CoefConf")));
+            $("#edit-id2").val(($(user).attr("id")));
+            $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
+        }
     })
 </script>

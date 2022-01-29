@@ -42,7 +42,7 @@ class CompteRenduModel extends Model
         $builder->join('listePraticien', 'listePraticien.id = compteRendu.Praticien');
         $builder->join('listeRemplacant', 'listeRemplacant.id = compteRendu.Remplacant');
         $builder->join('listeMotifVisite', 'listeMotifVisite.id = compteRendu.MotifVisite');
-        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif,');
+        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite,compteRendu.texte as Texte, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif, compteRendu.CoefConf as CoefConf,compteRendu.ImpacteVisite as ImpacteVisite,');
         $query=$builder->get();
         return $query->getResultArray();
     }

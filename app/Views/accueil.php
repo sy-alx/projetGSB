@@ -16,7 +16,7 @@
           href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700%7cSource+Sans+Pro:300,300i,400,400i,600,600i,700">
     <link rel="stylesheet" href="/assets/css/libraries.css"/>
     <link rel="stylesheet" href="/assets/css/style.css"/>
-    <link rel="stylesheet" href="/assets/css/csstali.css"/>
+    <link rel="stylesheet" href="/assets/css/talicss.css"/>
     <link rel="stylesheet" href="/assets/css/csstemplate.css"/>
 
     <link rel="stylesheet" href="/assets/css/dropzone.css"/>
@@ -53,8 +53,8 @@
 
 
 <section>
-    <h1 class="text-center">Bienvenue</h1>
-    <img class="rounded mx-auto d-block" src="/assets/img/gsb.png" alt="logo-gsb">
+    <h1 class="text-center pt-4">Bienvenue</h1>
+    <img class="rounded mx-auto d-block pt-90" src="/assets/img/gsb.png" alt="logo-gsb">
 </section>
 
 
@@ -65,13 +65,13 @@
 
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<!--<footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2020</span>
         </div>
     </div>
-</footer>
+</footer>-->
 <!-- End of Footer -->
 
 

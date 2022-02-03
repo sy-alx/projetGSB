@@ -23,6 +23,8 @@
     <!-- BON Custom styles for this template -->
     <link href="/assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/talicss.css"/>
+    <link rel="stylesheet" href="/assets/css/sb-admin-2.min.css"/>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
@@ -52,9 +54,9 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="/profil">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-user"></i>
                 <span>Profil</span>
             </a>
         </li>
@@ -68,7 +70,7 @@
         </div>
 
 
-        <li class="nav-item active">
+        <li class="nav-item ">
             <a class="nav-link" href="/CompteRendu">
                 <i class="fas fa-pen"></i>
                 <span>Compte-rendu</span>
@@ -76,7 +78,7 @@
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/Consultation">
                 <i class="fas fa-eye"></i>
                 <span>Consultation</span>
@@ -93,7 +95,7 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/Voirrdv">
                 <i class="fas fa-clock"></i>
                 <span>Voir mes rendez-vous</span>
@@ -110,7 +112,7 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/Addpraticien">
                 <i class="fas fa-user-plus"></i>
                 <span>Ajouter mes praticiens</span>
@@ -126,18 +128,18 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/Medicament">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-
+                <i class="fas fa-pills"></i>
                 <span>Information medicament</span>
             </a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
-        <li class="nav-item active">
+        <li class="nav-item ">
             <a class="nav-link" href="/logout">
+                <i class="fas fa-sign-out-alt"></i>
                 <span>Logout</span>
             </a>
         </li>
@@ -161,13 +163,13 @@
 
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<!--<footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2020</span>
         </div>
     </div>
-</footer>
+</footer>-->
 <!-- End of Footer -->
 
 

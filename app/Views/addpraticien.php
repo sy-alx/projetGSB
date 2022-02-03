@@ -65,10 +65,10 @@
         <div class="card shadow mb-4">
 
 
-            <div class = "margin-top row pb-3 pt-2">
+            <div class = "margin-top row pb-3 pt-2 pl-100">
 
                 <div class = "col-md-3 center">
-                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Créer un praticien <i class = "fas fa-plus icon"></i></b></button>
+                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Ajouter un nouveau praticien <i class = "fas fa-plus icon"></i></b></button>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title light-dark">
-                                    <b>Add new User</b>
+                                    <b>Ajouter un nouveau praticien</b>
                                 </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class = "form-group">
-                                    <label class = "light-dark">Name</label>
+                                    <label class = "light-dark">Nom</label>
                                     <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick">
                                 </div>
                                 <div class = "form-group">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel  <i class="fas fa-window-close"></i></b></button>
                                 <button type="submit" class="btn btn-success"><b>Insert <i class = "fas fa-check-double icon"></i></b></button>
                             </div>
                         </div>
@@ -160,9 +160,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
-                                <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
-                                <button id="btn-update" type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel  <i class="fas fa-window-close"></i></b></button>
+                                <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete  <i class="fas fa-trash-alt"></i></b></button></a>
+                                <button id="btn-update" type="submit" class="btn btn-success"><b>Update  <i class = "fas fa-check-double icon"></i></b></button>
                             </div>
                         </div>
                     </div>

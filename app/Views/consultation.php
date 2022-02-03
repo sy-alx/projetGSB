@@ -1,23 +1,67 @@
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
- <script>
-     $(document).ready(() => {
-         /* config fields to update/delete a user */
-         edit = (user) => {
-             $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
-             $("#edit-nom").val(($(user).attr("PraticienId")));
-             $("#edit-prenom").val(($(user).attr("prenom")));
-             $("#edit-DateCR").val(($(user).attr("DateCR")));
-             $("#edit-Datevisite").val(($(user).attr("Datevisite")));
-             $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
-             $("#edit-MotifVisite").val(($(user).attr("Motif")));
-             $("#edit-Texte").val(($(user).attr("Texte")));
-             $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
-             $("#edit-CoefConf").val(($(user).attr("CoefConf")));
-             $("#edit-id").val(($(user).attr("id")));
-             $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(user).attr("id"));
-         }
-     })
- </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(() => {
+        /* config fields to update/delete a user */
+        edit = (user) => {
+            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+
+            $("#edit-nom").val(($(user).attr("PraticienId")));
+            $("#edit-nom").prop("disabled",false);
+
+            $("#edit-prenom").val(($(user).attr("prenom")));
+            $("#edit-prenom").prop("disabled",false);
+
+            $("#edit-DateCR").val(($(user).attr("DateCR")));
+            $("#edit-DateCR").prop("disabled",false);
+
+            $("#edit-Datevisite").val(($(user).attr("Datevisite")));
+            $("#edit-Datevisite").prop("disabled",false);
+
+            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
+            $("#edit-nomRemplacant").prop("disabled",false);
+
+            $("#edit-MotifVisite").val(($(user).attr("Motif")));
+            $("#edit-MotifVisite").prop("disabled",false);
+
+            $("#edit-Texte").val(($(user).attr("Texte")));
+            $("#edit-Texte").prop("disabled",false);
+
+            $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
+            $("#edit-ImpacteVisite").prop("disabled",false);
+
+            $("#edit-CoefConf").val(($(user).attr("CoefConf")));
+            $("#edit-CoefConf").prop("disabled",false);
+
+            $("#edit-id").val(($(user).attr("id")));
+            $("#edit-id").prop("disabled",false);
+
+
+            $("#btn-update").show();
+            $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(user).attr("id"));
+        }
+        view = (user) => {
+            edit(user);
+            $("#text-edit-user").text("View " + ($(user).attr("nom")));
+            $("#edit-nom").prop("disabled",true);
+
+            $("#edit-prenom").prop("disabled",true);
+            $("#edit-DateCR").prop("disabled",true);
+
+            $("#edit-Datevisite").prop("disabled",true);
+            $("#edit-nomRemplacant").prop("disabled",true);
+            $("#edit-MotifVisite").prop("disabled",true);
+            $("#edit-Texte").prop("disabled",true);
+            $("#edit-ImpacteVisite").prop("disabled",true);
+            $("#edit-CoefConf").prop("disabled",true);
+            $("#edit-id").prop("disabled",true);
+
+
+            $("#btn-update").hide();
+
+            $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(user).attr("id"));
+        }
+    })
+</script>
 
 <section>
     <h1>Consultation</h1>
@@ -42,13 +86,12 @@
                             <th>ImpacteVisite</th>
                             <th>coefconf</th>
                             <th>Modifier</th>
-                          
+
 
                         </tr>
                         </thead>
+
                         <tbody>
-
-
                         <?php foreach ($compteRendu as $row) { ?>
                             <tr>
                                 <td><?= $row['nom'] ?></td>
@@ -63,7 +106,7 @@
 
                                 <td>
                                     <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user2" class = "btn btn-sm btn-primary"><b><i class="fas fa-eye"></i></b></button>
+                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class="fas fa-eye"></i></b></button>
                             </tr>
                         <?php } ?>
 
@@ -76,6 +119,7 @@
         </div>
     </div>
 
+    <!--FORMULAIRE DE LA PREMIERE MODALE POUR MODIFIER L'UTILISATEUR-->
     <form method = "post" action = "/CompteRendu/update">
         <input type = "hidden" name = "id" id = "edit-id">
         <div class="modal" tabindex="-1" role="dialog" id = "edit-user">
@@ -128,11 +172,11 @@
 
 
                         <div class = "form-group">
-                             <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
-                                    <textarea class="form-control"  rows="3" name="texte" id="edit-Texte">
+                            <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
+                            <textarea class="form-control"  rows="3" name="texte" id="edit-Texte">
 
                                     </textarea>
-                         </div>
+                        </div>
 
 
                         <div class="form-group">
@@ -172,66 +216,15 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
                         <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
-                        <button type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
+                        <button id="btn-update" type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
 
-    <form method = "post" action = "/CompteRendu/update">
-        <input type = "hidden" name = "id" id = "edit-id2">
-        <div class="modal" tabindex="-1" role="dialog" id = "edit-user2">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title light-dark" id = "text-edit-user2"><b></b></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
 
 
-                        <?php foreach ($compteRendu as $row) { ?>
-                            <tr>
-                                <td><?= $row['id'] ?></td>
-                                <br>
-
-                                <td><?= $row['nom'] ?></td>                                <br>
-
-                                <td><?= $row['prenom'] ?></td>                                <br>
-
-                                <td><?= $row['DateCR'] ?></td>                                <br>
-
-                                <td><?= $row['Datevisite'] ?></td>                                <br>
-
-                                <td><?= $row['RemplacantNom'] ?></td>                                <br>
-
-                                <td><?= $row['Motif'] ?></td>                                <br>
-
-                                <td><?= $row['Texte'] ?></td>                                <br>
-
-                                <td><?= $row['CoefConf'] ?></td>                                <br>
-
-                                <td><?= $row['ImpacteVisite'] ?></td>                                <br>
-
-
-                                <td>
-                             </tr>
-                        <?php } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
-                        <a id = "btn-delete btn-delete">
-                            <button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button>
-                        </a>
-                        <button type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
 
 </section>
 

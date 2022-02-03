@@ -7,13 +7,50 @@
         edit = (user) => {
 
             $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+
             $("#edit-nom").val(($(user).attr("usernom")));
+            $("#edit-nom").prop("disabled",false);
+
+
             $("#edit-prenom").val(($(user).attr("userprenom")));
+            $("#edit-prenom").prop("disabled",false);
+
+
             $("#edit-adresse").val(($(user).attr("useradresse")));
+            $("#edit-adresse").prop("disabled",false);
+
+
             $("#edit-codePostal").val(($(user).attr("usercodePostal")));
+            $("#edit-codePostal").prop("disabled",false);
+
+
             $("#edit-numero").val(($(user).attr("usernumero")));
+            $("#edit-numero").prop("disabled",false);
+
+
             $("#edit-email").val(($(user).attr("useremail")));
+            $("#edit-email").prop("disabled",false);
+
+
             $("#edit-id").val(($(user).attr("userid")));
+            $("#edit-id").prop("disabled",false);
+
+            $("#btn-update").show();
+            $("#btn-delete").attr("href", "/Addpraticien/Delete/" + $(user).attr("userid"));
+
+        }
+        view = (user) => {
+            edit(user);
+            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+            $("#edit-nom").prop("disabled",true);
+            $("#edit-prenom").prop("disabled",true);
+            $("#edit-adresse").prop("disabled",true);
+            $("#edit-codePostal").prop("disabled",true);
+            $("#edit-numero").prop("disabled",true);
+            $("#edit-email").prop("disabled",true);
+            $("#edit-id").prop("disabled",true);
+
+            $("#btn-update").hide();
             $("#btn-delete").attr("href", "/Addpraticien/Delete/" + $(user).attr("userid"));
 
         }
@@ -125,7 +162,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
                                 <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
-                                <button type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
+                                <button id="btn-update" type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
                             </div>
                         </div>
                     </div>
@@ -157,6 +194,8 @@
                             <td><?= $user->email?></td>
                             <td>
                                 <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

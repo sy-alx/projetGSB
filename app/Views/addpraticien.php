@@ -6,7 +6,7 @@
         /* config fields to update/delete a user */
         edit = (user) => {
 
-            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+            $("#text-edit-user").text("Modifier le praticien : " + ($(user).attr("usernom")));
 
             $("#edit-nom").val(($(user).attr("usernom")));
             $("#edit-nom").prop("disabled",false);
@@ -41,7 +41,7 @@
         }
         view = (user) => {
             edit(user);
-            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+            $("#text-edit-user").text("Voir la fiche du praticien : " + ($(user).attr("usernom")));
             $("#edit-nom").prop("disabled",true);
             $("#edit-prenom").prop("disabled",true);
             $("#edit-adresse").prop("disabled",true);

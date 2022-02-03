@@ -2,46 +2,46 @@
 <script>
     $(document).ready(() => {
         /* config fields to update/delete a user */
-        edit = (user) => {
-            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+        edit = (row) => {
+            $("#text-edit-user").text("Consultation " + ($(row).attr("PraticienId")));
 
-            $("#edit-nom").val(($(user).attr("PraticienId")));
+            $("#edit-nom").val(($(row).attr("PraticienId")));
             $("#edit-nom").prop("disabled",false);
 
-            $("#edit-prenom").val(($(user).attr("prenom")));
+            $("#edit-prenom").val(($(row).attr("prenom")));
             $("#edit-prenom").prop("disabled",false);
 
-            $("#edit-DateCR").val(($(user).attr("DateCR")));
+            $("#edit-DateCR").val(($(row).attr("DateCR")));
             $("#edit-DateCR").prop("disabled",false);
 
-            $("#edit-Datevisite").val(($(user).attr("Datevisite")));
+            $("#edit-Datevisite").val(($(row).attr("Datevisite")));
             $("#edit-Datevisite").prop("disabled",false);
 
-            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
+            $("#edit-nomRemplacant").val(($(row).attr("nomRemplacantId")));
             $("#edit-nomRemplacant").prop("disabled",false);
 
-            $("#edit-MotifVisite").val(($(user).attr("Motif")));
+            $("#edit-MotifVisite").val(($(row).attr("Motif")));
             $("#edit-MotifVisite").prop("disabled",false);
 
-            $("#edit-Texte").val(($(user).attr("Texte")));
+            $("#edit-Texte").val(($(row).attr("Texte")));
             $("#edit-Texte").prop("disabled",false);
 
-            $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
+            $("#edit-ImpacteVisite").val(($(row).attr("ImpacteVisite")));
             $("#edit-ImpacteVisite").prop("disabled",false);
 
-            $("#edit-CoefConf").val(($(user).attr("CoefConf")));
+            $("#edit-CoefConf").val(($(row).attr("CoefConf")));
             $("#edit-CoefConf").prop("disabled",false);
 
-            $("#edit-id").val(($(user).attr("id")));
+            $("#edit-id").val(($(row).attr("id")));
             $("#edit-id").prop("disabled",false);
 
 
             $("#btn-update").show();
-            $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(user).attr("id"));
+            $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(row).attr("id"));
         }
-        view = (user) => {
-            edit(user);
-            $("#text-edit-user").text("View " + ($(user).attr("nom")));
+        view = (row) => {
+            edit(row);
+            $("#text-edit-user").text("Consultation " + ($(row).attr("PraticienId")));
             $("#edit-nom").prop("disabled",true);
 
             $("#edit-prenom").prop("disabled",true);
@@ -58,7 +58,7 @@
 
             $("#btn-update").hide();
 
-            $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(user).attr("id"));
+            $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(row).attr("id"));
         }
     })
 </script>

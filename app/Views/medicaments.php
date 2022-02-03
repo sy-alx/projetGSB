@@ -1,161 +1,176 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(() => {
+
+        /* config fields to update/delete a user */
+        edit = (user) => {
+
+            $("#text-edit-user").text("Modifier le médicament : " + ($(user).attr("usernom")));
+
+            $("#edit-nom").val(($(user).attr("usernom")));
+            $("#edit-nom").prop("disabled",false);
+
+
+            $("#edit-prenom").val(($(user).attr("usertype")));
+            $("#edit-prenom").prop("disabled",false);
+
+
+            $("#edit-adresse").val(($(user).attr("userlorem")));
+            $("#edit-adresse").prop("disabled",false);
+
+
+            $("#edit-codePostal").val(($(user).attr("usernote")));
+            $("#edit-codePostal").prop("disabled",false);
+
+
+
+            $("#edit-id").val(($(user).attr("userid")));
+            $("#edit-id").prop("disabled",false);
+
+            $("#btn-update").show();
+            $("#btn-delete").attr("href", "/Medicament/Delete/" + $(user).attr("userid"));
+
+        }
+        view = (user) => {
+            edit(user);
+            $("#text-edit-user").text("Voir la fiche du médicament : " + ($(user).attr("usernom")));
+            $("#edit-nom").prop("disabled",true);
+            $("#edit-prenom").prop("disabled",true);
+            $("#edit-adresse").prop("disabled",true);
+            $("#edit-codePostal").prop("disabled",true);
+
+            $("#edit-id").prop("disabled",true);
+
+            $("#btn-update").hide();
+            $("#btn-delete").attr("href", "/Medicament/Delete/" + $(user).attr("userid"));
+
+        }
+
+    })
+</script>
 <section>
+    <?= $session->getFlashdata("message") ?>
+
     <div id="content-wrapper" class="d-flex flex-column">
+
         <div class="card shadow mb-4">
-            <form method="post" action="/Medicament/formulairecontact" id="form_contact">
-                <div id="content-wrapper" class="d-flex flex-column">
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <?php if (isset($_GET['is_valid']) and $_GET['is_valid'] == 0) { ?>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
-                                                    <div class="alert alert-danger" role="alert">
-                                                        Vous n'avez pas rempli tout les champs putain attention  !
-                                                    </div>
-                                                </div><!-- /.col-lg-8 -->
-                                            </div><!-- /.row -->
-                                        </div><!-- /.container -->
-                                    <?php } else if (isset($_GET['is_valid']) and $_GET['is_valid'] == 1) { ?>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
-                                                    <div class="alert alert-success" role="alert">
-                                                        This is a success alert—check it out!
-                                                    </div>
-                                                </div><!-- /.col-lg-8 -->
-                                            </div><!-- /.row -->
-                                        </div><!-- /.container -->
-                                    <?php } ?>
-
-                                    <div class="form-group">
-                                        <label for="start">Nom médicament:</label>
-                                        <input type="input" id="DateVisite" name="nom" placeholder="nom medicament">
-
-                                        <label for="start">gramme:</label>
-                                        <input type="input" id="DateVisite" name="lorem" placeholder="gramme">
-                                    </div>
 
 
+            <div class = "margin-top row pb-3 pt-2">
 
-                                    <fieldset class="form-group">
-                                        <div class="row">
-                                            <legend class="col-form-label col-sm-2 pt-0">Type</legend>
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="2222" checked>
-                                                    <label class="form-check-label" for="gridRadios1">
-                                                        First radio
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="type" id="gridRadios2" value="211111">
-                                                    <label class="form-check-label" for="gridRadios2">
-                                                        Second radio
-                                                    </label>
-                                                </div>
-                                                <div class="form-check disabled">
-                                                    <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="3"  >
-                                                    <label class="form-check-label" for="gridRadios3">
-                                                        Third disabled radio
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-
-                                    <div class="col-sm-12 col-md-12 col-lg-6">
-
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Note :</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="note"></textarea>
-                                        </div>
-                                    </div>
+                <div class = "col-md-3 center">
+                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Ajouter un nouveau médicament <i class = "fas fa-plus icon"></i></b></button>
+                </div>
+            </div>
 
 
-
-
-
-                                    <div class="form-check form-check-inline">
-
-                                        <div class="col-sm-6 col-md-6 col-lg-6">
-                                            <div class="btn btn-danger btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                                <button class="btn btn__rounded btn__primary btn__hover3"  type="reset" >Rafraîchir</button>
-                                            </div
-                                        </div>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-
-                                        <div class="col-sm-6 col-md-6 col-lg-6">
-                                            <div class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-paper-plane"></i>
-                                        </span>
-                                         <button   class="btn btn__rounded btn__primary btn__hover3" id="buttontest" onclick="$( '#form_contact' ).submit();">Envoyer</button>
-                                            </div>
-                                        </div>
-                                    </div>
+            <form method = "post" action = "/Medicament/Create">
+                <div class="modal" tabindex="-1" role="dialog" id = "add-user">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title light-dark">
+                                    <b>Nouveau médicament</b>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class = "form-group">
+                                    <label class = "light-dark">Nom</label>
+                                    <input class = "form-control" name = "nom" required>
                                 </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Type</label>
+                                    <input class = "form-control" name = "type" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Lorem</label>
+                                    <input class = "form-control" name = "lorem" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Note</label>
+                                    <input class = "form-control" name = "note" required >
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
+                                <button type="submit" class="btn btn-success"><b>Insert <i class = "fas fa-check-double icon"></i></b></button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-        </div>
-    </div>
-
-    </form>
+            </form>
 
 
 
+            <form method = "post" action = "/Medicament/Update">
+                <input type = "hidden" name = "id" id = "edit-id">
+                <div class="modal" tabindex="-1" role="dialog" id = "edit-user">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title light-dark" id = "text-edit-user"><b></b></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class = "form-group">
+                                    <label class = "light-dark">Nom</label>
+                                    <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick" id = "edit-nom">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Type</label>
+                                    <input class = "form-control" name = "type" required id = "edit-prenom">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Lorem</label>
+                                    <input class = "form-control" name = "lorem" required id = "edit-adresse">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Note</label>
+                                    <input class = "form-control" name = "note" required type = "number" id = "edit-codePostal">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
+                                <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
+                                <button id="btn-update" type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
 
-    <h1>Consultation</h1>
-
-    <div id="content-wrapper" class="d-flex flex-column">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <div class = "margin-top">
+                <table class = "table table-hover">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Praticien</th>
-                        <th>Date de visite</th>
-                        <th>Cp</th>
-                        <th>Date compte rendu</th>
-                        <th>Ouvrir</th>
+                        <th>Nom</th>
+                        <th>type</th>
+                        <th>lorem</th>
+                        <th>note</th>
                         <th>Modifier</th>
                     </tr>
                     </thead>
+
                     <tbody>
-
-
-                    <?php foreach ($medicamentProduit as $row) { ?>
+                    <?php foreach($listeMedicament as $user) : ?>
                         <tr>
-                            <td><?= $row['id'] ?></td>
-                            <td><?= $row['nom'] ?></td>
-                            <td><?= $row['type'] ?></td>
-                            <td><?= $row['lorem'] ?></td>
-                            <td><?= $row['note'] ?></td>
+                            <td><?= $user->nom?></td>
+                            <td><?= $user->type?></td>
+                            <td><?= $user->lorem?></td>
+                            <td><?= $user->note?></td>
                             <td>
-                                <button><i class="fas fa-user-edit"></i></button></td>
+                                <button usernom = "<?= $user->nom ?>" usertype = "<?= $user->type ?>" userlorem = "<?= $user->lorem ?>" usernote = "<?= $user->note ?>" userid = "<?= $user->id ?>"onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                <button usernom = "<?= $user->nom ?>" usertype = "<?= $user->type ?>" userlorem = "<?= $user->lorem ?>" usernote = "<?= $user->note ?>" userid = "<?= $user->id ?>"onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+
+                            </td>
                         </tr>
-                    <?php } ?>
-
-
-
-                    </tr>
-
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

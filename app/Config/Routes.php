@@ -72,6 +72,10 @@ $routes->post('/CompteRendu/formulairecontact', 'CompteRenduController::formulai
 
 /*########################################PAGE MEDICAMENT################################################*/
 $routes->get('/Medicament', 'MedicamentsController::index',['filter' => 'authGuard']);
+$routes->post('/Medicament/Update', 'MedicamentsController::update',['filter' => 'authGuard']);
+$routes->post('/Medicament/Create', 'MedicamentsController::create',['filter' => 'authGuard']);
+$routes->get('/Medicament/Delete/(:num)', 'MedicamentsController::delete/$1',['filter' => 'authGuard']);
+
 
 /*###############################################PAGE LOGOUT##########################################################*/
 $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);

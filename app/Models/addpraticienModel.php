@@ -25,7 +25,7 @@ class addpraticienModel extends Model{
     protected $useTimestamps = true;
 
     /* default fields that will be inserted */
-    protected $allowedFields = ['nom', 'prenom', 'adresse', 'cp', 'numero', 'email'];
+    protected $allowedFields = ['nom', 'prenom', 'adresse', 'codePostal', 'numero', 'email'];
 
     /* automatic date create in database */
     protected $createdField = "created_at";

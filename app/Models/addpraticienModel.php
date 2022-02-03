@@ -57,11 +57,11 @@ class addpraticienModel extends Model{
     }
 
 
+
     public function init_delete($id){
 
         /* delete a user by your id */
         $this->delete($id);
 
     }
-
 }

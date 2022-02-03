@@ -12,9 +12,6 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
 }
 
 
-
-
-
 /*
  * --------------------------------------------------------------------
  * Router Setup
@@ -36,29 +33,47 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
 $routes->get('Accueil', 'AccueilController::index');
-$routes->get('/SignupController', 'SignupController::index');
+/*#########################################################################################################*/
+
 $routes->get('/signin', 'SigninController::index');
 $routes->post('signin/loginAuth', 'SigninController::loginAuth');
+/*#########################################################################################################*/
+
+$routes->get('/SignupController', 'SignupController::index');
 $routes->post('/SignupController/store', 'SignupController::store');
 
-$routes->post('/CompteRendu/update', 'CompteRenduController::update');
 
+/*#############################################PAGE VOIR MES RDV############################################################*/
 
 $routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
 
+/*###########################################PAGE AJOUTER PRATICIENS##############################################################*/
 
 $routes->get('/Addpraticien', 'addpraticienController::index',['filter' => 'authGuard']);
 $routes->post('/Addpraticien/Create', 'addpraticienController::create',['filter' => 'authGuard']);
 $routes->post('/Addpraticien/Update', 'addpraticienController::update',['filter' => 'authGuard']);
+$routes->get('/Addpraticien/Delete/(:num)', 'addpraticienController::delete/$1',['filter' => 'authGuard']);
 
 
-
+/*#########################################PAGE PROFIL################################################################*/
 $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
+
+/*############################################PAGE CONSULTATION#############################################################*/
 $routes->get('/Consultation', 'ConsultationController::index',['filter' => 'authGuard']);
+
+/*##########################################PAGE COMPTE RENDU###############################################################*/
 $routes->get('/CompteRendu', 'CompteRenduController::index',['filter' => 'authGuard']);
+$routes->post('/CompteRendu/update', 'CompteRenduController::update');
+/*ici le (:num) est pour l'id et le $1 est pour appeler le (:num) qui est en premiere position car possible d'en avoir plusieurs*/
+$routes->get('/CompteRendu/delete/(:num)', 'CompteRenduController::delete/$1');
 $routes->post('/CompteRendu/formulairecontact', 'CompteRenduController::formulairecontact',['filter' => 'authGuard']);
+
+/*########################################PAGE MEDICAMENT################################################*/
 $routes->get('/Medicament', 'MedicamentsController::index',['filter' => 'authGuard']);
+
+/*###############################################PAGE LOGOUT##########################################################*/
 $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
 
 

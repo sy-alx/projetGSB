@@ -100,13 +100,13 @@ class CompteRenduController extends BaseController
         }
     }
 
+
+    /*################### Pour faire fonctionner la table et la modification des champs dans consultation ############*/
     public function edit($id){
 
         echo view('edit');
 
     }
-
-
 
     /* controller to update a user */
     public function update(){
@@ -135,7 +135,7 @@ class CompteRenduController extends BaseController
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user deleted!</b></div>");
 
         /* return to default page */
-        return redirect("/");
+        return redirect()->to(site_url("/Consultation"));
 
     }
 

@@ -1,6 +1,25 @@
-<section>
-<!--    --><?/*= $session->getFlashdata("message") */?>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script>
+     $(document).ready(() => {
+         /* config fields to update/delete a user */
+         edit = (user) => {
+             $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+             $("#edit-nom").val(($(user).attr("PraticienId")));
+             $("#edit-prenom").val(($(user).attr("prenom")));
+             $("#edit-DateCR").val(($(user).attr("DateCR")));
+             $("#edit-Datevisite").val(($(user).attr("Datevisite")));
+             $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
+             $("#edit-MotifVisite").val(($(user).attr("Motif")));
+             $("#edit-Texte").val(($(user).attr("Texte")));
+             $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
+             $("#edit-CoefConf").val(($(user).attr("CoefConf")));
+             $("#edit-id").val(($(user).attr("id")));
+             $("#btn-delete").attr("href", "/CompteRendu/delete/" + $(user).attr("id"));
+         }
+     })
+ </script>
 
+<section>
     <h1>Consultation</h1>
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -204,7 +223,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
-                        <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
+                        <a id = "btn-delete btn-delete">
+                            <button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button>
+                        </a>
                         <button type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
                     </div>
                 </div>
@@ -214,28 +235,9 @@
 
 </section>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(() => {
-        /* config fields to update/delete a user */
-        edit = (user) => {
-            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
-            $("#edit-nom").val(($(user).attr("PraticienId")));
-            $("#edit-prenom").val(($(user).attr("prenom")));
-            $("#edit-DateCR").val(($(user).attr("DateCR")));
-            $("#edit-Datevisite").val(($(user).attr("Datevisite")));
-            $("#edit-nomRemplacant").val(($(user).attr("nomRemplacantId")));
-            $("#edit-MotifVisite").val(($(user).attr("Motif")));
-            $("#edit-Texte").val(($(user).attr("Texte")));
-            $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
-            $("#edit-CoefConf").val(($(user).attr("CoefConf")));
-            $("#edit-id").val(($(user).attr("id")));
-            $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
-        }
-    })
-</script>
 
-<script>
+
+<!--<script>
     $(document).ready(() => {
         /* config fields to update/delete a user */
         edit = (user) => {
@@ -250,7 +252,7 @@
             $("#edit-ImpacteVisite").val(($(user).attr("ImpacteVisite")));
             $("#edit-CoefConf").val(($(user).attr("CoefConf")));
             $("#edit-id2").val(($(user).attr("id")));
-            $("#btn-delete").attr("href", "/users/delete/" + $(user).attr("userid"));
+            $("#btn-delete").attr("href", "/CompteRendu/delete" + $(user).attr("userid"));
         }
     })
-</script>
+</script>-->

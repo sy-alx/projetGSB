@@ -75,8 +75,7 @@ class addpraticienController extends Controller {
 
         /* calling the delete function on model sending the url id */
         $this->model->init_delete($id);
-
-        /* add success message in flashdata */
+         /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user deleted!</b></div>");
 
         /* return to default page */

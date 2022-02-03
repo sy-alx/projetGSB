@@ -1,4 +1,3 @@
-<?= $session->getFlashdata("message") ?>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <script>
@@ -7,9 +6,12 @@
         /* config fields to update/delete a user */
         edit = (user) => {
 
-            $("#text-edit-user").text("Edit " + ($(user).attr("username")));
-            $("#edit-name").val(($(user).attr("username")));
-            $("#edit-age").val(($(user).attr("userage")));
+            $("#text-edit-user").text("Edit " + ($(user).attr("nom")));
+            $("#edit-nom").val(($(user).attr("usernom")));
+            $("#edit-prenom").val(($(user).attr("userprenom")));
+            $("#edit-adresse").val(($(user).attr("useradresse")));
+            $("#edit-codePostal").val(($(user).attr("usercodePostal")));
+            $("#edit-numero").val(($(user).attr("usernumero")));
             $("#edit-email").val(($(user).attr("useremail")));
             $("#edit-id").val(($(user).attr("userid")));
             $("#btn-delete").attr("href", "/Addpraticien/Delete/" + $(user).attr("userid"));
@@ -19,16 +21,17 @@
     })
 </script>
 <section>
+    <?= $session->getFlashdata("message") ?>
+
     <div id="content-wrapper" class="d-flex flex-column">
+
         <div class="card shadow mb-4">
 
 
             <div class = "margin-top row pb-3 pt-2">
+
                 <div class = "col-md-3 center">
-                    <h3 class = "light-dark">Ajouter des praticiens</h3>
-                </div>
-                <div class = "col-md-3 center">
-                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Add user <i class = "fas fa-plus icon"></i></b></button>
+                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Créer un praticien <i class = "fas fa-plus icon"></i></b></button>
                 </div>
             </div>
 
@@ -48,11 +51,23 @@
                             <div class="modal-body">
                                 <div class = "form-group">
                                     <label class = "light-dark">Name</label>
-                                    <input class = "form-control" name = "name" required placeholder = "Ex: John Wick">
+                                    <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick">
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Age</label>
-                                    <input class = "form-control" name = "age" required type = "number">
+                                    <label class = "light-dark">Prénom</label>
+                                    <input class = "form-control" name = "prenom" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Adresse</label>
+                                    <input class = "form-control" name = "adresse" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Code postal</label>
+                                    <input class = "form-control" name = "codePostal" required type = "number" >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Numéro</label>
+                                    <input class = "form-control" name = "numero" required type = "number">
                                 </div>
                                 <div class = "form-group">
                                     <label class = "light-dark">E-mail</label>
@@ -84,15 +99,27 @@
                             <div class="modal-body">
                                 <div class = "form-group">
                                     <label class = "light-dark">Name</label>
-                                    <input class = "form-control" name = "name" required placeholder = "Ex: John Wick" id = "edit-name">
+                                    <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick" id = "edit-nom">
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Age</label>
-                                    <input class = "form-control" name = "age" required type = "number" id = "edit-age">
+                                    <label class = "light-dark">Prénom</label>
+                                    <input class = "form-control" name = "prenom" required id = "edit-prenom">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Adresse</label>
+                                    <input class = "form-control" name = "adresse" required id = "edit-adresse">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Code postal</label>
+                                    <input class = "form-control" name = "codePostal" required type = "number" id = "edit-codePostal">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">Numéro</label>
+                                    <input class = "form-control" name = "numero" required type = "number" id = "edit-numero">
                                 </div>
                                 <div class = "form-group">
                                     <label class = "light-dark">E-mail</label>
-                                    <input class = "form-control" name = "email" required type = "email" placeholder = "Example: john@wick.com" id = "edit-email">
+                                    <input class = "form-control" name = "email"  type = "email" placeholder = "Example: john@wick.com" id = "edit-email" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -109,22 +136,27 @@
                 <table class = "table table-hover">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>E-mail</th>
-                        <th>Edit</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse</th>
+                        <th>codePostal</th>
+                        <th>Numéro</th>
+                        <th>Email</th>
+                        <th>Modifier</th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    <?php foreach($users2 as $user) : ?>
+                    <?php foreach($listePraticien as $user) : ?>
                         <tr>
-                            <td><?= $user->name?></td>
-                            <td><?= $user->age?></td>
-                            <td><?= $user->age?></td>
+                            <td><?= $user->nom?></td>
+                            <td><?= $user->prenom?></td>
+                            <td><?= $user->adresse?></td>
+                            <td><?= $user->codePostal?></td>
+                            <td><?= $user->numero?></td>
                             <td><?= $user->email?></td>
                             <td>
-                                <button userage = "<?= $user->age ?>" useremail = "<?= $user->email ?>" username = "<?= $user->name ?>" userid = "<?= $user->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
                             </td>
                         </tr>
                     <?php endforeach; ?>

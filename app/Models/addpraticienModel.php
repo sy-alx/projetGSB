@@ -14,7 +14,7 @@ use CodeIgniter\Model;
 class addpraticienModel extends Model{
 
     /* Name of database table */
-    protected $table = "users2";
+    protected $table = "listePraticien";
 
     /* name of primary key field */
     protected $primaryKey = "id";
@@ -25,7 +25,7 @@ class addpraticienModel extends Model{
     protected $useTimestamps = true;
 
     /* default fields that will be inserted */
-    protected $allowedFields = ['name', 'age', 'email'];
+    protected $allowedFields = ['nom', 'prenom', 'adresse', 'cp', 'numero', 'email'];
 
     /* automatic date create in database */
     protected $createdField = "created_at";

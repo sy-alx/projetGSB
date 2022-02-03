@@ -31,7 +31,7 @@ class addpraticienController extends Controller {
         );
 
         /* sending users list and session variable to interface */
-        $data["users2"] = $this->model->getUsers();
+        $data["listePraticien"] = $this->model->getUsers();
         $data["session"] = $this->session;
 
         /* loading the views */
@@ -48,7 +48,7 @@ class addpraticienController extends Controller {
         $this->model->init_insert($this->request->getVar());
 
         /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user added!</b></div>");
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
 
         /* return to default page */
         return redirect()->to(site_url("/Addpraticien"));
@@ -62,7 +62,7 @@ class addpraticienController extends Controller {
         $this->model->init_update($this->request->getVar());
 
         /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user edited!</b></div>");
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Bravo la modification a bien été appliquée</b></div>");
 
         /* return to default page */
         return redirect()->to(site_url("/Addpraticien"));
@@ -76,7 +76,7 @@ class addpraticienController extends Controller {
         /* calling the delete function on model sending the url id */
         $this->model->init_delete($id);
          /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Success, user deleted!</b></div>");
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Nous avons bien pris en compte votre suppression de praticien</b></div>");
 
         /* return to default page */
         return redirect()->to(site_url("/Addpraticien"));

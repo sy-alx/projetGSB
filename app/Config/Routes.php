@@ -57,6 +57,14 @@ $routes->post('/Addpraticien/Update', 'addpraticienController::update',['filter'
 $routes->get('/Addpraticien/Delete/(:num)', 'addpraticienController::delete/$1',['filter' => 'authGuard']);
 
 
+/*###########################################PAGE AJOUTER VISITEURS##############################################################*/
+
+$routes->get('/Addvisiteur', 'addvisiteurController::index',['filter' => 'authGuard']);
+$routes->post('/Addvisiteur/Create', 'addvisiteurController::create',['filter' => 'authGuard']);
+$routes->post('/Addvisiteur/Update', 'addvisiteurController::update',['filter' => 'authGuard']);
+$routes->get('/Addvisiteur/Delete/(:num)', 'addvisiteurController::delete/$1',['filter' => 'authGuard']);
+
+
 /*#########################################PAGE PROFIL################################################################*/
 $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
 

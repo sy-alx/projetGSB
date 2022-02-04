@@ -8,17 +8,17 @@
 
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\addpraticienModel;
+use App\Models\addvisiteurModel;
 use Config\Services\session;
 
 /* Users Controller */
 
-class addpraticienController extends Controller {
+class addvisiteurController extends Controller {
 
     function __construct(){
 
         /* Loading user modal and session library */
-        $this->model = new addpraticienModel();
+        $this->model = new addvisiteurModel();
         $this->session = \Config\Services::session();
 
     }
@@ -26,12 +26,12 @@ class addpraticienController extends Controller {
     /* default function called */
     public function index(){
         $data = array(
-            "TITRE_PAGE" => "Ajouter praticien",
-            "CONTENT_PAGE" =>  "addpraticien",
+            "TITRE_PAGE" => "Ajouter visiteur",
+            "CONTENT_PAGE" =>  "addvisiteur",
         );
 
         /* sending users list and session variable to interface */
-        $data["listePraticien"] = $this->model->getUsers();
+        $data["listeVisiteur"] = $this->model->getUsers();
         $data["session"] = $this->session;
 
         /* loading the views */
@@ -51,7 +51,7 @@ class addpraticienController extends Controller {
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
 
         /* return to default page */
-        return redirect()->to(site_url("/Addpraticien"));
+        return redirect()->to(site_url("/Addvisiteur"));
 
     }
 
@@ -65,7 +65,7 @@ class addpraticienController extends Controller {
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Bravo la modification a bien été appliquée</b></div>");
 
         /* return to default page */
-        return redirect()->to(site_url("/Addpraticien"));
+        return redirect()->to(site_url("/Addvisiteur"));
 
 
     }
@@ -75,11 +75,11 @@ class addpraticienController extends Controller {
 
         /* calling the delete function on model sending the url id */
         $this->model->init_delete($id);
-         /* add success message in flashdata */
+        /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Nous avons bien pris en compte votre suppression de praticien</b></div>");
 
         /* return to default page */
-        return redirect()->to(site_url("/Addpraticien"));
+        return redirect()->to(site_url("/Addvisiteur"));
 
     }
 

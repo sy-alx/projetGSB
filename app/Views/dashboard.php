@@ -121,6 +121,21 @@
 
 
         <hr class="sidebar-divider">
+  <!-- Heading -->
+        <div class="sidebar-heading">
+            Ajouter des visiteurs
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link" href="/Addvisiteur">
+                <i class="fas fa-user-plus"></i>
+                <span>Ajouter des visiteurs</span>
+            </a>
+        </li>
+
+
+        <hr class="sidebar-divider">
 
         <!-- Heading -->
         <div class="sidebar-heading">

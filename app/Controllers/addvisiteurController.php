@@ -7,8 +7,8 @@
  */
 
 namespace App\Controllers;
+use App\Models\UserModel;
 use CodeIgniter\Controller;
-use App\Models\addvisiteurModel;
 use Config\Services\session;
 
 /* Users Controller */
@@ -18,7 +18,7 @@ class addvisiteurController extends Controller {
     function __construct(){
 
         /* Loading user modal and session library */
-        $this->model = new addvisiteurModel();
+        $this->model = new UserModel();
         $this->session = \Config\Services::session();
 
     }
@@ -33,6 +33,8 @@ class addvisiteurController extends Controller {
         /* sending users list and session variable to interface */
         $data["listeVisiteur"] = $this->model->getUsers();
         $data["session"] = $this->session;
+        $data['listeRegion'] = $this->model->insertVisiteurRegion();
+
 
         /* loading the views */
         echo view('dashboard', $data);

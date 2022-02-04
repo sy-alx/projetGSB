@@ -64,4 +64,6 @@ class addpraticienModel extends Model{
         $this->delete($id);
 
     }
+
+
 }

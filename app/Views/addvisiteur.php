@@ -16,6 +16,9 @@
             $("#edit-prenom").val(($(uservisiteur).attr("uservisiteurprenom")));
             $("#edit-prenom").prop("disabled",false);
 
+            $("#edit-region").val(($(uservisiteur).attr("uservisiteurRegion")));
+            $("#edit-region").prop("disabled",false);
+
 
             $("#edit-telephone").val(($(uservisiteur).attr("uservisiteurtelephone")));
             $("#edit-telephone").prop("disabled",false);
@@ -47,6 +50,7 @@
             $("#text-edit-user").text("Voir la fiche du praticien : " + ($(uservisiteur).attr("uservisiteurnom")));
             $("#edit-nom").prop("disabled",true);
             $("#edit-prenom").prop("disabled",true);
+            $("#edit-region").prop("disabled",true);
             $("#edit-telephone").prop("disabled",true);
             $("#edit-email").prop("disabled",true);
             $("#edit-adresse").prop("disabled",true);
@@ -91,7 +95,7 @@
                             <div class="modal-body">
                                 <div class = "form-group">
                                     <label class = "light-dark">Nom</label>
-                                    <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick">
+                                    <input class = "form-control" name = "name" required placeholder = "Ex: John Wick">
                                 </div>
                                 <div class = "form-group">
                                     <label class = "light-dark">Prénom</label>
@@ -139,10 +143,19 @@
                                 </button>
                             </div>
                             <div class="modal-body">
+                                <select class="form-control" id="edit-region" name="idRegion">
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeRegion as $row) { ?>
+
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']; ?></option>
+
+                                    <?php } ?>
+                                </select>
 
                                 <div class = "form-group">
                                     <label class = "light-dark">Nom</label>
-                                    <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick" id = "edit-nom">
+                                    <input class = "form-control" name = "name" required placeholder = "Ex: John Wick" id = "edit-nom">
                                 </div>
                                 <div class = "form-group">
                                     <label class = "light-dark">Prénom</label>
@@ -194,15 +207,15 @@
                     <tbody>
                     <?php foreach($listeVisiteur as $uservisiteur) : ?>
                         <tr>
-                            <td><?= $uservisiteur->nom?></td>
-                            <td><?= $uservisiteur->prenom?></td>
-                            <td><?= $uservisiteur->telephone?></td>
-                            <td><?= $uservisiteur->email?></td>
-                            <td><?= $uservisiteur->adresse?></td>
-                            <td><?= $uservisiteur->cp?></td>
+                            <td><?= $uservisiteur["name"]?></td>
+                            <td><?= $uservisiteur["prenom"]?></td>
+                            <td><?= $uservisiteur["telephone"]?></td>
+                            <td><?= $uservisiteur["email"]?></td>
+                            <td><?= $uservisiteur["adresse"]?></td>
+                            <td><?= $uservisiteur["cp"]?></td>
                             <td>
-                                <button  uservisiteurnom = "<?= $uservisiteur->nom ?>" uservisiteurprenom = "<?= $uservisiteur->prenom ?>" uservisiteurtelephone = "<?= $uservisiteur->telephone ?>" uservisiteuremail = "<?= $uservisiteur->email ?>" uservisiteuradresse = "<?= $uservisiteur->adresse ?>" uservisiteurcodePostal = "<?= $uservisiteur->cp ?>"   uservisiteurid = "<?= $uservisiteur->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                <button  uservisiteurnom = "<?= $uservisiteur->nom ?>" uservisiteurprenom = "<?= $uservisiteur->prenom ?>" uservisiteurtelephone = "<?= $uservisiteur->telephone ?>" uservisiteuremail = "<?= $uservisiteur->email ?>" uservisiteuradresse = "<?= $uservisiteur->adresse ?>" uservisiteurcodePostal = "<?= $uservisiteur->cp ?>"   uservisiteurid = "<?= $uservisiteur->id ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>" uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>" uservisiteurRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>" uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>" uservisiteurRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
 
                             </td>
                         </tr>

@@ -152,8 +152,8 @@
                         </div>
 
                         <label class = "light-dark">Remplacent</label>
-                        <select class="form-control" id="edit-nomRemplacant" name="Remplacant">
 
+                        <select class="form-control" id="edit-nomRemplacant" name="Remplacant">
                             <option value="">-- Sélection --</option>
                             <?php foreach ($listeRemplacant as $row) { ?>
                                 <option value="<?php echo $row['id']; ?>"> <?php echo $row['nomRemplacant']. " ".$row['prenomRemplacant'] ; ?></option>

@@ -33,13 +33,12 @@
 
                             <div class="form-group">
                                 <label for="start">Date de visite:</label>
-                                <input type="date" id="DateVisite" name="Datevisite" value="<php echo date(); ?>" min="2022-01-01" max="2025-12-31" selected>
+                                <input type="date" id="DateVisite" name="Datevisite" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d', strtotime('-1 year')); ?>" max="<?php echo date('Y-m-d', strtotime('+1 year')); ?>">
                             </div>
                             <div class="form-group">
                                 <label for="start">Date de compte rendu:</label>
-                                <input type="date" id="DateCR" name="DateCR" value="<php echo date(); ?>" min="2018-01-01" max="2018-12-31" disabled>
+                                <input type="date" id="DateCR" name="DateCR" value="<?php echo date('Y-m-d'); ?>" disabled>
                             </div>
-
 
 
 

@@ -34,8 +34,8 @@
             $("#edit-codePostal").val(($(uservisiteur).attr("uservisiteurcodePostal")));
             $("#edit-codePostal").prop("disabled",false);
 
-
-
+            $("#edit-idregion").val(($(uservisiteur).attr("uservisiteuridRegion")));
+            $("#edit-idregion").prop("disabled",false);
 
 
             $("#edit-id").val(($(uservisiteur).attr("uservisiteurid")));
@@ -56,6 +56,7 @@
             $("#edit-adresse").prop("disabled",true);
             $("#edit-codePostal").prop("disabled",true);
             $("#edit-id").prop("disabled",true);
+            $("#edit-idregion").prop("disabled",true);
 
             $("#btn-update").hide();
             $("#btn-delete").attr("href", "/Addvisiteur/Delete/" + $(uservisiteur).attr("uservisiteurid"));
@@ -93,6 +94,16 @@
                                 </button>
                             </div>
                             <div class="modal-body">
+                                <select class="form-control" id="edit-idregion" name="idRegion">
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeRegion as $row) { ?>
+
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['nom']; ?></option>
+
+                                    <?php } ?>
+                                </select>
+
                                 <div class = "form-group">
                                     <label class = "light-dark">Nom</label>
                                     <input class = "form-control" name = "name" required placeholder = "Ex: John Wick">
@@ -143,7 +154,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <select class="form-control" id="edit-region" name="idRegion">
+                                <select class="form-control" id="edit-idregion" name="idRegion">
 
                                     <option value="">-- Sélection --</option>
                                     <?php foreach ($listeRegion as $row) { ?>
@@ -199,7 +210,8 @@
                         <th>Téléphone</th>
                         <th>Email</th>
                         <th>Adresse</th>
-                        <th>codePostal</th>
+                        <th>Code Postal</th>
+                        <th>Region</th>
                         <th>Modifier</th>
                     </tr>
                     </thead>
@@ -213,10 +225,10 @@
                             <td><?= $uservisiteur["email"]?></td>
                             <td><?= $uservisiteur["adresse"]?></td>
                             <td><?= $uservisiteur["cp"]?></td>
+                            <td><?= $uservisiteur["idRegion"]?></td>
                             <td>
-                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>" uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>" uservisiteurRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>" uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>" uservisiteurRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
-
+                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>" uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>"  uservisiteuridRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>" uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>"  uservisiteuridRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
                             </td>
                         </tr>
                     <?php endforeach; ?>

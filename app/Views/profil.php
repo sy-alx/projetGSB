@@ -2,7 +2,7 @@
     <div class="container">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Profil</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Profil <?= session()->get('name') ?></h6>
             </div>
             <div class="col-12 card-body">
                 <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce

@@ -20,6 +20,11 @@ class UserModel extends Model{
     ];
 
 
+    /* name of primary key field */
+    protected $primaryKey = "id";
+
+
+    protected $useTimestamps = true;
 
 
     /* automatic date create in database */
@@ -65,7 +70,7 @@ class UserModel extends Model{
         $builder = $this->db->table('listeRegion');
         $builder->select('*');
         $query=$builder->get();
-        $builder->join('listeRegion', 'listeRegion.id = listeVisiteur.idRegion');
+        $builder->join('listeRegion', 'listeRegion.id = users.idRegion');
         return $query->getResultArray();
     }
 

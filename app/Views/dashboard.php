@@ -48,6 +48,7 @@
                 <i class="fas fa-laugh-wink"></i>
             </div>
             <div class="sidebar-brand-text mx-3">Projet GSB</div>
+
         </a>
 
         <!-- Divider -->
@@ -57,7 +58,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="/profil">
                 <i class="fas fa-user"></i>
-                <span>Profil</span>
+                <span>Profil <?= session()->get('name') ?></span>
             </a>
         </li>
 

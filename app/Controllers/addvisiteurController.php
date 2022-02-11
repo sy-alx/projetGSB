@@ -47,7 +47,9 @@ class addvisiteurController extends Controller {
     public function create(){
 
         /* calling the insert function on model sending the form */
-        $this->model->init_insert($this->request->getVar());
+        $data = $this->request->getVar();
+        $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
+        $this->model->init_insert($data);
 
         /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");

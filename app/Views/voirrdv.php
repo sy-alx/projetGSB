@@ -5,8 +5,9 @@
     <table style="width: 100%;" border="1">
         <thead>
             <tr>
+                <th></th>
                 <th>
-                    <?php          
+                    <?php        
                         foreach($createSemaine as $row){
                             echo $row."</th><th>";
                         }
@@ -19,14 +20,18 @@
                 $heureCalendrier = 8;
 
                 for ($i=1; $i<=10;$i++){
-                    echo '<tr>';
+                    echo '<tr><th>'.($heureCalendrier).'h</th>';
                     
                     for($j=1;$j<=7;$j++){
 
                             $textForCell = "";
                             foreach($liste_rdv as $row){
                                 if($row['date_rdv'] == date('Y-m-d', strtotime('+'.($j-$jour).' days')) && $row['heure_rdv'] == $heureCalendrier){
-                                    $textForCell .= "Le".$row['date_rdv']." à ".$row['heure_rdv']."h";
+                                    if(isset($row['nomRemplacant'])){
+                                        $textForCell .= $row['nomRemplacant']." remplaçant de ".$row['nomPraticien'];
+                                    }else{
+                                        $textForCell .= $row['nomPraticien'];
+                                    }
                                 }
                             }
                             if(empty($textForCell)) {

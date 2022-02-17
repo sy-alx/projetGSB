@@ -18,13 +18,16 @@ class VoirrdvModel extends Model
 
     public function getRdvData($startDate = null, $endDate = null) {
         $builder = $this->db->table('rdv');
-        $builder->select('date_rdv, heure_rdv');
+        $builder->join('listePraticien', 'rdv.idPraticien = listePraticien.id');
+        $builder->join('listeRemplacant', 'rdv.idRemplacant = listeRemplacant.id', 'left');
+        $builder->select('rdv.date_rdv, rdv.heure_rdv, listePraticien.nom as nomPraticien, listeRemplacant.nomRemplacant');
         if($startDate){
             $builder->where('date_rdv > ', $startDate);
         }
         if($endDate){
             $builder->where('date_rdv <', $endDate);
         }
+        $builder->where(session()->get('id').'= rdv.idUsers');
         $query=$builder->get();
         return $query->getResultArray();
     }

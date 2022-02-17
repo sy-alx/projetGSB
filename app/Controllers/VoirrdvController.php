@@ -17,10 +17,6 @@ class VoirrdvController extends BaseController
         $this->model = new VoirrdvModel();
 
     }
-    
-    // public function createCalendar(){
-        
-    // }
 
     public function index()
     {

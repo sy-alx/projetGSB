@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="start">Date de compte rendu:</label>
-                                <input type="date" id="DateCR" name="DateCR" value="<?php echo date('Y-m-d'); ?>" disabled>
+                                <input type="date" id="DateCR" name="DateCR" value="<?php echo date('Y-m-d'); ?>">
                             </div>
 
 

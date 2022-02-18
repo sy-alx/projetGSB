@@ -76,13 +76,12 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Praticien</th>
                             <th>Prenom</th>
-                            <th>Date de visite</th>
+                            <th>Nom</th>
                             <th>Date du compte-rendu</th>
+                            <th>Date de visite</th>
                             <th>Remplacant</th>
                             <th>Motif</th>
-                            <th>texte</th>
                             <th>ImpacteVisite</th>
                             <th>coefconf</th>
                             <th>Modifier</th>
@@ -100,7 +99,6 @@
                                 <td><?= $row['Datevisite'] ?></td>
                                 <td><?= $row['RemplacantNom'] ?></td>
                                 <td><?= $row['Motif'] ?></td>
-                                <td><?= $row['Texte'] ?></td>
                                 <td><?= $row['CoefConf'] ?></td>
                                 <td><?= $row['ImpacteVisite'] ?></td>
 
@@ -183,7 +181,7 @@
                             <label for="start">Impacte de la visite :</label> <br>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="1">
+                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="1" >
                                 <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
                             </div>
                             <div class="form-check form-check-inline">

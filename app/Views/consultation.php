@@ -69,11 +69,12 @@
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Historique des comptes-rendus</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    
+                    <table class="table table-bordered"  placeholder="salut" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Prenom</th>
@@ -91,7 +92,8 @@
                         </thead>
 
                         <tbody>
-                        <?php foreach ($compteRendu as $row) { ?>
+                        <?php 
+                        foreach ($compteRendu as $row) { ?>
                             <tr>
                                 <td><?= $row['nom'] ?></td>
                                 <td><?= $row['prenom'] ?></td>

@@ -30,6 +30,10 @@ class CompteRenduController extends BaseController
         $data['listePraticien'] = $this->nouveauModel->insertPraticienSelect();
         $data['listeRemplacant'] = $this->nouveauModel->insertRempacantSelect();
         $data['listeMotifVisite'] = $this->nouveauModel->insertMotifVisiteSelect();
+        $data['listeImpacteVisite'] = $this->nouveauModel->insertImpacteVisiteSelect();
+        $data['listeCoefConf'] = $this->nouveauModel->insertCoefConfSelect();
+
+
         $data["compteRendu"] = $this->model->getUsers();
 
         echo view('dashboard', $data);
@@ -86,6 +90,8 @@ class CompteRenduController extends BaseController
             ];
 
             $this->nouveauModel->insertCompteRendu($dataclients);
+
+  
 
 
 

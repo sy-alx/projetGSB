@@ -74,39 +74,34 @@
 
 
 
-                                <div class="form-group">
-                                    <label for="start">Impacte de la visite :</label> <br>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Impacte visite: </label>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio1" value="1">
-                                        <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio2" value="2">
-                                        <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ImpacteVisite" id="inlineRadio2" value="3">
-                                        <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
-                                    </div>
-                                </div>
+                                <select class="form-control" id="ImpacteVisite" name="ImpacteVisite">
 
-                                <div class="form-group">
-                                    <label for="start">Coefficient de confiance :</label> <br>
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeImpacteVisite as $row) { ?>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio1" value="1">
-                                        <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio2" value="2">
-                                        <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="CoefConf" id="inlineRadio2" value="3">
-                                        <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
-                                    </div>
-                                </div>
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['motif'];?></option>
+
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Coefficient de confiance : </label>
+
+                                <select class="form-control" id="CoefConf" name="CoefConf">
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeCoefConf as $row) { ?>
+
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['motif'];?></option>
+
+                                    <?php } ?>
+                                </select>
+                            </div>
 
 
 
@@ -116,7 +111,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
 
-                                <select class="form-control" id="exampleFormControlSelect1" name="MotifVisite">
+                                <select class="form-control" id="MotifVisite" name="MotifVisite">
 
                                     <option value="">-- Sélection --</option>
                                     <?php foreach ($listeMotifVisite as $row) { ?>

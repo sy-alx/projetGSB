@@ -75,6 +75,7 @@ class CompteRenduController extends BaseController
             // BDD
             $dataclients = [
                 'Datevisite' => $this->request->getPost('Datevisite'),
+                'DateCR' => $this->request->getPost('DateCR'),
                 'Praticien' => $this->request->getPost('Praticien'),
                 'Remplacant'=> $this->request->getPost('Remplacant'),
                 'ImpacteVisite' => $this->request->getPost('ImpacteVisite'),

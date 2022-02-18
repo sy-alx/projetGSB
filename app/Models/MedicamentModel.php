@@ -25,7 +25,7 @@ class MedicamentModel extends Model{
     protected $useTimestamps = true;
 
     /* default fields that will be inserted */
-    protected $allowedFields = ['nom', 'type', 'lorem', 'note'];
+    protected $allowedFields = ['MED_DEPOTLEGAL', 'MED_NOMCOMMERCIAL', 'MED_COMPOSITION', 'FAM_CODE', 'MED_EFFETS', 'MED_CONTREINDIC', 'MED_PRIXECHANTILLON','MED_NOMBRECHANTILLON', ];
 
     /* automatic date create in database */
     protected $createdField = "created_at";

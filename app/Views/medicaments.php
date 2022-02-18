@@ -6,22 +6,34 @@
         /* config fields to update/delete a user */
         edit = (user) => {
 
-            $("#text-edit-user").text("Modifier le médicament : " + ($(user).attr("usernom")));
+            $("#text-edit-user").text("Modifier le médicament : " + ($(user).attr("DEPOTLEGAL")));
 
-            $("#edit-nom").val(($(user).attr("usernom")));
-            $("#edit-nom").prop("disabled",false);
-
-
-            $("#edit-prenom").val(($(user).attr("usertype")));
-            $("#edit-prenom").prop("disabled",false);
+            $("#edit-MED_DEPOTLEGAL").val(($(user).attr("DEPOTLEGAL")));
+            $("#edit-MED_DEPOTLEGAL").prop("disabled",false);
 
 
-            $("#edit-adresse").val(($(user).attr("userlorem")));
-            $("#edit-adresse").prop("disabled",false);
+            $("#edit-MED_NOMCOMMERCIAL").val(($(user).attr("MED_NOMCOMMERCIAL")));
+            $("#edit-MED_NOMCOMMERCIAL").prop("disabled",false);
 
 
-            $("#edit-codePostal").val(($(user).attr("usernote")));
-            $("#edit-codePostal").prop("disabled",false);
+            $("#edit-FAM_CODE").val(($(user).attr("FAM_CODE")));
+            $("#edit-FAM_CODE").prop("disabled",false);
+
+
+            $("#edit-MED_COMPOSITION").val(($(user).attr("MED_COMPOSITION")));
+            $("#edit-MED_COMPOSITION").prop("disabled",false);
+
+            $("#edit-MED_EFFETS").val(($(user).attr("MED_EFFETS")));
+            $("#edit-MED_EFFETS").prop("disabled",false);
+
+            $("#edit-MED_CONTREINDIC").val(($(user).attr("MED_CONTREINDIC")));
+            $("#edit-MED_CONTREINDIC").prop("disabled",false);
+
+            $("#edit-MED_PRIXECHANTILLON").val(($(user).attr("MED_PRIXECHANTILLON")));
+            $("#edit-MED_PRIXECHANTILLON").prop("disabled",false);
+
+            $("#edit-MED_NOMBRECHANTILLON").val(($(user).attr("MED_PRIXECHANTILLON")));
+            $("#edit-MED_NOMBRECHANTILLON").prop("disabled",false);
 
 
 
@@ -34,11 +46,15 @@
         }
         view = (user) => {
             edit(user);
-            $("#text-edit-user").text("Voir la fiche du médicament : " + ($(user).attr("usernom")));
-            $("#edit-nom").prop("disabled",true);
-            $("#edit-prenom").prop("disabled",true);
-            $("#edit-adresse").prop("disabled",true);
-            $("#edit-codePostal").prop("disabled",true);
+            $("#text-edit-user").text("Voir la fiche du médicament : " + ($(user).attr("DEPOTLEGAL")));
+            $("#edit-MED_DEPOTLEGAL").prop("disabled",true);
+            $("#edit-MED_NOMCOMMERCIAL").prop("disabled",true);
+            $("#edit-FAM_CODE").prop("disabled",true);
+            $("#edit-MED_COMPOSITION").prop("disabled",true);
+            $("#edit-MED_EFFETS").prop("disabled",true);
+            $("#edit-MED_CONTREINDIC").prop("disabled",true);
+            $("#edit-MED_PRIXECHANTILLON").prop("disabled",true);
+            $("#edit-MED_NOMBRECHANTILLON").prop("disabled",true);
 
             $("#edit-id").prop("disabled",true);
 
@@ -80,20 +96,36 @@
                             </div>
                             <div class="modal-body">
                                 <div class = "form-group">
-                                    <label class = "light-dark">Nom</label>
-                                    <input class = "form-control" name = "nom" required>
+                                    <label class = "light-dark">MED_DEPOTLEGAL</label>
+                                    <input class = "form-control" name = "MED_DEPOTLEGAL" required>
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Type</label>
-                                    <input class = "form-control" name = "type" required >
+                                    <label class = "light-dark">MED_NOMCOMMERCIAL</label>
+                                    <input class = "form-control" name = "MED_NOMCOMMERCIAL" required >
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Lorem</label>
-                                    <input class = "form-control" name = "lorem" required >
+                                    <label class = "light-dark">FAM_CODE</label>
+                                    <input class = "form-control" name = "FAM_CODE" required >
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Note</label>
-                                    <input class = "form-control" name = "note" required >
+                                    <label class = "light-dark">MED_COMPOSITION</label>
+                                    <input class = "form-control" name = "MED_COMPOSITION" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_EFFETS</label>
+                                    <input class = "form-control" name = "MED_EFFETS" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_CONTREINDIC</label>
+                                    <input class = "form-control" name = "MED_CONTREINDIC" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_PRIXECHANTILLON</label>
+                                    <input class = "form-control" name = "MED_PRIXECHANTILLON" type="number" required >
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_NOMBRECHANTILLON</label>
+                                    <input class = "form-control" name = "MED_NOMBRECHANTILLON" type="number" required >
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -120,20 +152,36 @@
                             </div>
                             <div class="modal-body">
                                 <div class = "form-group">
-                                    <label class = "light-dark">Nom</label>
-                                    <input class = "form-control" name = "nom" required placeholder = "Ex: John Wick" id = "edit-nom">
+                                    <label class = "light-dark">MED_DEPOTLEGAL</label>
+                                    <input class = "form-control" name = "MED_DEPOTLEGAL" required  id = "edit-MED_DEPOTLEGAL">
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Type</label>
-                                    <input class = "form-control" name = "type" required id = "edit-prenom">
+                                    <label class = "light-dark">MED_NOMCOMMERCIAL</label>
+                                    <input class = "form-control" name = "MED_NOMCOMMERCIAL" required id = "edit-MED_NOMCOMMERCIAL">
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Lorem</label>
-                                    <input class = "form-control" name = "lorem" required id = "edit-adresse">
+                                    <label class = "light-dark">FAM_CODE</label>
+                                    <input class = "form-control" name = "FAM_CODE" required id = "edit-FAM_CODE">
                                 </div>
                                 <div class = "form-group">
-                                    <label class = "light-dark">Note</label>
-                                    <input class = "form-control" name = "note" required type = "number" id = "edit-codePostal">
+                                    <label class = "light-dark">MED_COMPOSITION</label>
+                                    <input class = "form-control" name = "MED_COMPOSITION" required  id = "edit-MED_COMPOSITION">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_EFFETS</label>
+                                    <input class = "form-control" name = "MED_EFFETS" required id = "edit-MED_EFFETS">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_CONTREINDIC</label>
+                                    <input class = "form-control" name = "MED_CONTREINDIC" required id = "edit-MED_CONTREINDIC">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_PRIXECHANTILLON</label>
+                                    <input class = "form-control" name = "MED_PRIXECHANTILLON" type="number" required id = "edit-MED_PRIXECHANTILLON">
+                                </div>
+                                <div class = "form-group">
+                                    <label class = "light-dark">MED_NOMBRECHANTILLON</label>
+                                    <input class = "form-control" name = "MED_NOMBRECHANTILLON" type="number" required id = "edit-MED_NOMBRECHANTILLON">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -150,10 +198,14 @@
                 <table class = "table table-hover">
                     <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>type</th>
-                        <th>lorem</th>
-                        <th>note</th>
+                        <th>DEPOTLEGAL</th>
+                        <th>NOMCOMMERCIAL</th>
+                        <th>CODE</th>
+                        <th>COMPOSITION</th>
+                        <th>EFFETS</th>
+                        <th>CONTREINDIC</th>
+                        <th>PRIXECHANTILLON</th>
+                        <th>nmbCHANTILLON</th>
                         <th>Modifier</th>
                     </tr>
                     </thead>
@@ -161,13 +213,17 @@
                     <tbody>
                     <?php foreach($listeMedicament as $user) : ?>
                         <tr>
-                            <td><?= $user->nom?></td>
-                            <td><?= $user->type?></td>
-                            <td><?= $user->lorem?></td>
-                            <td><?= $user->note?></td>
+                            <td><?= $user->MED_DEPOTLEGAL?></td>
+                            <td><?= $user->MED_NOMCOMMERCIAL?></td>
+                            <td><?= $user->FAM_CODE?></td>
+                            <td><?= $user->MED_COMPOSITION?></td>
+                            <td><?= $user->MED_EFFETS?></td>
+                            <td><?= $user->MED_CONTREINDIC?></td>
+                            <td><?= $user->MED_PRIXECHANTILLON?> €</td>
+                            <td><?= $user->MED_NOMBRECHANTILLON?></td>
                             <td>
-                                <button usernom = "<?= $user->nom ?>" usertype = "<?= $user->type ?>" userlorem = "<?= $user->lorem ?>" usernote = "<?= $user->note ?>" userid = "<?= $user->id ?>"onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                <button usernom = "<?= $user->nom ?>" usertype = "<?= $user->type ?>" userlorem = "<?= $user->lorem ?>" usernote = "<?= $user->note ?>" userid = "<?= $user->id ?>"onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+                                <button DEPOTLEGAL = "<?= $user->MED_DEPOTLEGAL ?>" MED_NOMCOMMERCIAL = "<?= $user->MED_NOMCOMMERCIAL ?>" FAM_CODE = "<?= $user->FAM_CODE ?>" MED_COMPOSITION = "<?= $user->MED_COMPOSITION ?>" MED_EFFETS = "<?= $user->MED_EFFETS ?>"  MED_CONTREINDIC = "<?= $user->MED_CONTREINDIC ?>" MED_PRIXECHANTILLON = "<?= $user->MED_PRIXECHANTILLON ?>"   MED_NOMBRECHANTILLON = "<?= $user->MED_NOMBRECHANTILLON ?>" userid = "<?= $user->id ?>"onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
+                                <button DEPOTLEGAL = "<?= $user->MED_DEPOTLEGAL ?>" MED_NOMCOMMERCIAL = "<?= $user->MED_NOMCOMMERCIAL ?>" FAM_CODE = "<?= $user->FAM_CODE ?>" MED_COMPOSITION = "<?= $user->MED_COMPOSITION ?>" MED_EFFETS = "<?= $user->MED_EFFETS ?>"  MED_CONTREINDIC = "<?= $user->MED_CONTREINDIC ?>" MED_PRIXECHANTILLON = "<?= $user->MED_PRIXECHANTILLON ?>"  MED_NOMBRECHANTILLON = "<?= $user->MED_NOMBRECHANTILLON ?>" userid = "<?= $user->id ?>"onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
 
                             </td>
                         </tr>

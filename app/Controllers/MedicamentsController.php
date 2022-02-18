@@ -48,7 +48,7 @@ class MedicamentsController extends Controller {
         $this->model->init_insert($this->request->getVar());
 
         /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le médicament a bien été crée</b></div>");
 
         /* return to default page */
         return redirect()->to(site_url("/Medicament"));
@@ -76,7 +76,7 @@ class MedicamentsController extends Controller {
         /* calling the delete function on model sending the url id */
         $this->model->init_delete($id);
         /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Nous avons bien pris en compte votre suppression de praticien</b></div>");
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Nous avons bien pris en compte votre suppression du médicament</b></div>");
 
         /* return to default page */
         return redirect()->to(site_url("/Medicament"));

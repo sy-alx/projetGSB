@@ -19,7 +19,7 @@
             $("#edit-password").val(($(uservisiteur).attr("uservisiteurpassword")));
             $("#edit-password").prop("disabled",false);
 
-            $("#edit-region").val(($(uservisiteur).attr("uservisiteurRegion")));
+            $("#edit-region").val(($(uservisiteur).attr("uservisiteuridregion")));
             $("#edit-region").prop("disabled",false);
 
 

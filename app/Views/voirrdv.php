@@ -6,13 +6,11 @@
         <thead>
             <tr>
                 <th></th>
-                <th>
                     <?php        
                         foreach($createSemaine as $row){
-                            echo $row."</th><th>";
+                            echo "<th>".$row."</th>";
                         }
                     ?>
-                </th>
             </tr>
         </thead>
         <tbody>

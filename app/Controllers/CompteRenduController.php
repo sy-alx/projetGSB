@@ -84,6 +84,7 @@ class CompteRenduController extends BaseController
                 'ImpacteVisite' => $this->request->getPost('ImpacteVisite'),
                 'CoefConf'=> $this->request->getPost('CoefConf'),
                 'MotifVisite'=> $this->request->getPost('MotifVisite'),
+                'fkUsers'=> session()->get('id'),
                 'texte'=> $this->request->getPost('texte'),
 
             ];

@@ -33,6 +33,7 @@ class CompteRenduModel extends Model
 
         $builder = $this->db->table('compteRendu');
         $builder->insert($data);
+        
 
     }
 
@@ -43,11 +44,10 @@ class CompteRenduModel extends Model
         $builder->join('listeRemplacant', 'listeRemplacant.id = compteRendu.Remplacant');
         $builder->join('listeMotifVisite', 'listeMotifVisite.id = compteRendu.MotifVisite');
 
-        $builder->join('listeImpacteVisite', 'listeImpacteVisite.id = compteRendu.ImpacteVisite');
-        $builder->join('listeCoefConf', 'listeCoefConf.id = compteRendu.CoefConf');
 
 
-        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite,compteRendu.texte as Texte, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif, compteRendu.CoefConf as CoefConf,compteRendu.ImpacteVisite as ImpacteVisite, listeCoefConf.motif as CoefConf, listeImpacteVisite.motif as ImpacteVisite');
+
+        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite,compteRendu.texte as Texte, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif, compteRendu.CoefConf as CoefConf,compteRendu.ImpacteVisite as ImpacteVisite');
 
         $query=$builder->get();
         return $query->getResultArray();
@@ -100,19 +100,6 @@ class CompteRenduModel extends Model
         return $query->getResultArray();
     }
 
-    public function insertImpacteVisiteSelect(){
-        $builder = $this->db->table('listeImpacteVisite');
-        $builder->select('*');
-        $query=$builder->get();
-        return $query->getResultArray();
-    }
-
-    public function insertCoefConfSelect(){
-        $builder = $this->db->table('listeCoefConf');
-        $builder->select('*');
-        $query=$builder->get();
-        return $query->getResultArray();
-    }
 
 
 

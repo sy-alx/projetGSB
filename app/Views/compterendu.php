@@ -73,7 +73,6 @@
 
 
 
-
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Impacte visite</label> </br>
 
@@ -92,8 +91,6 @@
 
 
 
-
-
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
 
@@ -106,49 +103,64 @@
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                                <label>Date prochaine visite :</label>
+                                <input type="date" id="dateRdv" name="dateRdv">
+                                <input type="number" id="heureRdv" name="heureRdv" min="8" max="18" style="display: none;"> 
+                            </div>
 
+                          
                             <div class="form-group">
                                     <label for="exampleFormControlSelect1">Compte rendu de la visite :</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texte"></textarea>
-                                </div>
+                                
+                            </div>
 
 
 
 
+                            <div class="form-check form-check-inline">
 
-                                <div class="form-check form-check-inline">
-
-                                    <div class="col-sm-6 col-md-6 col-lg-6">
-                                        <div class="btn btn-danger btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                            <button class="btn btn__rounded btn__primary btn__hover3"  type="reset" >Rafraîchir</button>
-                                        </div
-                                    </div>
-                                </div>
-                                <div class="form-check form-check-inline">
-
-                                    <div class="col-sm-6 col-md-6 col-lg-6">
-                                        <div class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-paper-plane"></i>
-                                        </span>
-                                            <button   class="btn btn__rounded btn__primary btn__hover3" id="buttontest" onclick="$( '#form_contact' ).submit();">Envoyer</button>
-                                        </div>
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <div class="btn btn-danger btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-trash"></i>
+                                    </span>
+                                        <button class="btn btn__rounded btn__primary btn__hover3"  type="reset" >Rafraîchir</button>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="form-check form-check-inline">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <div class="btn btn-success btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </span>
+                                        <button   class="btn btn__rounded btn__primary btn__hover3" id="buttontest" onclick="$( '#form_contact' ).submit();">Envoyer</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </form>
 
 
 </section>
 
+<script>
+    //Pour afficher ou cacher le champ "heure" si une date pour prochain rdv est sélectionné
+    heureRdv = document.querySelector('#heureRdv');
+    isHourRequired = document.querySelector('#dateRdv');
 
+    isHourRequired.addEventListener('change',function(){
+        if(isHourRequired.value == ""){
+            heureRdv.style.display="none";
+        }else{
+            heureRdv.style.display="inline";
+        }
+    })
+</script>

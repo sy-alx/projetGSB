@@ -30,8 +30,7 @@ class CompteRenduController extends BaseController
         $data['listePraticien'] = $this->nouveauModel->insertPraticienSelect();
         $data['listeRemplacant'] = $this->nouveauModel->insertRempacantSelect();
         $data['listeMotifVisite'] = $this->nouveauModel->insertMotifVisiteSelect();
-        $data['listeImpacteVisite'] = $this->nouveauModel->insertImpacteVisiteSelect();
-        $data['listeCoefConf'] = $this->nouveauModel->insertCoefConfSelect();
+
 
 
         $data["compteRendu"] = $this->model->getUsers();
@@ -88,19 +87,16 @@ class CompteRenduController extends BaseController
                 'texte'=> $this->request->getPost('texte'),
 
             ];
+            if ($dataclients["ImpacteVisite"]<=10 & $dataclients["CoefConf"]<=10) {
+                 $this->nouveauModel->insertCompteRendu($dataclients);
 
-            $this->nouveauModel->insertCompteRendu($dataclients);
+                 return redirect()->to(site_url("CompteRendu?is_valid=1"));
+            }else {
 
-  
-
-
-
-
+                return redirect()->to(site_url("CompteRendu?is_valid=0"));}
+               
 
 
-
-            // redirect()->to('/Contact');
-            return redirect()->to(site_url("CompteRendu?is_valid=1"));
         } else {
 
             return redirect()->to(site_url("CompteRendu?is_valid=0"));

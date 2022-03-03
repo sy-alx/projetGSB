@@ -75,32 +75,18 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Impacte visite: </label>
+                                <label for="exampleFormControlSelect1">Impacte visite</label> </br>
 
-                                <select class="form-control" id="ImpacteVisite" name="ImpacteVisite">
+                                <input type="number" id="ImpacteVisite" name="ImpacteVisite" min="1" max="10">
 
-                                    <option value="">-- Sélection --</option>
-                                    <?php foreach ($listeImpacteVisite as $row) { ?>
-
-                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['motif'];?></option>
-
-                                    <?php } ?>
-                                </select>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Coefficient de confiance : </label>
+                                <label for="exampleFormControlSelect1">Coefficient de confiance</label> </br>
 
-                                <select class="form-control" id="CoefConf" name="CoefConf">
+                                <input type="number" id="CoefConf" name="CoefConf" min="1" max="10">
 
-                                    <option value="">-- Sélection --</option>
-                                    <?php foreach ($listeCoefConf as $row) { ?>
-
-                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['motif'];?></option>
-
-                                    <?php } ?>
-                                </select>
                             </div>
 
 

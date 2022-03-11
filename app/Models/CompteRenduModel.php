@@ -30,7 +30,6 @@ class CompteRenduModel extends Model
 
     //insertion des clients en bdd dans la table nouveau
     public function insertCompteRendu($data) {
-
         $builder = $this->db->table('compteRendu');
         $builder->insert($data);
         

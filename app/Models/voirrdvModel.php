@@ -8,6 +8,10 @@ class VoirrdvModel extends Model
     protected $table = 'rdv';
     protected $primaryKey = 'id_rdv';
     protected $db;
+    protected $allowedFields = [
+        'date_rdv',
+        'heure_rdv'
+    ];
 
 
     public function __construct() {

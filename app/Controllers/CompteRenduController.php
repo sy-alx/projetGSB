@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\CompteRenduModel;
+use App\Models\VoirrdvModel;
 
 
 class CompteRenduController extends BaseController
@@ -75,7 +76,8 @@ class CompteRenduController extends BaseController
         if($validation->withRequest($this->request)->run())
         {
 
-            // BDD
+            // BDD          
+
             $dataclients = [
                 'Datevisite' => $this->request->getPost('Datevisite'),
                 'DateCR' => $this->request->getPost('DateCR'),
@@ -86,9 +88,21 @@ class CompteRenduController extends BaseController
                 'MotifVisite'=> $this->request->getPost('MotifVisite'),
                 'fkUsers'=> session()->get('id'),
                 'texte'=> $this->request->getPost('texte'),
-
             ];
+            $rdvData = array(
+                'date_rdv'=> $this->request->getPost('dateRdv'),
+                'heure_rdv'=> $this->request->getPost('heureRdv')
+            );
             if ($dataclients["ImpacteVisite"]<=10 & $dataclients["CoefConf"]<=10) {
+                if($rdvData["date_rdv"] && $rdvData["heure_rdv"])  {
+                    $rdvModel = new VoirrdvModel();
+                    $dataclients['idRdv'] = $rdvModel->insert($rdvData);
+                }
+
+                if(($rdvData["date_rdv"] || $rdvData["heure_rdv"]) && (!$rdvData["date_rdv"] || !$rdvData["heure_rdv"]))  {
+                    return redirect()->to(site_url("CompteRendu?is_valid=0"));
+                }
+
                  $this->nouveauModel->insertCompteRendu($dataclients);
 
                  return redirect()->to(site_url("CompteRendu?is_valid=1"));

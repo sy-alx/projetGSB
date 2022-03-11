@@ -152,10 +152,19 @@
 </section>
 
 <script>
-    //Pour afficher ou cacher le champ "heure" si une date pour prochain rdv est sélectionné
     heureRdv = document.querySelector('#heureRdv');
     isHourRequired = document.querySelector('#dateRdv');
 
+    //Empêcher d'insérer des données extérieur à 8-18
+    heureRdv.addEventListener('change', function(){
+        if(heureRdv.value<8){
+            heureRdv.value = 8;
+        }else if(heureRdv.value>18){
+            heureRdv.value = 18;
+        }
+    })
+
+    //Pour afficher ou cacher le champ "heure" si une date pour prochain rdv est sélectionné
     isHourRequired.addEventListener('change',function(){
         if(isHourRequired.value == ""){
             heureRdv.style.display="none";

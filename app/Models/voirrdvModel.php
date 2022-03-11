@@ -27,10 +27,10 @@ class VoirrdvModel extends Model
         $builder->join('listeRemplacant', 'compterendu.Remplacant = listeRemplacant.id', 'left');
         $builder->select('rdv.date_rdv, rdv.heure_rdv, listePraticien.nom as nomPraticien, listeRemplacant.nomRemplacant');
         if($startDate){
-            $builder->where('date_rdv > ', $startDate);
+            $builder->where('date_rdv >= ', $startDate);
         }
         if($endDate){
-            $builder->where('date_rdv <', $endDate);
+            $builder->where('date_rdv <=', $endDate);
         }
         $builder->where(session()->get('id').'= compterendu.fkUsers');
         $query=$builder->get();

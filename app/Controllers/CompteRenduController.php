@@ -41,6 +41,7 @@ class CompteRenduController extends BaseController
         echo view('dashboard', $data);
     }
 
+    // ionic --> get data de user
     public function indexApi() {
         $data = $this->model->getUsers();
         return $this->respond($data);

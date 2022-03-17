@@ -1,13 +1,14 @@
 <?php
-    //session_start();
-    //session()->('isLoggedIn');
     session()->destroy();
-    echo "déconnecté !";
-    //echo session('name');
-    echo session()->get('email');
-    echo session()->get('isLoggedIn');
-  // session('isLoggedIn')->set(0);
-   
-    //sleep(2);
-   //return redirect()->route('signin');
+    echo "Déconnecté ! Redirection en cours ...";
+
 ?>
+
+<script>
+      function greet() {
+        window.location.replace("http://localhost");
+        alert('coucou');
+}
+setTimeout(greet, 2000);
+    </script>
+    

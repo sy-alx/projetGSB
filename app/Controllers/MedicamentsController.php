@@ -62,7 +62,7 @@ class MedicamentsController extends Controller {
         $this->model->init_update($this->request->getVar());
 
         /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Bravo la modification a bien été appliquée</b></div>");
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>la modification a bien été appliquée</b></div>");
 
         /* return to default page */
         return redirect()->to(site_url("/Medicament"));

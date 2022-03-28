@@ -26,7 +26,7 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Bienvenue</h1>
                                     </div>
 
             <?php if(session()->getFlashdata('msg')):?>
@@ -41,11 +41,11 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <input type="password" name="password" placeholder="Password" class="form-control form-control-user" >
+                    <input type="password" name="password" placeholder="Mot de passe" class="form-control form-control-user" >
                 </div>
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-user btn-block">Signin</button>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">connexion</button>
                 </div>
             </form>
         </div>

@@ -68,9 +68,11 @@
             <div class = "margin-top row pb-3 pt-2 pl-100">
 
                 <div class = "col-md-3 center">
-                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Ajouter un nouveau praticien <i class = "fas fa-plus icon"></i></b></button>
+                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Ajouter un nouveau praticien<i class = "fas fa-plus icon"></i></b></button>
                 </div>
             </div>
+
+
 
 
             <form method = "post" action = "/Addpraticien/Create">
@@ -194,7 +196,7 @@
                             <td><?= $user->email?></td>
                             <td>
                                 <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+
 
                             </td>
                         </tr>

@@ -6,8 +6,8 @@
 
 <script>
       function greet() {
-        window.location.replace("http://localhost");
-        alert('coucou');
+        window.location.replace("Accueil");
+        alert('vous avez bien été déconnectés ');
 }
 setTimeout(greet, 2000);
     </script>

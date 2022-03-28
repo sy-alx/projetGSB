@@ -43,7 +43,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Accueil">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -116,7 +116,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/Addpraticien">
                 <i class="fas fa-user-plus"></i>
-                <span>Ajouter mes praticiens</span>
+                <span>Gestions des praticiens</span>
             </a>
         </li>
 
@@ -147,7 +147,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/Medicament">
                 <i class="fas fa-pills"></i>
-                <span>Information medicament</span>
+                <span>Informations medicaments</span>
             </a>
         </li>
 
@@ -156,7 +156,7 @@
         <li class="nav-item ">
             <a class="nav-link" href="/logout">
                 <i class="fas fa-sign-out-alt"></i>
-                <span>Logout</span>
+                <span>Se déconnecter</span>
             </a>
         </li>
     </ul>

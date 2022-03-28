@@ -3,7 +3,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Compte rendu</h6>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -14,7 +14,7 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
                                             <div class="alert alert-danger" role="alert">
-                                                Vous n'avez pas rempli tout les champs putain attention  !
+                                                Vous n'avez pas rempli tout les champs, pensez à vérifier avant d'envoyer.
                                             </div>
                                         </div><!-- /.col-lg-8 -->
                                     </div><!-- /.row -->
@@ -24,7 +24,7 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
                                             <div class="alert alert-success" role="alert">
-                                                This is a success alert—check it out!
+                                                Le compte rendu a bien été enregistré, retrouvez-le dans l'onglet consultation
                                             </div>
                                         </div><!-- /.col-lg-8 -->
                                     </div><!-- /.row -->
@@ -74,7 +74,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Impacte visite</label> </br>
+                                <label for="exampleFormControlSelect1">Impacte visite sur 10</label> </br>
 
                                 <input type="number" id="ImpacteVisite" name="ImpacteVisite" min="1" max="10">
 
@@ -82,7 +82,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Coefficient de confiance</label> </br>
+                                <label for="exampleFormControlSelect1">Coefficient de confiance sur 10</label> </br>
 
                                 <input type="number" id="CoefConf" name="CoefConf" min="1" max="10">
 

@@ -1,6 +1,11 @@
 <section>
+    
 
-    <h1>Voir mes rendez-vous</h1>
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Voir mes rendez-vous</h6>
+    </div>
+    <br>
+
 
     <table style="width: 100%;" border="1">
         <thead>
@@ -46,8 +51,11 @@
     <?php   
     ?>   
     <br>
-    <a href="Voirrdv?semaine=1&jour=<?php echo $jour ?>">Semaine précédente</a>
-    <a href="Voirrdv?semaine=0">Semaine en cours</a>
-    <a href="Voirrdv?semaine=2&jour=<?php echo $jour ?>">Semaine suivante</a>
+    
+      <a style="padding-right: 20px;" href="Voirrdv?semaine=1&jour=<?php echo $jour ?>">Semaine précédente</a>
+      <a style="padding-right: 20px;" href="Voirrdv?semaine=0">Semaine en cours</a>
+      <a style="padding-right: 20px;" href="Voirrdv?semaine=2&jour=<?php echo $jour ?>">Semaine suivante</a>
+    
     <br>
 </section>
+

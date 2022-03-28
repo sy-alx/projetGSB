@@ -58,6 +58,14 @@
     })
 </script>
 <section>
+
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Gestion des praticiens</h6>
+    </div>
+
+
+
+
     <?= $session->getFlashdata("message") ?>
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -114,8 +122,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel  <i class="fas fa-window-close"></i></b></button>
-                                <button type="submit" class="btn btn-success"><b>Insert <i class = "fas fa-check-double icon"></i></b></button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Annuler  <i class="fas fa-window-close"></i></b></button>
+                                <button type="submit" class="btn btn-success"><b>Insérer <i class = "fas fa-check-double icon"></i></b></button>
                             </div>
                         </div>
                     </div>

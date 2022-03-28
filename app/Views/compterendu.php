@@ -92,7 +92,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Motif de la visite (deroulant)</label>
+                                <label for="exampleFormControlSelect1">Motif de la visite</label>
 
                                 <select class="form-control" id="MotifVisite" name="MotifVisite">
 

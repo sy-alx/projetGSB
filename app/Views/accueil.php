@@ -44,7 +44,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/signin">Login</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/signin">Connexion</a>
 
            <!-- <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a> --> <!-- Fonction pour créer un profil mis de côté pour le momment / à supprimer -->
         </form>

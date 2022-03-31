@@ -48,4 +48,26 @@ class SigninController extends Controller
             return redirect()->to('/signin');
         }
     }
+
+    // ionic --> check siginIn
+    public function signInApi($email, $password) {
+        $userModel = new UserModel();
+
+        $data = $userModel->where('email', $email)->first();
+
+        if($data){
+            $pass = $data['password'];
+            $authenticatePassword = password_verify($password, $pass);
+            if($authenticatePassword){
+                $ses_data = [
+                    'id' => $data['id'],
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'isLoggedIn' => TRUE
+                ];
+
+                return $ses_data;
+            }
+        }
+    }
 }

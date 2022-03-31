@@ -4,12 +4,13 @@ namespace App\Controllers;
 
 use App\Models\CompteRenduModel;
 use App\Models\VoirrdvModel;
-
+use CodeIgniter\API\ResponseTrait;
 
 class CompteRenduController extends BaseController
 {
     protected $db;
     protected $nouveauModel;
+    use ResponseTrait;
 
     public function __construct() {
         helper(['form', 'url']);
@@ -19,6 +20,7 @@ class CompteRenduController extends BaseController
         $this->model = new CompteRenduModel();
 
     }
+
 
     public function index()
     {
@@ -37,6 +39,12 @@ class CompteRenduController extends BaseController
         $data["compteRendu"] = $this->model->getUsers();
 
         echo view('dashboard', $data);
+    }
+
+    // ionic --> get data de user
+    public function indexApi() {
+        $data = $this->model->getUsers();
+        return $this->respond($data);
     }
 
         // Récuperer les données du formulaire compte rendu

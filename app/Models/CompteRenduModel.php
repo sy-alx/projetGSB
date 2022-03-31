@@ -46,7 +46,8 @@ class CompteRenduModel extends Model
 
 
 
-        $builder->select('compteRendu.id as id,listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite,compteRendu.texte as Texte, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif, compteRendu.CoefConf as CoefConf,compteRendu.ImpacteVisite as ImpacteVisite');
+        $builder->select('compteRendu.id as id, listePraticien.nom as nom,listePraticien.id as PraticienId, listePraticien.prenom as prenom, compteRendu.DateCR as DateCR, compteRendu.Datevisite as Datevisite,compteRendu.texte as Texte, listeRemplacant.id as RemplacantId, listeRemplacant.nomRemplacant as RemplacantNom, listeRemplacant.prenomRemplacant as RemplacantPrenom, listeMotifVisite.id as MotifId, listeMotifVisite.motif as Motif, compteRendu.CoefConf as CoefConf,compteRendu.ImpacteVisite as ImpacteVisite');
+        $builder->where(session()->get('id').'= compterendu.fkUsers');
 
         $query=$builder->get();
         return $query->getResultArray();

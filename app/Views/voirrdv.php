@@ -7,7 +7,7 @@
     <br>
 
 
-    <table style="width: 100%;" border="1">
+    <table style="width: 100%;" border="1" class="table table-hover">
         <thead>
             <tr>
                 <th></th>

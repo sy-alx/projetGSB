@@ -271,7 +271,7 @@
                             <td><?= $uservisiteur["idRegion"]?></td>
                             <td>
                                 <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>"  uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>"  uservisiteuridRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                <button  uservisiteurnom = "<?= $uservisiteur["name"] ?>" uservisiteurprenom = "<?= $uservisiteur["prenom"] ?>"  uservisiteurtelephone = "<?= $uservisiteur["telephone"] ?>" uservisiteuremail = "<?= $uservisiteur["email"] ?>" uservisiteuradresse = "<?= $uservisiteur["adresse"] ?>" uservisiteurcodePostal = "<?= $uservisiteur["cp"] ?>"   uservisiteurid = "<?= $uservisiteur["id"] ?>"  uservisiteuridRegion = "<?= $uservisiteur["idRegion"] ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

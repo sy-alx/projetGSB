@@ -1,3 +1,15 @@
+# Setup Environnement
+Côté bdd :
+dump_bdd (à la racine)
+import le dump (nommé projetgsb dans la config du code)
+
+Côté code :
+app>config>Database.php
+Configuer host, username, password et database
+
+.env (à la racine)
+Configurer app.baseURL
+
 # CodeIgniter 4 Development
 
 [![Build Status](https://github.com/codeigniter4/CodeIgniter4/workflows/PHPUnit/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions?query=workflow%3A%22PHPUnit%22)

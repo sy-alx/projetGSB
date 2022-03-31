@@ -37,16 +37,16 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="/profil">Page principale</a>
+               <!-- <a class="nav-link" href="/profil">Page principale</a> --> <!-- Fonction pour aller à la page principale, utile pour les tests / à supprimer -->
             </li>
 
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/signin">Login</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/signin">Connexion</a>
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a>
+           <!-- <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a> --> <!-- Fonction pour créer un profil mis de côté pour le momment / à supprimer -->
         </form>
     </div>
 </nav>

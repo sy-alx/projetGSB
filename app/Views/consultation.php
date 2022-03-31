@@ -64,12 +64,12 @@
 </script>
 
 <section>
-    <h1>Consultation</h1>
+
 
     <div id="content-wrapper" class="d-flex flex-column">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Historique des comptes-rendus</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Consultation des comptes rendus</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -83,8 +83,8 @@
                             <th>Date de visite</th>
                             <th>Remplacant</th>
                             <th>Motif</th>
-                            <th>ImpacteVisite</th>
                             <th>coefconf</th>
+                            <th>ImpacteVisite</th>
                             <th>Modifier</th>
 
 
@@ -106,7 +106,7 @@
 
                                 <td>
                                     <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                    <button id= "<?= $row['id'] ?>" PraticienId = "<?= $row['PraticienId'] ?>" Datevisite = "<?= $row['Datevisite'] ?>" DateCR = "<?= $row['DateCR'] ?>" nomRemplacantId = "<?= $row['RemplacantId'] ?>" motif = "<?= $row['MotifId'] ?>" motif = "<?= $row['MotifId'] ?>" Texte = "<?= $row['Texte'] ?>" ImpacteVisite = "<?= $row['ImpacteVisite'] ?>" CoefConf = "<?= $row['CoefConf'] ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class="fas fa-eye"></i></b></button>
+
                             </tr>
                         <?php } ?>
 
@@ -183,40 +183,29 @@
                             <label for="start">Impacte de la visite :</label> <br>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="1" >
-                                <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
+
+                                <input type="number" id="edit-ImpacteVisite" name="ImpacteVisite" min="1" max="10" value="">
+
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="2">
-                                <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ImpacteVisite" id="edit-ImpacteVisite" value="3">
-                                <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
-                            </div>
+
+
                         </div>
 
                         <div class="form-group">
                             <label for="start">Coefficient de confiance :</label> <br>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="CoefConf" id="edit-CoefConf" value="1">
-                                <label class="form-check-label" for="inlineRadio1">1 <i class="fas fa-frown"></i></i></label>
+
+                                <input type="number" id="edit-CoefConf" name="CoefConf" min="1" max="10" value="">
+
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="CoefConf" id="edit-CoefConf" value="2">
-                                <label class="form-check-label" for="inlineRadio2">2 <i class="fas fa-meh"></i></label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="CoefConf" id="edit-CoefConf" value="3">
-                                <label class="form-check-label" for="inlineRadio2">3<i class="fas fa-smile"></i></label>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel</b></button>
-                        <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Delete <i class = "fas fa-info icon"></i></b></button></a>
-                        <button id="btn-update" type="submit" class="btn btn-success"><b>Update <i class = "fas fa-check-double icon"></i></b></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Annuler</b></button>
+                        <a id = "btn-delete"><button type = "button" class="btn btn-danger"><b>Suprimer <i class = "fas fa-info icon"></i></b></button></a>
+                        <button id="btn-update" type="submit" class="btn btn-success"><b>Mettre à jour <i class = "fas fa-check-double icon"></i></b></button>
                     </div>
                 </div>
             </div>

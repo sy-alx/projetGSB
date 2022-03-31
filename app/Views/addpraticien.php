@@ -58,6 +58,14 @@
     })
 </script>
 <section>
+
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Gestion des praticiens</h6>
+    </div>
+
+
+
+
     <?= $session->getFlashdata("message") ?>
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -68,9 +76,11 @@
             <div class = "margin-top row pb-3 pt-2 pl-100">
 
                 <div class = "col-md-3 center">
-                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Ajouter un nouveau praticien <i class = "fas fa-plus icon"></i></b></button>
+                    <button class = "btn btn-info" data-toggle = "modal" data-target = "#add-user"><b>Ajouter un nouveau praticien<i class = "fas fa-plus icon"></i></b></button>
                 </div>
             </div>
+
+
 
 
             <form method = "post" action = "/Addpraticien/Create">
@@ -112,8 +122,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Cancel  <i class="fas fa-window-close"></i></b></button>
-                                <button type="submit" class="btn btn-success"><b>Insert <i class = "fas fa-check-double icon"></i></b></button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Annuler  <i class="fas fa-window-close"></i></b></button>
+                                <button type="submit" class="btn btn-success"><b>Insérer <i class = "fas fa-check-double icon"></i></b></button>
                             </div>
                         </div>
                     </div>
@@ -194,7 +204,7 @@
                             <td><?= $user->email?></td>
                             <td>
                                 <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "edit(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-bars"></i></b></button>
-                                <button usernom = "<?= $user->nom ?>" userprenom = "<?= $user->prenom ?>" useradresse = "<?= $user->adresse ?>" usercodePostal = "<?= $user->codePostal ?>" usernumero = "<?= $user->numero ?>" useremail = "<?= $user->email ?>" userid = "<?= $user->id ?>" onclick = "view(this)" data-toggle = "modal" data-target = "#edit-user" class = "btn btn-sm btn-primary"><b><i class = "fas fa-eye"></i></b></button>
+
 
                             </td>
                         </tr>

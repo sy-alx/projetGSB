@@ -2,14 +2,12 @@
     <div class="container">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Profil</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Profil <?= session()->get('name') ?></h6>
             </div>
             <div class="col-12 card-body">
-                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                    CSS bloat and poor page performance. Custom CSS classes are used to create
-                    custom components and custom utility classes.</p>
-                <p class="mb-0">Before working with this theme, you should become familiar with the
-                    Bootstrap framework, especially the utility classes.</p>
+                <p>Bienvenue sur votre espace personnel de gestion de compte rendu, utilisez la barre latérale afin de naviguer entre les onglets</p>
+                
+                <a> Pensez à vous déconnecter une fois votre activité terminée <a>
             </div>
         </div>
 

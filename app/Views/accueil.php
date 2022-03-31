@@ -16,7 +16,7 @@
           href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700%7cSource+Sans+Pro:300,300i,400,400i,600,600i,700">
     <link rel="stylesheet" href="/assets/css/libraries.css"/>
     <link rel="stylesheet" href="/assets/css/style.css"/>
-    <link rel="stylesheet" href="/assets/css/csstali.css"/>
+    <link rel="stylesheet" href="/assets/css/talicss.css"/>
     <link rel="stylesheet" href="/assets/css/csstemplate.css"/>
 
     <link rel="stylesheet" href="/assets/css/dropzone.css"/>
@@ -33,28 +33,28 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="/AccueilController">Accueil</a>
+        <a class="navbar-brand" href="/Accueil">Accueil</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             <li class="nav-item">
-                <a class="nav-link" href="/ProfilController">Page principale</a>
+               <!-- <a class="nav-link" href="/profil">Page principale</a> --> <!-- Fonction pour aller à la page principale, utile pour les tests / à supprimer -->
             </li>
 
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SigninController">Login</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/signin">Connexion</a>
 
-            <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a>
+           <!-- <a class="btn btn-outline-success my-2 my-sm-0 nav-link" type="submit" href="/SignupController">Signup</a> --> <!-- Fonction pour créer un profil mis de côté pour le momment / à supprimer -->
         </form>
     </div>
 </nav>
 
 
 <section>
-    <h1 class="text-center">Bienvenue</h1>
-    <img class="rounded mx-auto d-block" src="/assets/img/logogsb.jpg" alt="logo-gsb">
+    <h1 class="text-center pt-4">Bienvenue</h1>
+    <img class="rounded mx-auto d-block pt-90" src="/assets/img/gsb.png" alt="logo-gsb">
 </section>
 
 
@@ -65,13 +65,13 @@
 
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<!--<footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2020</span>
         </div>
     </div>
-</footer>
+</footer>-->
 <!-- End of Footer -->
 
 

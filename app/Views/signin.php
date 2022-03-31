@@ -11,7 +11,7 @@
 <section class="bg-gradient-primary">
 
 
-    <a href="/AccueilController">Accueil</a>
+    <a href="/Accueil">Accueil</a>
     <div class="container">
 
         <!-- Outer Row -->
@@ -26,7 +26,7 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Bienvenue</h1>
                                     </div>
 
             <?php if(session()->getFlashdata('msg')):?>
@@ -35,17 +35,17 @@
                 </div>
             <?php endif;?>
 
-            <form  class="user" action="<?php echo base_url(); ?>/SigninController/loginAuth" method="post">
+            <form  class="user" action="<?php echo base_url(); ?>/signin/loginAuth" method="post">
                 <div class="form-group mb-3">
                     <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control form-control-user" >
                 </div>
 
                 <div class="form-group mb-3">
-                    <input type="password" name="password" placeholder="Password" class="form-control form-control-user" >
+                    <input type="password" name="password" placeholder="Mot de passe" class="form-control form-control-user" >
                 </div>
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-user btn-block">Signin</button>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">connexion</button>
                 </div>
             </form>
         </div>

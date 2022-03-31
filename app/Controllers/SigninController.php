@@ -35,6 +35,7 @@ class SigninController extends Controller
                     'id' => $data['id'],
                     'name' => $data['name'],
                     'email' => $data['email'],
+                    'role'=> $data['fk_role'],
                     'isLoggedIn' => TRUE
                 ];
 

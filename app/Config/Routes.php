@@ -89,7 +89,7 @@ $routes->get('/Medicament/Delete/(:num)', 'MedicamentsController::delete/$1',['f
 $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
 
 /*###############################################API Compte Login#####################################################*/
-$routes->post('/api/Signin', 'SigninController::signInApi');
+$routes->post('/api/SignIn', 'SigninController::signInApi');
 
 /*###############################################API Compte rendu#####################################################*/
 $routes->get('/api/CompteRendu', 'CompteRenduController::indexApi');

@@ -3,10 +3,13 @@
 namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UserModel;
-
+use CodeIgniter\API\ResponseTrait;
 
 class SigninController extends Controller
 {
+
+    use ResponseTrait;
+
     public function index()
     {
         helper(['form']);
@@ -50,11 +53,14 @@ class SigninController extends Controller
     }
 
     // ionic --> check siginIn
-    public function signInApi($email, $password) {
+    public function signInApi() {
         $userModel = new UserModel();
 
-        $data = $userModel->where('email', $email)->first();
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
 
+        $data = $userModel->where('email', $email)->first();
+        $ses_data = array();
         if($data){
             $pass = $data['password'];
             $authenticatePassword = password_verify($password, $pass);
@@ -66,8 +72,16 @@ class SigninController extends Controller
                     'isLoggedIn' => TRUE
                 ];
 
-                return $ses_data;
+               $ses_data;
             }
         }
+
+        if(!empty($ses_data)) {
+            return $this->respond($ses_data);
+        }
+        else {
+            return $this->fail('notAllowed', 403);
+        }
+    
     }
 }

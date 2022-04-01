@@ -41,7 +41,7 @@ $routes->get('/signin', 'SigninController::index');
 $routes->post('signin/loginAuth', 'SigninController::loginAuth');
 /*#########################################################################################################*/
 
-$routes->get('/SignupController', 'SignupController::index');
+$routes->get('/SignupController', 'SignupController::index'); // route signup à supprimer
 $routes->post('/SignupController/store', 'SignupController::store');
 
 
@@ -59,10 +59,10 @@ $routes->get('/Addpraticien/Delete/(:num)', 'addpraticienController::delete/$1',
 
 /*###########################################PAGE AJOUTER VISITEURS##############################################################*/
 
-$routes->get('/Addvisiteur', 'addvisiteurController::index',['filter' => 'authGuard']);
-$routes->post('/Addvisiteur/Create', 'addvisiteurController::create',['filter' => 'authGuard']);
-$routes->post('/Addvisiteur/Update', 'addvisiteurController::update',['filter' => 'authGuard']);
-$routes->get('/Addvisiteur/Delete/(:num)', 'addvisiteurController::delete/$1',['filter' => 'authGuard']);
+$routes->get('/Addvisiteur', 'addvisiteurController::index',['filter' => 'AuthroleFilter']);
+$routes->post('/Addvisiteur/Create', 'addvisiteurController::create',['filter' => 'AuthroleFilter']);
+$routes->post('/Addvisiteur/Update', 'addvisiteurController::update',['filter' => 'AuthroleFilter']);
+$routes->get('/Addvisiteur/Delete/(:num)', 'addvisiteurController::delete/$1',['filter' => 'AuthroleFilter']);
 
 
 /*#########################################PAGE PROFIL################################################################*/

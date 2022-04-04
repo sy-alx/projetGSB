@@ -11,15 +11,20 @@ class roleFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     { 
         if (!(session()->get('role') == 3))
-        {
-            return redirect()
-                ->to('/profil');
+        { 
+
+            echo "<alert><script>setTimeout(\"location.href = '/profil';\",1),swal('Accès refusé, vous n\'avez pas les droits necéssaire') </script>";    
+            
+       
+                
            
         }
+
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do something here
+
+
     }
 }

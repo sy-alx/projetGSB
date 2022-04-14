@@ -77,6 +77,9 @@
                     <table class="table table-bordered"  placeholder="salut" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
+                            <?php if(session()->get('role') == 3){?>
+                            <th>Visiteur</th>
+                            <?php } ?>
                             <th>Prenom</th>
                             <th>Nom</th>
                             <th>Date du compte-rendu</th>
@@ -95,6 +98,9 @@
                         <?php 
                         foreach ($compteRendu as $row) { ?>
                             <tr>
+                                <?php if(session()->get('role') == 3){
+                                echo '<td>'.$row['visNom'].' '.$row['visPrenom'].'</td>';
+                                 } ?>
                                 <td><?= $row['nom'] ?></td>
                                 <td><?= $row['prenom'] ?></td>
                                 <td><?= $row['DateCR'] ?></td>

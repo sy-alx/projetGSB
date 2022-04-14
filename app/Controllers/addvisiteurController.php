@@ -61,6 +61,8 @@ class addvisiteurController extends Controller {
 
     /* controller to update a user */
     public function update(){
+
+        /* Hash password */
         $data = $this->request->getVar();
         $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
 

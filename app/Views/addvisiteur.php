@@ -248,7 +248,7 @@
                     <tr>
                         <th>Nom</th>
                         <th>Prénom</th>
-                        <th>Mdp</th>
+
                         <th>Téléphone</th>
                         <th>Email</th>
                         <th>Adresse</th>
@@ -263,7 +263,7 @@
                         <tr>
                             <td><?= $uservisiteur["name"]?></td>
                             <td><?= $uservisiteur["prenom"]?></td>
-                            <td><?= $uservisiteur["password"]?></td>
+
                             <td><?= $uservisiteur["telephone"]?></td>
                             <td><?= $uservisiteur["email"]?></td>
                             <td><?= $uservisiteur["adresse"]?></td>

@@ -48,15 +48,19 @@ class addvisiteurController extends Controller {
 
         /* calling the insert function on model sending the form */
         $data = $this->request->getVar();
-        $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
-        $this->model->init_insert($data);
 
-        /* add success message in flashdata */
-        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
+        if($data['password']== $data['confirmpassword']){
+            $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
+            $this->model->init_insert($data);
 
-        /* return to default page */
-        return redirect()->to(site_url("/Addvisiteur"));
-
+            /* add success message in flashdata */
+            $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
+        
+        }else{
+            $this->session->setFlashdata('message', "<div class = 'alert alert-danger'><b>Les mots de passes ne sont pas identiques</b></div>");
+        }
+            /* return to default page */
+            return redirect()->to(site_url("/Addvisiteur"));
     }
 
     /* controller to update a user */
@@ -64,7 +68,12 @@ class addvisiteurController extends Controller {
 
         /* Hash password */
         $data = $this->request->getVar();
-        $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
+        
+        if( $data["password"]== null ||  $data["password"]== ''){
+            unset($data["password"]);
+        }else{
+            $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
+        }
 
         /* calling the update function on model sending the form */
         $this->model->init_update($data);

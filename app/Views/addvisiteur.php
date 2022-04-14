@@ -113,7 +113,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <select class="form-control" id="creat-region" name="idRegion">
+                                <select class="form-control" id="creat-region" name="idRegion" required>
 
                                     <option value="">-- Sélection --</option>
                                     <?php foreach ($listeRegion as $row) { ?>
@@ -205,7 +205,7 @@
 
                                 <div class = "form-group">
                                     <label class = "light-dark">Password / Confirm Password</label>
-                                    <input class = "form-control" type="password" name = "password" placeholder="Password" required id = "edit-password">
+                                    <input class = "form-control" type="password" name = "password" placeholder="Password" id = "edit-password">
                                 </div>
                                 <div class="form-group">
                                     <input class = "form-control" type="password" name="confirmpassword" placeholder="Confirm Password" class="form-confirmpass" >

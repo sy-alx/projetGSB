@@ -13,7 +13,7 @@
                 <th></th>
                     <?php        
                         foreach($createSemaine as $row){
-                            echo "<th>".$row."</th>";
+                            echo "<th style='text-align: center;'>".$row."</th>";
                         }
                     ?>
             </tr>
@@ -23,18 +23,16 @@
                 $heureCalendrier = 8;
 
                 for ($i=1; $i<=10;$i++){
-                    echo '<tr><th>'.($heureCalendrier).'h</th>';
+                    echo '<tr><th style="text-align: center;">'.($heureCalendrier).'h</th>';
                     
                     for($j=1;$j<=7;$j++){
 
                             $textForCell = "";
                             foreach($liste_rdv as $row){
                                 if($row['date_rdv'] == date('Y-m-d', strtotime('+'.($j-$jour).' days')) && $row['heure_rdv'] == $heureCalendrier){
-                                    if(isset($row['nomRemplacant'])){
-                                        $textForCell .= $row['nomRemplacant']." remplaçant de ".$row['nomPraticien'];
-                                    }else{
-                                        $textForCell .= $row['nomPraticien'];
-                                    }
+                                        $textForCell .= "<div class='cellFormCalendar'>
+                                        Praticien:  ".$row['nomPraticien']." ".$row['prenomPraticien']."<br/>Téléphone: ".$row['numero']."<br/>Adresse: ".$row['adresse']
+                                        ."</div>";
                                 }
                             }
                             if(empty($textForCell)) {
@@ -51,11 +49,11 @@
     <?php   
     ?>   
     <br>
-    
+    <div style="text-align: center;">
       <a style="padding-right: 20px;" href="Voirrdv?semaine=1&jour=<?php echo $jour ?>">Semaine précédente</a>
       <a style="padding-right: 20px;" href="Voirrdv?semaine=0">Semaine en cours</a>
       <a style="padding-right: 20px;" href="Voirrdv?semaine=2&jour=<?php echo $jour ?>">Semaine suivante</a>
-    
+    </div>
     <br>
 </section>
 

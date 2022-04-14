@@ -7,18 +7,18 @@
  */
 
 namespace App\Controllers;
-use App\Models\UserModel;
 use CodeIgniter\Controller;
+use App\Models\addremplacantModel;
 use Config\Services\session;
 
 /* Users Controller */
 
-class addvisiteurController extends Controller {
+class addremplacantController extends Controller {
 
     function __construct(){
 
         /* Loading user modal and session library */
-        $this->model = new UserModel();
+        $this->model = new addremplacantModel();
         $this->session = \Config\Services::session();
 
     }
@@ -26,15 +26,13 @@ class addvisiteurController extends Controller {
     /* default function called */
     public function index(){
         $data = array(
-            "TITRE_PAGE" => "Ajouter visiteur",
-            "CONTENT_PAGE" =>  "addvisiteur",
+            "TITRE_PAGE" => "Ajouter remplacant",
+            "CONTENT_PAGE" =>  "addremplacant",
         );
 
         /* sending users list and session variable to interface */
-        $data["listeVisiteur"] = $this->model->getUsers();
+        $data["listeremplacant"] = $this->model->getUsers();
         $data["session"] = $this->session;
-        $data['listeRegion'] = $this->model->insertVisiteurRegion();
-
 
         /* loading the views */
         echo view('dashboard', $data);
@@ -45,44 +43,30 @@ class addvisiteurController extends Controller {
 
     /* controller to create a new user */
     public function create(){
-
-        /* calling the insert function on model sending the form */
-        $data = $this->request->getVar();
-
-        if($data['password']== $data['confirmpassword']){
-            $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
-            $this->model->init_insert($data);
-
-            /* add success message in flashdata */
-            $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
         
-        }else{
-            $this->session->setFlashdata('message', "<div class = 'alert alert-danger'><b>Les mots de passes ne sont pas identiques</b></div>");
-        }
-            /* return to default page */
-            return redirect()->to(site_url("/Addvisiteur"));
+        /* calling the insert function on model sending the form */
+        $this->model->init_insert($this->request->getVar());
+
+        /* add success message in flashdata */
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Merci le praticien a bien été crée</b></div>");
+
+        /* return to default page */
+        return redirect()->to(site_url("/Addremplacant"));
+        
+
     }
 
     /* controller to update a user */
     public function update(){
 
-        /* Hash password */
-        $data = $this->request->getVar();
-        
-        if( $data["password"]== null ||  $data["password"]== ''){
-            unset($data["password"]);
-        }else{
-            $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
-        }
-
         /* calling the update function on model sending the form */
-        $this->model->init_update($data);
+        $this->model->init_update($this->request->getVar());
 
         /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>La modification a bien été appliquée</b></div>");
 
         /* return to default page */
-        return redirect()->to(site_url("/Addvisiteur"));
+        return redirect()->to(site_url("/Addremplacant"));
 
 
     }
@@ -92,11 +76,13 @@ class addvisiteurController extends Controller {
 
         /* calling the delete function on model sending the url id */
         $this->model->init_delete($id);
-        /* add success message in flashdata */
+         /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Nous avons bien pris en compte votre suppression de praticien</b></div>");
 
         /* return to default page */
-        return redirect()->to(site_url("/Addvisiteur"));
+
+        
+        return redirect()->to(site_url("/Addremplacant"));
 
     }
 

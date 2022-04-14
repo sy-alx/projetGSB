@@ -120,6 +120,13 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="/Addremplacant">
+                <i class="fas fa-user-plus"></i>
+                <span>Gestions des remplacants</span>
+            </a>
+        </li>
+
 
         <hr class="sidebar-divider">
   <!-- Heading -->

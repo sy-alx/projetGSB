@@ -34,4 +34,30 @@ class VoirrdvController extends BaseController
         echo view('dashboard', $data);
     }
 
+    public function update(){
+
+        /* calling the update function on model sending the form */
+        $this->model->init_update($this->request->getVar());
+
+        /* add success message in flashdata */
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>La modification a bien été appliquée</b></div>");
+
+        /* return to default page */
+        return redirect()->to(site_url("/Voirrdv"));
+
+
+    }
+
+    public function delete($id = NULL){
+
+        /* calling the delete function on model sending the url id */
+        $this->model->init_delete($id);
+         /* add success message in flashdata */
+        $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>Votre rendez-vous à été supprimé</b></div>");
+
+        /* return to default page */
+        return redirect()->to(site_url("/Voirrdv"));
+
+    }
+
 }

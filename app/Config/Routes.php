@@ -48,13 +48,14 @@ $routes->post('/SignupController/store', 'SignupController::store');
 /*#############################################PAGE VOIR MES RDV############################################################*/
 
 $routes->get('/Voirrdv', 'VoirrdvController::index',['filter' => 'authGuard']);
+$routes->post('/Voirrdv/Update', 'VoirrdvController::update',['filter' => 'authGuard']);
+$routes->get('/Voirrdv/Delete/(:num)', 'VoirrdvController::delete/$1',['filter' => 'authGuard']);
 
 /*###########################################PAGE AJOUTER PRATICIENS##############################################################*/
 
 $routes->get('/Addpraticien', 'addpraticienController::index',['filter' => 'authGuard']);
 $routes->post('/Addpraticien/Create', 'addpraticienController::create',['filter' => 'authGuard']);
 $routes->post('/Addpraticien/Update', 'addpraticienController::update',['filter' => 'authGuard']);
-$routes->get('/Addpraticien/Delete/(:num)', 'addpraticienController::delete/$1',['filter' => 'authGuard']);
 
 /*###########################################PAGE AJOUTER REMPLACANTS##############################################################*/
 

@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class VoirrdvModel extends Model
 {
     protected $table = 'rdv';
-    protected $primaryKey = 'id_rdv';
+    protected $primaryKey = 'id';
     protected $db;
     protected $allowedFields = [
         'date_rdv',
@@ -59,5 +59,27 @@ class VoirrdvModel extends Model
             }
             return $sub;
     }
+
+    public function init_update($data = NULL) {
+
+        /* update a user by your id (primary key) */
+        $this->update($data["id"], $data);
+
+    }
+
+    public function init_delete($id){
+
+        //Met à null la foreign key
+        $builder = $this->db->table('compterendu');
+        $builder->join('rdv', 'rdv.id = compterendu.idRdv');
+        $builder->select('compterendu.idRdv');
+        $builder->where('compterendu.idRdv='.$id);
+        $builder->set('idRdv', null);
+        $builder->update();
+        /* delete rdv */
+        $this->delete($id);
+
+    }
+
 }
 ?>

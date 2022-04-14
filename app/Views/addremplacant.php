@@ -194,7 +194,7 @@
                     </thead>
 
                     <tbody>
-                    <?php foreach($listeremplacant as $user) : ?>
+                    <?php foreach($listeremplacant as $user) : if(!($user->id==1)){ ?>
                         <tr>
                             <td><?= $user->nomRemplacant?></td>
                             <td><?= $user->prenomRemplacant?></td>
@@ -208,7 +208,7 @@
 
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php } endforeach; ?>
                     </tbody>
                 </table>
             </div>

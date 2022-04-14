@@ -23,7 +23,7 @@
                 $heureCalendrier = 8;
 
                 for ($i=1; $i<=10;$i++){
-                    echo '<tr><th style="text-align: center;">'.($heureCalendrier).'h</th>';
+                    echo '<tr><th style="text-align: center; vertical-align:middle;">'.($heureCalendrier).'h</th>';
                     
                     for($j=1;$j<=7;$j++){
 
@@ -32,7 +32,7 @@
                                 if($row['date_rdv'] == date('Y-m-d', strtotime('+'.($j-$jour).' days')) && $row['heure_rdv'] == $heureCalendrier){
                                         $textForCell .= "<div class='cellFormCalendar'>
                                         Praticien:  ".$row['nomPraticien']." ".$row['prenomPraticien']."<br/>Téléphone: ".$row['numero']."<br/>Adresse: ".$row['adresse'].
-                                        "<button id='".$row['id']."'date_rdv = '".$row['date_rdv']."'heure_rdv='".$row['heure_rdv']."' onclick = 'edit(this)' data-toggle = 'modal' data-target = '#edit-rdv' class = 'btn btn-sm btn-primary'><b><i class = 'fas fa-bars'></i></b></button>
+                                        "<button style='float:right; margin-top:-7%;' id='".$row['id']."'date_rdv = '".$row['date_rdv']."'heure_rdv='".$row['heure_rdv']."' onclick = 'edit(this)' data-toggle = 'modal' data-target = '#edit-rdv' class = 'btn btn-sm btn-primary'><b><i class = 'fas fa-bars'></i></b></button><br/>
                                         </div>";
                                 }
                             }

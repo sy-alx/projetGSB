@@ -56,6 +56,14 @@ $routes->post('/Addpraticien/Create', 'addpraticienController::create',['filter'
 $routes->post('/Addpraticien/Update', 'addpraticienController::update',['filter' => 'authGuard']);
 $routes->get('/Addpraticien/Delete/(:num)', 'addpraticienController::delete/$1',['filter' => 'authGuard']);
 
+/*###########################################PAGE AJOUTER REMPLACANTS##############################################################*/
+
+$routes->get('/Addremplacant', 'addremplacantController::index',['filter' => 'authGuard']);
+$routes->post('/Addremplacant/Create', 'addremplacantController::create',['filter' => 'authGuard']);
+$routes->post('/Addremplacant/Update', 'addremplacantController::update',['filter' => 'authGuard']);
+$routes->get('/Addremplacant/Delete/(:num)', 'addremplacantController::delete/$1',['filter' => 'authGuard']);
+
+
 
 /*###########################################PAGE AJOUTER VISITEURS##############################################################*/
 

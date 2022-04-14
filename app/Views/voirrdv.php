@@ -30,11 +30,7 @@
                             $textForCell = "";
                             foreach($liste_rdv as $row){
                                 if($row['date_rdv'] == date('Y-m-d', strtotime('+'.($j-$jour).' days')) && $row['heure_rdv'] == $heureCalendrier){
-                                    if(isset($row['nomRemplacant'])){
-                                        $textForCell .= $row['nomRemplacant']." remplaçant de ".$row['nomPraticien'];
-                                    }else{
-                                        $textForCell .= $row['nomPraticien'];
-                                    }
+                                        $textForCell .= "Praticien:  ".$row['nomPraticien']." ".$row['prenomPraticien']."<br/>Téléphone: ".$row['numero']."<br/>Adresse: ".$row['adresse'];
                                 }
                             }
                             if(empty($textForCell)) {

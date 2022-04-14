@@ -61,9 +61,11 @@ class addvisiteurController extends Controller {
 
     /* controller to update a user */
     public function update(){
+        $data = $this->request->getVar();
+        $data ["password"] = password_hash($data ["password"], PASSWORD_DEFAULT);
 
         /* calling the update function on model sending the form */
-        $this->model->init_update($this->request->getVar());
+        $this->model->init_update($data);
 
         /* add success message in flashdata */
         $this->session->setFlashdata('message', "<div class = 'alert alert-success'><b>La modification a bien été appliquée</b></div>");

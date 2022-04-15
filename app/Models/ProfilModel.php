@@ -22,8 +22,14 @@ class ProfilModel extends Model
 
     public function getrdvrecent() {
         $builder = $this->db->table('compterendu');
-        $builder->select('Datevisite');
-        $builder->orderBy('Datevisite', 'ASC');
+        $builder->join('users', 'users.id = compterendu.fkUsers');
+
+        $builder->select('DateCR');
+        if(session()->get('role') != 3){
+            $builder->where(session()->get('id').'=compterendu.fkUsers');
+        }
+
+        $builder->orderBy('DateCR', 'DESC');
 
          $query=$builder->get();
 

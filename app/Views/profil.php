@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-body">
                     <?php
-                 echo $rdvrecent->Datevisite;
+                 echo $rdvrecent->DateCR;
 
                         ?>
 

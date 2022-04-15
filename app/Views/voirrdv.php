@@ -31,7 +31,7 @@
                             foreach($liste_rdv as $row){
                                 if($row['date_rdv'] == date('Y-m-d', strtotime('+'.($j-$jour).' days')) && $row['heure_rdv'] == $heureCalendrier){
                                         $textForCell .= "<div class='cellFormCalendar'>
-                                        Praticien:  ".$row['nomPraticien']." ".$row['prenomPraticien']."<br/>Téléphone: ".$row['numero']."<br/>Adresse: ".$row['adresse'].
+                                        Praticien:  ".$row['nomPraticien']." ".$row['prenomPraticien']."<br/>Téléphone: ".$row['numero']."<br/>Adresse: ".$row['adresse'].", ".$row['codePostal'].
                                         "<button style='float:right; margin-top:-7%;' id='".$row['id']."'date_rdv = '".$row['date_rdv']."'heure_rdv='".$row['heure_rdv']."' onclick = 'edit(this)' data-toggle = 'modal' data-target = '#edit-rdv' class = 'btn btn-sm btn-primary'><b><i class = 'fas fa-bars'></i></b></button><br/>
                                         </div>";
                                 }

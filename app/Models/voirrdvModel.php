@@ -25,7 +25,7 @@ class VoirrdvModel extends Model
         $builder->join('compterendu', 'rdv.id = compterendu.idRdv');
         $builder->join('listePraticien', 'compterendu.Praticien = listePraticien.id');
         $builder->join('listeRemplacant', 'compterendu.Remplacant = listeRemplacant.id', 'left');
-        $builder->select('rdv.id, rdv.date_rdv, rdv.heure_rdv, listePraticien.nom as nomPraticien, listePraticien.prenom as prenomPraticien, listePraticien.adresse, listePraticien.numero');
+        $builder->select('rdv.id, rdv.date_rdv, rdv.heure_rdv, listePraticien.nom as nomPraticien, listePraticien.prenom as prenomPraticien, listePraticien.adresse, listePraticien.numero, listePraticien.codePostal');
         if($startDate){
             $builder->where('date_rdv >= ', $startDate);
         }

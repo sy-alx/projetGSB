@@ -106,7 +106,8 @@
                             <div class="form-group">
                                 <label>Date prochaine visite :</label>
                                 <input type="date" id="dateRdv" name="dateRdv">
-                                <input type="number" id="heureRdv" name="heureRdv" min="8" max="18" style="display: none;"> 
+                                <input type="number" id="heureRdv" name="heureRdv" min="8" max="18" style="display: none;">
+                                <p id="heureRdvText" style="display: none;">h</p>
                             </div>
 
                           
@@ -153,6 +154,7 @@
 
 <script>
     heureRdv = document.querySelector('#heureRdv');
+    heureRdvText = document.querySelector('#heureRdvText');
     isHourRequired = document.querySelector('#dateRdv');
 
     //Empêcher d'insérer des données extérieur à 8-18
@@ -168,8 +170,10 @@
     isHourRequired.addEventListener('change',function(){
         if(isHourRequired.value == ""){
             heureRdv.style.display="none";
+            heureRdvText.style.display="none";
         }else{
             heureRdv.style.display="inline";
+            heureRdvText.style.display="inline";
         }
     })
 </script>

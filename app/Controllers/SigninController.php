@@ -56,7 +56,7 @@ class SigninController extends Controller
     // ionic --> check siginIn
     public function signInApi() {
         $userModel = new UserModel();
-
+        $session = session();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
@@ -70,10 +70,10 @@ class SigninController extends Controller
                     'id' => $data['id'],
                     'name' => $data['name'],
                     'email' => $data['email'],
-                    'isLoggedIn' => TRUE
+                    'isLoggedIn' => TRUE,
+                    'token' => $session->session_id
                 ];
-
-               $ses_data;
+                $session->set($ses_data);
             }
         }
 

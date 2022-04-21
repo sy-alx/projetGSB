@@ -82,9 +82,9 @@ $routes->get('/Consultation', 'ConsultationController::index',['filter' => 'auth
 
 /*##########################################PAGE COMPTE RENDU###############################################################*/
 $routes->get('/CompteRendu', 'CompteRenduController::index',['filter' => 'authGuard']);
-$routes->post('/CompteRendu/update', 'CompteRenduController::update');
+$routes->post('/CompteRendu/update', 'CompteRenduController::update', ['filter' => 'authGuard']);
 /*ici le (:num) est pour l'id et le $1 est pour appeler le (:num) qui est en premiere position car possible d'en avoir plusieurs*/
-$routes->get('/CompteRendu/delete/(:num)', 'CompteRenduController::delete/$1');
+$routes->get('/CompteRendu/delete/(:num)', 'CompteRenduController::delete/$1', ['filter' => 'authGuard']);
 $routes->post('/CompteRendu/formulairecontact', 'CompteRenduController::formulairecontact',['filter' => 'authGuard']);
 
 /*########################################PAGE MEDICAMENT################################################*/
@@ -100,8 +100,8 @@ $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
 /*###############################################API Compte Login#####################################################*/
 $routes->post('/api/SignIn', 'SigninController::signInApi');
 
-/*###############################################API Compte rendu#####################################################*/
-$routes->get('/api/CompteRendu', 'CompteRenduController::indexApi');
+/*###############################################API Consultation#####################################################*/
+$routes->get('/api/Consultation', 'ConsultationController::indexApi', ['filter' => 'apiAuthGuard']);
 
 
 /*

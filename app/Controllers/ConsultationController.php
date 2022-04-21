@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\CompteRenduModel;
+use CodeIgniter\API\ResponseTrait;
 
 class ConsultationController extends BaseController
 {
+    use ResponseTrait;
 
     public function __construct() {
         $this->NouveauModel = new \App\Models\CompteRenduModel();
@@ -29,6 +31,12 @@ class ConsultationController extends BaseController
         $data['compteRendu'] = $this->NouveauModel->getCompteRendu();
       //  echo '<pre>',print_r($data),'</pre>';
         echo view('dashboard', $data);
+    }
+
+     // ionic --> get data de user
+     public function indexApi() {
+        $data = $this->NouveauModel->getCompteRenduApi();
+        return $this->respond($data);
     }
 
     

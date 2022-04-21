@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CompteRenduModel;
 use App\Models\VoirrdvModel;
+use App\Models\MedicamentModel;
 use CodeIgniter\API\ResponseTrait;
 
 class CompteRenduController extends BaseController
@@ -33,6 +34,7 @@ class CompteRenduController extends BaseController
         $data['listePraticien'] = $this->nouveauModel->insertPraticienSelect();
         $data['listeRemplacant'] = $this->nouveauModel->insertRempacantSelect();
         $data['listeMotifVisite'] = $this->nouveauModel->insertMotifVisiteSelect();
+        $data['listeMedicament'] = $this->nouveauModel->insertListeMedicamentSelect();
 
 
 
@@ -101,10 +103,22 @@ class CompteRenduController extends BaseController
                 'date_rdv'=> $this->request->getPost('dateRdv'),
                 'heure_rdv'=> $this->request->getPost('heureRdv')
             );
-            if ($dataclients["ImpacteVisite"]<=10 & $dataclients["CoefConf"]<=10) {
+            
+            $echantillonData = array(
+                'id'=>$this->request->getPost('idEchantillon'),
+                'MED_NOMBRECHANTILLON'=>$this->request->getPost('MED_NOMBRECHANTILLON')
+            );
+
+            if ($dataclients["ImpacteVisite"]<=10 && $dataclients["CoefConf"]<=10) {
+                //Si rendez vous existe, insert
                 if($rdvData["date_rdv"] && $rdvData["heure_rdv"])  {
                     $rdvModel = new VoirrdvModel();
                     $dataclients['idRdv'] = $rdvModel->insert($rdvData);
+                }
+                //Si echantillon donné existe, insert
+                if($echantillonData["id"] && $echantillonData["MED_NOMBRECHANTILLON"])  {
+                    $echantillonModel = new MedicamentModel();
+                    $echantillonModel->incrementEchantillon($echantillonData);
                 }
 
                 if(($rdvData["date_rdv"] || $rdvData["heure_rdv"]) && (!$rdvData["date_rdv"] || !$rdvData["heure_rdv"]))  {

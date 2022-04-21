@@ -32,7 +32,7 @@
             $("#edit-MED_PRIXECHANTILLON").val(($(user).attr("MED_PRIXECHANTILLON")));
             $("#edit-MED_PRIXECHANTILLON").prop("disabled",false);
 
-            $("#edit-MED_NOMBRECHANTILLON").val(($(user).attr("MED_PRIXECHANTILLON")));
+            $("#edit-MED_NOMBRECHANTILLON").val(($(user).attr("MED_NOMBRECHANTILLON")));
             $("#edit-MED_NOMBRECHANTILLON").prop("disabled",false);
 
 

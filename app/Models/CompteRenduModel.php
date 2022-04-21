@@ -82,6 +82,14 @@ class CompteRenduModel extends Model
         return $query->getResultArray();
     }
 
+    //Recuperation listeMedicament dans le select
+    public function insertListeMedicamentSelect(){
+        $builder = $this->db->table('listemedicament');
+        $builder->select('id, MED_NOMCOMMERCIAL');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+
 
     // recuperation en bdd dans la view controller
    public function insertRempacantSelect(){

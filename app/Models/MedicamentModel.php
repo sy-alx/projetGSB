@@ -64,4 +64,18 @@ class MedicamentModel extends Model{
         $this->delete($id);
 
     }
+
+    public function incrementEchantillon($data){
+        $builder = $this->table('listemedicament');
+        $builder->select('listemedicament.id, listemedicament.MED_NOMBRECHANTILLON');
+        $builder->where('id='.$data['id']);
+        $query=$builder->get();
+        
+        foreach ($query->getResult() as $row) {
+            $nrbEchantillon = $row->MED_NOMBRECHANTILLON;
+        }
+        $data['MED_NOMBRECHANTILLON'] += $nrbEchantillon;
+        
+        $this->update($data["id"], $data);
+    }
 }

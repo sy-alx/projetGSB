@@ -89,7 +89,21 @@
                             </div>
 
 
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Echantillons médicament </label>
 
+                                <select class="form-control" id="idEchantillon" name="idEchantillon">
+
+                                    <option value="">-- Sélection --</option>
+                                    <?php foreach ($listeMedicament as $row) { ?>
+
+                                        <option value="<?php echo $row['id']; ?>"> <?php echo $row['MED_NOMCOMMERCIAL'];?></option>
+
+                                    <?php } ?>
+                                </select>
+                                <label for="exampleFormControlSelect1">Nombre donné </label>
+                                <input type="number" id="MED_NOMBRECHANTILLON" name="MED_NOMBRECHANTILLON">
+                            </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Motif de la visite</label>

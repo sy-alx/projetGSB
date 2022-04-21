@@ -39,6 +39,22 @@ class ProfilModel extends Model
 
     }
 
+    public function getrdvavenirCetteSemaine(){
+        $today = date('Y-m-d');
+        $AnneMoisDebutSemaine = date('Y-m');
+        $premierJourSemaine = date('d', strtotime("this week"));
+        $dernierJourSemaine = $premierJourSemaine + 4;
+
+        $builder = $this->db->table('rdv');
+        $builder->join('compterendu', 'rdv.id = compterendu.idRdv');
+        $builder->select('count(rdv.id) as nbrRdv');
+        $builder->where('date_rdv >= ', $today);
+        $builder->where('date_rdv <=', $AnneMoisDebutSemaine.'-'.$dernierJourSemaine);        
+        $builder->where(session()->get('id').'= compterendu.fkUsers');
+        $query=$builder->get();
+        return $query->getResultArray();
+    }
+
 
 
 }

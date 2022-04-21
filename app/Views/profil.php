@@ -26,6 +26,18 @@
 
                 </div>
             </div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Nombre de rendez-vous prévu cette semaine:</h6>
+                </div>
+                <div class="card-body">
+                    <?php
+                 var_dump($rdvavenirCetteSemaine[0]);
+
+                        ?>
+
+                </div>
+            </div>
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">

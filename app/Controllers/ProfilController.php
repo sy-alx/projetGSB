@@ -25,6 +25,7 @@ class ProfilController extends BaseController
             "CONTENT_PAGE" =>  "profil",
         );
         $data['rdvrecent'] = $this->nouveauModel->getrdvrecent();
+        $data['rdvavenirCetteSemaine'] = $this->nouveauModel->getrdvavenirCetteSemaine();
 
         echo view('dashboard', $data);
     }

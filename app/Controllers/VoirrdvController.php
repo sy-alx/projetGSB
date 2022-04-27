@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\VoirrdvModel;
+use CodeIgniter\API\ResponseTrait;
 
 class VoirrdvController extends BaseController
 {
+    use ResponseTrait;
     protected $db;
     protected $nouveauModel;
 
@@ -59,5 +61,26 @@ class VoirrdvController extends BaseController
         return redirect()->to(site_url("/Voirrdv"));
 
     }
+
+    // API
+      // ionic --> get data de user
+      public function indexApi() {
+        // $data['jour'] = $this->nouveauModel->getDateOfFirstDayOfTheWeekToDisplay(
+        //     $this->request->getVar('dateDebut'), $this->request->getVar('dateFin')
+        // );
+        $startDate = date('Y-m-d', strtotime($this->request->getVar('dateDebut')));
+        $endDate = date('Y-m-d',strtotime($this->request->getVar('dateFin')));
+
+        $data = $this->model->getRdvDataApi($startDate, $endDate);
+        return $this->respond($data);
+    }
+
+    // public function getWeekApi() {
+    //     $data['jour'] = $this->nouveauModel->getDateOfFirstDayOfTheWeekToDisplay($this->request->getVar('semaine'), $this->request->getVar('jour'));
+    //     $weekData = $this->nouveauModel->createSemaine($data['jour']);
+
+    //     return $this->respond($weekData);
+    // }
+
 
 }

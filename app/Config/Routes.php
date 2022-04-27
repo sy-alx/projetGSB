@@ -102,6 +102,9 @@ $routes->post('/api/SignIn', 'SigninController::signInApi');
 
 /*###############################################API Consultation#####################################################*/
 $routes->get('/api/Consultation', 'ConsultationController::indexApi', ['filter' => 'apiAuthGuard']);
+/*###############################################API Voir RDV#####################################################*/
+$routes->get('/api/VoirRdv', 'VoirrdvController::indexApi', ['filter' => 'apiAuthGuard']);
+$routes->get('/api/VoirRdv', 'VoirrdvController::getWeekApi', ['filter' => 'apiAuthGuard']);
 
 
 /*

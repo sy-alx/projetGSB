@@ -45,8 +45,10 @@ class CompteRenduController extends BaseController
 
     // ionic --> get data de user
     public function indexApi() {
-        $data = $this->model->getUsers();
-        return $this->respond($data);
+        // Faire requete dans model
+        // $data = $this->model->insertPraticienSelect();
+        // $data += $this->model->insertRempacantSelect();
+        // return $this->respond($data);
     }
 
         // Récuperer les données du formulaire compte rendu
@@ -98,6 +100,7 @@ class CompteRenduController extends BaseController
                 'MotifVisite'=> $this->request->getPost('MotifVisite'),
                 'fkUsers'=> session()->get('id'),
                 'texte'=> $this->request->getPost('texte'),
+                'idMedicament' => $this->request->getPost('idEchantillon')
             ];
             $rdvData = array(
                 'date_rdv'=> $this->request->getPost('dateRdv'),

@@ -99,7 +99,8 @@ $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
 
 /*###############################################API Compte Login#####################################################*/
 $routes->post('/api/SignIn', 'SigninController::signInApi');
-
+/*###############################################API CompteRendu#####################################################*/
+$routes->get('/api/CompteRendu', 'CompteRenduController::indexApi', ['filter' => 'apiAuthGuard']);
 /*###############################################API Consultation#####################################################*/
 $routes->get('/api/Consultation', 'ConsultationController::indexApi', ['filter' => 'apiAuthGuard']);
 /*###############################################API Voir RDV#####################################################*/

@@ -157,7 +157,7 @@
                             <input class = "form-control" name = "Datevisite" required type = "date" id = "edit-Datevisite">
                         </div>
 
-                        <label class = "light-dark">Remplacent</label>
+                        <label class = "light-dark">Remplaçant</label>
 
                         <select class="form-control" id="edit-nomRemplacant" name="Remplacant">
                             <option value="">-- Sélection --</option>
@@ -186,7 +186,7 @@
 
 
                         <div class="form-group">
-                            <label for="start">Impacte de la visite :</label> <br>
+                            <label for="start">Impact de la visite :</label> <br>
 
                             <div class="form-check form-check-inline">
 

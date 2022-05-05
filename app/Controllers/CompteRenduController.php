@@ -46,9 +46,12 @@ class CompteRenduController extends BaseController
     // ionic --> get data de user
     public function indexApi() {
         // Faire requete dans model
-        // $data = $this->model->insertPraticienSelect();
-        // $data += $this->model->insertRempacantSelect();
-        // return $this->respond($data);
+        $dataPraticien = $this->model->insertPraticienSelect();
+        $dataRemplacant = $this->model->insertRempacantSelect();
+        $dataMedicament = $this->model->insertListeMedicamentSelect();
+        $dataMotif = $this->model->insertMotifVisiteSelect();
+        $data = [$dataPraticien, $dataRemplacant, $dataMedicament, $dataMotif];
+        return $this->respond($data);
     }
 
         // Récuperer les données du formulaire compte rendu
@@ -89,19 +92,35 @@ class CompteRenduController extends BaseController
         {
 
             // BDD          
+            if($this->request->getPost('idEchantillon')!=null){
+                $dataclients = [
+                    'Datevisite' => $this->request->getPost('Datevisite'),
+                    'DateCR' => $this->request->getPost('DateCR'),
+                    'Praticien' => $this->request->getPost('Praticien'),
+                    'Remplacant'=> $this->request->getPost('Remplacant'),
+                    'ImpacteVisite' => $this->request->getPost('ImpacteVisite'),
+                    'CoefConf'=> $this->request->getPost('CoefConf'),
+                    'MotifVisite'=> $this->request->getPost('MotifVisite'),
+                    'fkUsers'=> session()->get('id'),
+                    'texte'=> $this->request->getPost('texte'),
 
-            $dataclients = [
-                'Datevisite' => $this->request->getPost('Datevisite'),
-                'DateCR' => $this->request->getPost('DateCR'),
-                'Praticien' => $this->request->getPost('Praticien'),
-                'Remplacant'=> $this->request->getPost('Remplacant'),
-                'ImpacteVisite' => $this->request->getPost('ImpacteVisite'),
-                'CoefConf'=> $this->request->getPost('CoefConf'),
-                'MotifVisite'=> $this->request->getPost('MotifVisite'),
-                'fkUsers'=> session()->get('id'),
-                'texte'=> $this->request->getPost('texte'),
-                'idMedicament' => $this->request->getPost('idEchantillon')
-            ];
+                    'idMedicament' => $this->request->getPost('idEchantillon')
+                
+                ];
+            }else{
+                $dataclients = [
+                    'Datevisite' => $this->request->getPost('Datevisite'),
+                    'DateCR' => $this->request->getPost('DateCR'),
+                    'Praticien' => $this->request->getPost('Praticien'),
+                    'Remplacant'=> $this->request->getPost('Remplacant'),
+                    'ImpacteVisite' => $this->request->getPost('ImpacteVisite'),
+                    'CoefConf'=> $this->request->getPost('CoefConf'),
+                    'MotifVisite'=> $this->request->getPost('MotifVisite'),
+                    'fkUsers'=> session()->get('id'),
+                    'texte'=> $this->request->getPost('texte'),
+                
+                ];
+            }
             $rdvData = array(
                 'date_rdv'=> $this->request->getPost('dateRdv'),
                 'heure_rdv'=> $this->request->getPost('heureRdv')
@@ -181,6 +200,94 @@ class CompteRenduController extends BaseController
         return redirect()->to(site_url("/Consultation"));
 
     }
+
+    /*API */
+    public function postCompteRenduApi()
+    {
+        $validation =  \Config\Services::validation();
+        $validation->setRules([
+            'Datevisite' => 'required',
+            'Praticien' => 'required',
+            'Remplacant' => 'required',
+            'ImpacteVisite' => 'required',
+            'CoefConf' =>'required',
+            'MotifVisite' => 'required',
+            'texte' => 'required',
+
+        ]);
+
+        if($validation->withRequest($this->request)->run())
+        {
+
+            // BDD          
+            if($this->request->getPost('idEchantillon')!=null){
+                $dataclients = [
+                    'Datevisite' => $this->request->getVar('Datevisite'),
+                    'DateCR' => $this->request->getVar('DateCR'),
+                    'Praticien' => $this->request->getVar('Praticien'),
+                    'Remplacant'=> $this->request->getVar('Remplacant'),
+                    'ImpacteVisite' => $this->request->getVar('ImpacteVisite'),
+                    'CoefConf'=> $this->request->getVar('CoefConf'),
+                    'MotifVisite'=> $this->request->getVar('MotifVisite'),
+                    'fkUsers'=> session()->get('id'),
+                    'texte'=> $this->request->getVar('texte'),
+                    'idMedicament' => $this->request->getVar('idEchantillon')
+                ];
+            }else{
+                $dataclients = [
+                    'Datevisite' => $this->request->getVar('Datevisite'),
+                    'DateCR' => $this->request->getVar('DateCR'),
+                    'Praticien' => $this->request->getVar('Praticien'),
+                    'Remplacant'=> $this->request->getVar('Remplacant'),
+                    'ImpacteVisite' => $this->request->getVar('ImpacteVisite'),
+                    'CoefConf'=> $this->request->getVar('CoefConf'),
+                    'MotifVisite'=> $this->request->getVar('MotifVisite'),
+                    'fkUsers'=> session()->get('id'),
+                    'texte'=> $this->request->getVar('texte'),
+
+                ];
+            }
+            $rdvData = array(
+                'date_rdv'=> $this->request->getVar('dateRdv'),
+                'heure_rdv'=> $this->request->getVar('heureRdv')
+            );
+            
+            $echantillonData = array(
+                'id'=>$this->request->getVar('idEchantillon'),
+                'MED_NOMBRECHANTILLON'=>$this->request->getVar('MED_NOMBRECHANTILLON')
+            );
+
+            if ($dataclients["ImpacteVisite"]<=10 && $dataclients["CoefConf"]<=10) {
+                //Si rendez vous existe, insert
+                if($rdvData["date_rdv"] && $rdvData["heure_rdv"])  {
+                    $rdvModel = new VoirrdvModel();
+                    $dataclients['idRdv'] = $rdvModel->insert($rdvData);
+                }
+                //Si echantillon donné existe, insert
+                if($echantillonData != null && $echantillonData["id"] && $echantillonData["MED_NOMBRECHANTILLON"])  {
+                    $echantillonModel = new MedicamentModel();
+                    $echantillonModel->incrementEchantillon($echantillonData);
+                }
+
+                if(($rdvData["date_rdv"] || $rdvData["heure_rdv"]) && (!$rdvData["date_rdv"] || !$rdvData["heure_rdv"]))  {
+                    return redirect()->to(site_url("CompteRendu?is_valid=0"));
+                }
+
+                 $this->nouveauModel->insertCompteRendu($dataclients);
+
+                 return redirect()->to(site_url("CompteRendu?is_valid=1"));
+            }else {
+
+                return redirect()->to(site_url("CompteRendu?is_valid=0"));}
+               
+
+
+        } else {
+
+            return redirect()->to(site_url("CompteRendu?is_valid=0"));
+        }
+    }
+
 
 
 }

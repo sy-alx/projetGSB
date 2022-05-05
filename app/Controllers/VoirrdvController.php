@@ -75,12 +75,4 @@ class VoirrdvController extends BaseController
         return $this->respond($data);
     }
 
-    // public function getWeekApi() {
-    //     $data['jour'] = $this->nouveauModel->getDateOfFirstDayOfTheWeekToDisplay($this->request->getVar('semaine'), $this->request->getVar('jour'));
-    //     $weekData = $this->nouveauModel->createSemaine($data['jour']);
-
-    //     return $this->respond($weekData);
-    // }
-
-
 }

@@ -59,7 +59,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Remplacant</label>
+                                <label for="exampleFormControlSelect1">Remplaçant</label>
 
                                 <select class="form-control" id="Remplacant" name="Remplacant">
 
@@ -74,7 +74,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Impacte visite sur 10</label> </br>
+                                <label for="exampleFormControlSelect1">Impact visite sur 10</label> </br>
 
                                 <input type="number" id="ImpacteVisite" name="ImpacteVisite" min="1" max="10">
 

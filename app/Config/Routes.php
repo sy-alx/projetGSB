@@ -101,11 +101,12 @@ $routes->get('/logout', 'LogoutController::index',['filter' => 'authGuard']);
 $routes->post('/api/SignIn', 'SigninController::signInApi');
 /*###############################################API CompteRendu#####################################################*/
 $routes->get('/api/CompteRendu', 'CompteRenduController::indexApi', ['filter' => 'apiAuthGuard']);
+$routes->post('/api/CompteRenduPost', 'CompteRenduController::postCompteRenduApi', ['filter' => 'apiAuthGuard']);
 /*###############################################API Consultation#####################################################*/
 $routes->get('/api/Consultation', 'ConsultationController::indexApi', ['filter' => 'apiAuthGuard']);
 /*###############################################API Voir RDV#####################################################*/
 $routes->get('/api/VoirRdv', 'VoirrdvController::indexApi', ['filter' => 'apiAuthGuard']);
-$routes->get('/api/VoirRdv', 'VoirrdvController::getWeekApi', ['filter' => 'apiAuthGuard']);
+// $routes->get('/api/VoirRdv', 'VoirrdvController::getWeekApi', ['filter' => 'apiAuthGuard']);
 
 
 /*

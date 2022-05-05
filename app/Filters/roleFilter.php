@@ -13,7 +13,7 @@ class roleFilter implements FilterInterface
         if (!(session()->get('role') == 3))
         { 
 
-            echo "<alert><script>setTimeout(\"location.href = '/profil';\",1),swal('Accès refusé, vous n\'avez pas les droits necéssaire') </script>";    
+            echo "<alert><script>setTimeout(\"location.href = '/Consultation';\",1),swal('Accès refusé, vous n\'avez pas les droits necéssaire') </script>";    
             
        
                 

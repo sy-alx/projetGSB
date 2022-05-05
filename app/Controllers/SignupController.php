@@ -33,7 +33,7 @@ class SignupController extends Controller
 
             $userModel->save($data);
 
-            return redirect()->to('/profil');
+            return redirect()->to('/Consultation');
         }else{
             $data['validation'] = $this->validator;
             echo view('signup', $data);

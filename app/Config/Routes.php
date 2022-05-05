@@ -75,7 +75,7 @@ $routes->get('/Addvisiteur/Delete/(:num)', 'addvisiteurController::delete/$1',['
 
 
 /*#########################################PAGE PROFIL################################################################*/
-$routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
+// $routes->get('/profil', 'ProfilController::index',['filter' => 'authGuard']);
 
 /*############################################PAGE CONSULTATION#############################################################*/
 $routes->get('/Consultation', 'ConsultationController::index',['filter' => 'authGuard']);

@@ -40,7 +40,7 @@ class SigninController extends Controller
                 ];
 
                 $session->set($ses_data);
-                return redirect()->to('/profil');
+                return redirect()->to('/Consultation');
 
             }else{
                 $session->setFlashdata('msg', 'Le mot de passe est erroné.');

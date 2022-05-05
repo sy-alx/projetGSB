@@ -56,7 +56,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="/profil">
+            <a class="nav-link" > 
                 <i class="fas fa-user"></i>
                 <span>Profil <?= session()->get('name') ?></span>
             </a>

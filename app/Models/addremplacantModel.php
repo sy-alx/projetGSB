@@ -14,7 +14,7 @@ use CodeIgniter\Model;
 class addremplacantModel extends Model{
 
     /* Name of database table */
-    protected $table = "listeremplacant";
+    protected $table = "listeRemplacant";
 
     /* name of primary key field */
     protected $primaryKey = "id";

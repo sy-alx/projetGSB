@@ -66,8 +66,8 @@ class MedicamentModel extends Model{
     }
 
     public function incrementEchantillon($data){
-        $builder = $this->table('listemedicament');
-        $builder->select('listemedicament.id, listemedicament.MED_NOMBRECHANTILLON');
+        $builder = $this->table('listeMedicament');
+        $builder->select('listeMedicament.id, listeMedicament.MED_NOMBRECHANTILLON');
         $builder->where('id='.$data['id']);
         $query=$builder->get();
         

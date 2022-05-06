@@ -21,12 +21,12 @@ class ProfilModel extends Model
     }
 
     public function getrdvrecent() {
-        $builder = $this->db->table('compterendu');
-        $builder->join('users', 'users.id = compterendu.fkUsers');
+        $builder = $this->db->table('compteRendu');
+        $builder->join('users', 'users.id = compteRendu.fkUsers');
 
         $builder->select('DateCR');
         if(session()->get('role') != 3){
-            $builder->where(session()->get('id').'=compterendu.fkUsers');
+            $builder->where(session()->get('id').'=compteRendu.fkUsers');
         }
 
         $builder->orderBy('DateCR', 'DESC');
@@ -46,11 +46,11 @@ class ProfilModel extends Model
         $dernierJourSemaine = $premierJourSemaine + 4;
 
         $builder = $this->db->table('rdv');
-        $builder->join('compterendu', 'rdv.id = compterendu.idRdv');
+        $builder->join('compteRendu', 'rdv.id = compteRendu.idRdv');
         $builder->select('count(rdv.id) as nbrRdv');
         $builder->where('date_rdv >= ', $today);
         $builder->where('date_rdv <=', $AnneMoisDebutSemaine.'-'.$dernierJourSemaine);        
-        $builder->where(session()->get('id').'= compterendu.fkUsers');
+        $builder->where(session()->get('id').'= compteRendu.fkUsers');
         $query=$builder->get();
         return $query->getResultArray();
     }
